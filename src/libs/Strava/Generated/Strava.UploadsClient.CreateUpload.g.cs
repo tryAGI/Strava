@@ -5,6 +5,25 @@ namespace Strava
 {
     public partial class UploadsClient
     {
+
+
+        private static readonly global::Strava.EndPointSecurityRequirement s_CreateUploadSecurityRequirement0 =
+            new global::Strava.EndPointSecurityRequirement
+            {
+                Authorizations = new global::Strava.EndPointAuthorizationRequirement[]
+                {                    new global::Strava.EndPointAuthorizationRequirement
+                    {
+                        Type = "Http",
+                        Location = "Header",
+                        Name = "Bearer",
+                        FriendlyName = "Bearer",
+                    },
+                },
+            };
+        private static readonly global::Strava.EndPointSecurityRequirement[] s_CreateUploadSecurityRequirements =
+            new global::Strava.EndPointSecurityRequirement[]
+            {                s_CreateUploadSecurityRequirement0,
+            };
         partial void PrepareCreateUploadArguments(
             global::System.Net.Http.HttpClient httpClient,
             global::Strava.CreateUploadRequest request);
@@ -41,9 +60,15 @@ namespace Strava
                 httpClient: HttpClient,
                 request: request);
 
+
+            var __authorizations = global::Strava.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_CreateUploadSecurityRequirements,
+                operationName: "CreateUploadAsync");
+
             var __pathBuilder = new global::Strava.PathBuilder(
                 path: "/uploads",
-                baseUri: HttpClient.BaseAddress); 
+                baseUri: HttpClient.BaseAddress);
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Post,
@@ -53,7 +78,7 @@ namespace Strava
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

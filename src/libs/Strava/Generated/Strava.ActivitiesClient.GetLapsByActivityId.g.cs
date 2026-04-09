@@ -5,6 +5,25 @@ namespace Strava
 {
     public partial class ActivitiesClient
     {
+
+
+        private static readonly global::Strava.EndPointSecurityRequirement s_GetLapsByActivityIdSecurityRequirement0 =
+            new global::Strava.EndPointSecurityRequirement
+            {
+                Authorizations = new global::Strava.EndPointAuthorizationRequirement[]
+                {                    new global::Strava.EndPointAuthorizationRequirement
+                    {
+                        Type = "Http",
+                        Location = "Header",
+                        Name = "Bearer",
+                        FriendlyName = "Bearer",
+                    },
+                },
+            };
+        private static readonly global::Strava.EndPointSecurityRequirement[] s_GetLapsByActivityIdSecurityRequirements =
+            new global::Strava.EndPointSecurityRequirement[]
+            {                s_GetLapsByActivityIdSecurityRequirement0,
+            };
         partial void PrepareGetLapsByActivityIdArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref long id);
@@ -38,9 +57,15 @@ namespace Strava
                 httpClient: HttpClient,
                 id: ref id);
 
+
+            var __authorizations = global::Strava.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_GetLapsByActivityIdSecurityRequirements,
+                operationName: "GetLapsByActivityIdAsync");
+
             var __pathBuilder = new global::Strava.PathBuilder(
                 path: $"/activities/{id}/laps",
-                baseUri: HttpClient.BaseAddress); 
+                baseUri: HttpClient.BaseAddress);
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
@@ -50,7 +75,7 @@ namespace Strava
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

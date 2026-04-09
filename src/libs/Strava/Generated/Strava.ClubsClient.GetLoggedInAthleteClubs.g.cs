@@ -5,6 +5,25 @@ namespace Strava
 {
     public partial class ClubsClient
     {
+
+
+        private static readonly global::Strava.EndPointSecurityRequirement s_GetLoggedInAthleteClubsSecurityRequirement0 =
+            new global::Strava.EndPointSecurityRequirement
+            {
+                Authorizations = new global::Strava.EndPointAuthorizationRequirement[]
+                {                    new global::Strava.EndPointAuthorizationRequirement
+                    {
+                        Type = "Http",
+                        Location = "Header",
+                        Name = "Bearer",
+                        FriendlyName = "Bearer",
+                    },
+                },
+            };
+        private static readonly global::Strava.EndPointSecurityRequirement[] s_GetLoggedInAthleteClubsSecurityRequirements =
+            new global::Strava.EndPointSecurityRequirement[]
+            {                s_GetLoggedInAthleteClubsSecurityRequirement0,
+            };
         partial void PrepareGetLoggedInAthleteClubsArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref int? page,
@@ -45,13 +64,19 @@ namespace Strava
                 page: ref page,
                 perPage: ref perPage);
 
+
+            var __authorizations = global::Strava.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_GetLoggedInAthleteClubsSecurityRequirements,
+                operationName: "GetLoggedInAthleteClubsAsync");
+
             var __pathBuilder = new global::Strava.PathBuilder(
                 path: "/athlete/clubs",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder
                 .AddOptionalParameter("page", page?.ToString())
                 .AddOptionalParameter("per_page", perPage?.ToString()) 
-                ; 
+                ;
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
@@ -61,7 +86,7 @@ namespace Strava
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")
