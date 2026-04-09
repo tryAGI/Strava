@@ -5,6 +5,25 @@ namespace Strava
 {
     public partial class SegmentsClient
     {
+
+
+        private static readonly global::Strava.EndPointSecurityRequirement s_ExploreSegmentsSecurityRequirement0 =
+            new global::Strava.EndPointSecurityRequirement
+            {
+                Authorizations = new global::Strava.EndPointAuthorizationRequirement[]
+                {                    new global::Strava.EndPointAuthorizationRequirement
+                    {
+                        Type = "Http",
+                        Location = "Header",
+                        Name = "Bearer",
+                        FriendlyName = "Bearer",
+                    },
+                },
+            };
+        private static readonly global::Strava.EndPointSecurityRequirement[] s_ExploreSegmentsSecurityRequirements =
+            new global::Strava.EndPointSecurityRequirement[]
+            {                s_ExploreSegmentsSecurityRequirement0,
+            };
         partial void PrepareExploreSegmentsArguments(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Collections.Generic.IList<float> bounds,
@@ -53,6 +72,12 @@ namespace Strava
                 minCat: ref minCat,
                 maxCat: ref maxCat);
 
+
+            var __authorizations = global::Strava.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_ExploreSegmentsSecurityRequirements,
+                operationName: "ExploreSegmentsAsync");
+
             var __pathBuilder = new global::Strava.PathBuilder(
                 path: "/segments/explore",
                 baseUri: HttpClient.BaseAddress); 
@@ -61,7 +86,7 @@ namespace Strava
                 .AddOptionalParameter("activity_type", activityType?.ToValueString())
                 .AddOptionalParameter("min_cat", minCat?.ToString())
                 .AddOptionalParameter("max_cat", maxCat?.ToString()) 
-                ; 
+                ;
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
@@ -71,7 +96,7 @@ namespace Strava
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

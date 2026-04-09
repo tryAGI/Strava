@@ -5,6 +5,25 @@ namespace Strava
 {
     public partial class ActivitiesClient
     {
+
+
+        private static readonly global::Strava.EndPointSecurityRequirement s_UpdateActivityByIdSecurityRequirement0 =
+            new global::Strava.EndPointSecurityRequirement
+            {
+                Authorizations = new global::Strava.EndPointAuthorizationRequirement[]
+                {                    new global::Strava.EndPointAuthorizationRequirement
+                    {
+                        Type = "Http",
+                        Location = "Header",
+                        Name = "Bearer",
+                        FriendlyName = "Bearer",
+                    },
+                },
+            };
+        private static readonly global::Strava.EndPointSecurityRequirement[] s_UpdateActivityByIdSecurityRequirements =
+            new global::Strava.EndPointSecurityRequirement[]
+            {                s_UpdateActivityByIdSecurityRequirement0,
+            };
         partial void PrepareUpdateActivityByIdArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref long id,
@@ -46,9 +65,15 @@ namespace Strava
                 id: ref id,
                 request: request);
 
+
+            var __authorizations = global::Strava.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_UpdateActivityByIdSecurityRequirements,
+                operationName: "UpdateActivityByIdAsync");
+
             var __pathBuilder = new global::Strava.PathBuilder(
                 path: $"/activities/{id}",
-                baseUri: HttpClient.BaseAddress); 
+                baseUri: HttpClient.BaseAddress);
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Put,
@@ -58,7 +83,7 @@ namespace Strava
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")
