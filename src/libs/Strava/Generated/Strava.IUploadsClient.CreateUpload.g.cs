@@ -9,11 +9,13 @@ namespace Strava
         /// Uploads a new data file to create an activity from. Requires activity:write scope.
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Strava.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::Strava.Upload> CreateUploadAsync(
 
             global::Strava.CreateUploadRequest request,
+            global::Strava.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Upload Activity<br/>
@@ -43,6 +45,7 @@ namespace Strava
         /// <param name="externalId">
         /// The desired external identifier of the resulting activity.
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::Strava.Upload> CreateUploadAsync(
@@ -54,6 +57,7 @@ namespace Strava
             string? commute = default,
             global::Strava.CreateUploadRequestDataType? dataType = default,
             string? externalId = default,
+            global::Strava.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

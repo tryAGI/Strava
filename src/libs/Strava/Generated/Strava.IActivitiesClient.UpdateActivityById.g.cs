@@ -10,12 +10,14 @@ namespace Strava
         /// </summary>
         /// <param name="id"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Strava.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::Strava.DetailedActivity> UpdateActivityByIdAsync(
             long id,
 
             global::Strava.UpdatableActivity request,
+            global::Strava.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Update Activity<br/>
@@ -46,6 +48,7 @@ namespace Strava
         /// <param name="gearId">
         /// Identifier for the gear associated with the activity. ‘none’ clears gear from activity
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::Strava.DetailedActivity> UpdateActivityByIdAsync(
@@ -58,6 +61,7 @@ namespace Strava
             global::Strava.ActivityType? type = default,
             global::Strava.SportType? sportType = default,
             string? gearId = default,
+            global::Strava.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

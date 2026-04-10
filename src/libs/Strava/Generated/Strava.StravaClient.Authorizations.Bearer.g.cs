@@ -25,6 +25,7 @@ namespace Strava
             Authorizations.Add(new global::Strava.EndPointAuthorization
             {
                 Type = "Http",
+                SchemeId = "HttpBearer",
                 Location = "Header",
                 Name = "Bearer",
                 Value = apiKey,
