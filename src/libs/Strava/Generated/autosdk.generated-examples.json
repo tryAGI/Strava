@@ -1,0 +1,290 @@
+{
+  "Examples": [
+    {
+      "Order": 1,
+      "Title": "Create an Activity",
+      "Slug": "createactivity",
+      "Description": "Creates a manual activity for an athlete, requires activity:write scope.",
+      "Language": "http",
+      "Code": "### Create an Activity\n# @name createActivity\nPOST {{host}}/activities\nAuthorization: Bearer {{token}}\nContent-Type: application/x-www-form-urlencoded\nAccept: application/json\n\n## Responses\n# 201\n# Description: The activity\u0027s detailed representation.\n# Content-Type: application/json\n# default\n# Description: Unexpected error.\n# Content-Type: application/json",
+      "Format": "http",
+      "OperationId": "createActivity",
+      "Setup": null
+    },
+    {
+      "Order": 2,
+      "Title": "Get Activity",
+      "Slug": "getactivitybyid",
+      "Description": "Returns the given activity that is owned by the authenticated athlete. Requires activity:read for Everyone and Followers activities. Requires activity:read_all for Only Me activities.\n\nWe strongly encourage you to display the appropriate attribution that identifies Garmin as the data source and the device name in your application. Please see example below from VeloViewer (that provides an attribution for a Garmin Forerunner device).\n\n![Attribution](/images/device-attribution-image.png)",
+      "Language": "http",
+      "Code": "### Get Activity\n# @name getActivityById\nGET {{host}}/activities/{{id}}?include_all_efforts={{include_all_efforts}}\nAuthorization: Bearer {{token}}\nAccept: application/json\n\n## Responses\n# 200\n# Description: The activity\u0027s detailed representation.\n# Content-Type: application/json\n# default\n# Description: Unexpected error.\n# Content-Type: application/json",
+      "Format": "http",
+      "OperationId": "getActivityById",
+      "Setup": null
+    },
+    {
+      "Order": 3,
+      "Title": "List Activity Comments",
+      "Slug": "getcommentsbyactivityid",
+      "Description": "Returns the comments on the given activity. Requires activity:read for Everyone and Followers activities. Requires activity:read_all for Only Me activities.",
+      "Language": "http",
+      "Code": "### List Activity Comments\n# @name getCommentsByActivityId\nGET {{host}}/activities/{{id}}/comments?page={{page}}\u0026per_page=30\u0026page_size=30\u0026after_cursor={{after_cursor}}\nAuthorization: Bearer {{token}}\nAccept: application/json\n\n## Responses\n# 200\n# Description: Comments.\n# Content-Type: application/json\n# default\n# Description: Unexpected error.\n# Content-Type: application/json",
+      "Format": "http",
+      "OperationId": "getCommentsByActivityId",
+      "Setup": null
+    },
+    {
+      "Order": 4,
+      "Title": "List Activity Kudoers",
+      "Slug": "getkudoersbyactivityid",
+      "Description": "Returns the athletes who kudoed an activity identified by an identifier. Requires activity:read for Everyone and Followers activities. Requires activity:read_all for Only Me activities.",
+      "Language": "http",
+      "Code": "### List Activity Kudoers\n# @name getKudoersByActivityId\nGET {{host}}/activities/{{id}}/kudos?page={{page}}\u0026per_page=30\nAuthorization: Bearer {{token}}\nAccept: application/json\n\n## Responses\n# 200\n# Description: Comments.\n# Content-Type: application/json\n# default\n# Description: Unexpected error.\n# Content-Type: application/json",
+      "Format": "http",
+      "OperationId": "getKudoersByActivityId",
+      "Setup": null
+    },
+    {
+      "Order": 5,
+      "Title": "List Activity Laps",
+      "Slug": "getlapsbyactivityid",
+      "Description": "Returns the laps of an activity identified by an identifier. Requires activity:read for Everyone and Followers activities. Requires activity:read_all for Only Me activities.",
+      "Language": "http",
+      "Code": "### List Activity Laps\n# @name getLapsByActivityId\nGET {{host}}/activities/{{id}}/laps\nAuthorization: Bearer {{token}}\nAccept: application/json\n\n## Responses\n# 200\n# Description: Activity Laps.\n# Content-Type: application/json\n# default\n# Description: Unexpected error.\n# Content-Type: application/json",
+      "Format": "http",
+      "OperationId": "getLapsByActivityId",
+      "Setup": null
+    },
+    {
+      "Order": 6,
+      "Title": "List Athlete Activities",
+      "Slug": "getloggedinathleteactivities",
+      "Description": "Returns the activities of an athlete for a specific identifier. Requires activity:read. Only Me activities will be filtered out unless requested by a token with activity:read_all.",
+      "Language": "csharp",
+      "Code": "using var client = new StravaClient(apiKey);\nvar response = await client.Activities.GetLoggedInAthleteActivitiesAsync();\n\n// Example response:\n// [\n//   {\n//     \u0022resource_state\u0022: 2,\n//     \u0022athlete\u0022: {\n//       \u0022id\u0022: 134815,\n//       \u0022resource_state\u0022: 1\n//     },\n//     \u0022name\u0022: \u0022Happy Friday\u0022,\n//     \u0022distance\u0022: 24931.4,\n//     \u0022moving_time\u0022: 4500,\n//     \u0022elapsed_time\u0022: 4500,\n//     \u0022total_elevation_gain\u0022: 0,\n//     \u0022type\u0022: \u0022Ride\u0022,\n//     \u0022sport_type\u0022: \u0022MountainBikeRide\u0022,\n//     \u0022workout_type\u0022: null,\n//     \u0022id\u0022: 154504250376823,\n//     \u0022external_id\u0022: \u0022garmin_push_12345678987654321\u0022,\n//     \u0022upload_id\u0022: 987654321234567891234,\n//     \u0022start_date\u0022: \u00222018-05-02T12:15:09Z\u0022,\n//     \u0022start_date_local\u0022: \u00222018-05-02T05:15:09Z\u0022,\n//     \u0022timezone\u0022: \u0022(GMT-08:00) America/Los_Angeles\u0022,\n//     \u0022utc_offset\u0022: -25200,\n//     \u0022start_latlng\u0022: null,\n//     \u0022end_latlng\u0022: null,\n//     \u0022location_city\u0022: null,\n//     \u0022location_state\u0022: null,\n//     \u0022location_country\u0022: \u0022United States\u0022,\n//     \u0022achievement_count\u0022: 0,\n//     \u0022kudos_count\u0022: 3,\n//     \u0022comment_count\u0022: 1,\n//     \u0022athlete_count\u0022: 1,\n//     \u0022photo_count\u0022: 0,\n//     \u0022map\u0022: {\n//       \u0022id\u0022: \u0022a12345678987654321\u0022,\n//       \u0022summary_polyline\u0022: null,\n//       \u0022resource_state\u0022: 2\n//     },\n//     \u0022device_name\u0022: \u0022Garmin Edge 1030\u0022,\n//     \u0022trainer\u0022: true,\n//     \u0022commute\u0022: false,\n//     \u0022manual\u0022: false,\n//     \u0022private\u0022: false,\n//     \u0022flagged\u0022: false,\n//     \u0022gear_id\u0022: \u0022b12345678987654321\u0022,\n//     \u0022from_accepted_tag\u0022: false,\n//     \u0022average_speed\u0022: 5.54,\n//     \u0022max_speed\u0022: 11,\n//     \u0022average_cadence\u0022: 67.1,\n//     \u0022average_watts\u0022: 175.3,\n//     \u0022weighted_average_watts\u0022: 210,\n//     \u0022kilojoules\u0022: 788.7,\n//     \u0022device_watts\u0022: true,\n//     \u0022has_heartrate\u0022: true,\n//     \u0022average_heartrate\u0022: 140.3,\n//     \u0022max_heartrate\u0022: 178,\n//     \u0022max_watts\u0022: 406,\n//     \u0022pr_count\u0022: 0,\n//     \u0022total_photo_count\u0022: 1,\n//     \u0022has_kudoed\u0022: false,\n//     \u0022suffer_score\u0022: 82\n//   },\n//   {\n//     \u0022resource_state\u0022: 2,\n//     \u0022athlete\u0022: {\n//       \u0022id\u0022: 167560,\n//       \u0022resource_state\u0022: 1\n//     },\n//     \u0022name\u0022: \u0022Bondcliff\u0022,\n//     \u0022distance\u0022: 23676.5,\n//     \u0022moving_time\u0022: 5400,\n//     \u0022elapsed_time\u0022: 5400,\n//     \u0022total_elevation_gain\u0022: 0,\n//     \u0022type\u0022: \u0022Ride\u0022,\n//     \u0022sport_type\u0022: \u0022MountainBikeRide\u0022,\n//     \u0022workout_type\u0022: null,\n//     \u0022id\u0022: 1234567809,\n//     \u0022external_id\u0022: \u0022garmin_push_12345678987654321\u0022,\n//     \u0022upload_id\u0022: 1234567819,\n//     \u0022start_date\u0022: \u00222018-04-30T12:35:51Z\u0022,\n//     \u0022start_date_local\u0022: \u00222018-04-30T05:35:51Z\u0022,\n//     \u0022timezone\u0022: \u0022(GMT-08:00) America/Los_Angeles\u0022,\n//     \u0022utc_offset\u0022: -25200,\n//     \u0022start_latlng\u0022: null,\n//     \u0022end_latlng\u0022: null,\n//     \u0022location_city\u0022: null,\n//     \u0022location_state\u0022: null,\n//     \u0022location_country\u0022: \u0022United States\u0022,\n//     \u0022achievement_count\u0022: 0,\n//     \u0022kudos_count\u0022: 4,\n//     \u0022comment_count\u0022: 0,\n//     \u0022athlete_count\u0022: 1,\n//     \u0022photo_count\u0022: 0,\n//     \u0022map\u0022: {\n//       \u0022id\u0022: \u0022a12345689\u0022,\n//       \u0022summary_polyline\u0022: null,\n//       \u0022resource_state\u0022: 2\n//     },\n//     \u0022device_name\u0022: \u0022Garmin Edge 1030\u0022,\n//     \u0022trainer\u0022: true,\n//     \u0022commute\u0022: false,\n//     \u0022manual\u0022: false,\n//     \u0022private\u0022: false,\n//     \u0022flagged\u0022: false,\n//     \u0022gear_id\u0022: \u0022b12345678912343\u0022,\n//     \u0022from_accepted_tag\u0022: false,\n//     \u0022average_speed\u0022: 4.385,\n//     \u0022max_speed\u0022: 8.8,\n//     \u0022average_cadence\u0022: 69.8,\n//     \u0022average_watts\u0022: 200,\n//     \u0022weighted_average_watts\u0022: 214,\n//     \u0022kilojoules\u0022: 1080,\n//     \u0022device_watts\u0022: true,\n//     \u0022has_heartrate\u0022: true,\n//     \u0022average_heartrate\u0022: 152.4,\n//     \u0022max_heartrate\u0022: 183,\n//     \u0022max_watts\u0022: 403,\n//     \u0022pr_count\u0022: 0,\n//     \u0022total_photo_count\u0022: 1,\n//     \u0022has_kudoed\u0022: false,\n//     \u0022suffer_score\u0022: 162\n//   }\n// ]",
+      "Format": "sdk",
+      "OperationId": "getLoggedInAthleteActivities",
+      "Setup": "This example assumes \u0060using Strava;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."
+    },
+    {
+      "Order": 7,
+      "Title": "Update Activity",
+      "Slug": "updateactivitybyid",
+      "Description": "Updates the given activity that is owned by the authenticated athlete. Requires activity:write. Also requires activity:read_all in order to update Only Me activities",
+      "Language": "http",
+      "Code": "### Update Activity\n# @name updateActivityById\nPUT {{host}}/activities/{{id}}\nAuthorization: Bearer {{token}}\nContent-Type: application/json\nAccept: application/json\n\n{\n  \u0022commute\u0022: true,\n  \u0022trainer\u0022: true,\n  \u0022hide_from_home\u0022: true,\n  \u0022description\u0022: \u0022string\u0022,\n  \u0022name\u0022: \u0022string\u0022,\n  \u0022type\u0022: \u0022AlpineSki\u0022,\n  \u0022sport_type\u0022: \u0022AlpineSki\u0022,\n  \u0022gear_id\u0022: \u0022string\u0022\n}\n\n## Responses\n# 200\n# Description: The activity\u0027s detailed representation.\n# Content-Type: application/json\n# default\n# Description: Unexpected error.\n# Content-Type: application/json",
+      "Format": "http",
+      "OperationId": "updateActivityById",
+      "Setup": null
+    },
+    {
+      "Order": 8,
+      "Title": "Get Authenticated Athlete",
+      "Slug": "getloggedinathlete",
+      "Description": "Returns the currently authenticated athlete. Tokens with profile:read_all scope will receive a detailed athlete representation; all others will receive a summary representation.",
+      "Language": "csharp",
+      "Code": "using var client = new StravaClient(apiKey);\nvar response = await client.Athletes.GetLoggedInAthleteAsync();\n\n// Example response:\n// {\n//   \u0022id\u0022: 1234567890987654321,\n//   \u0022username\u0022: \u0022marianne_t\u0022,\n//   \u0022resource_state\u0022: 3,\n//   \u0022firstname\u0022: \u0022Marianne\u0022,\n//   \u0022lastname\u0022: \u0022Teutenberg\u0022,\n//   \u0022city\u0022: \u0022San Francisco\u0022,\n//   \u0022state\u0022: \u0022CA\u0022,\n//   \u0022country\u0022: \u0022US\u0022,\n//   \u0022sex\u0022: \u0022F\u0022,\n//   \u0022premium\u0022: true,\n//   \u0022created_at\u0022: \u00222017-11-14T02:30:05Z\u0022,\n//   \u0022updated_at\u0022: \u00222018-02-06T19:32:20Z\u0022,\n//   \u0022badge_type_id\u0022: 4,\n//   \u0022profile_medium\u0022: \u0022https://xxxxxx.cloudfront.net/pictures/athletes/123456789/123456789/2/medium.jpg\u0022,\n//   \u0022profile\u0022: \u0022https://xxxxx.cloudfront.net/pictures/athletes/123456789/123456789/2/large.jpg\u0022,\n//   \u0022friend\u0022: null,\n//   \u0022follower\u0022: null,\n//   \u0022follower_count\u0022: 5,\n//   \u0022friend_count\u0022: 5,\n//   \u0022mutual_friend_count\u0022: 0,\n//   \u0022athlete_type\u0022: 1,\n//   \u0022date_preference\u0022: \u0022%m/%d/%Y\u0022,\n//   \u0022measurement_preference\u0022: \u0022feet\u0022,\n//   \u0022clubs\u0022: [],\n//   \u0022ftp\u0022: null,\n//   \u0022weight\u0022: 0,\n//   \u0022bikes\u0022: [\n//     {\n//       \u0022id\u0022: \u0022b12345678987655\u0022,\n//       \u0022primary\u0022: true,\n//       \u0022name\u0022: \u0022EMC\u0022,\n//       \u0022resource_state\u0022: 2,\n//       \u0022distance\u0022: 0\n//     }\n//   ],\n//   \u0022shoes\u0022: [\n//     {\n//       \u0022id\u0022: \u0022g12345678987655\u0022,\n//       \u0022primary\u0022: true,\n//       \u0022name\u0022: \u0022adidas\u0022,\n//       \u0022resource_state\u0022: 2,\n//       \u0022distance\u0022: 4904\n//     }\n//   ]\n// }",
+      "Format": "sdk",
+      "OperationId": "getLoggedInAthlete",
+      "Setup": "This example assumes \u0060using Strava;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."
+    },
+    {
+      "Order": 9,
+      "Title": "Get Zones",
+      "Slug": "getloggedinathletezones",
+      "Description": "Returns the the authenticated athlete\u0027s heart rate and power zones. Requires profile:read_all.",
+      "Language": "csharp",
+      "Code": "using var client = new StravaClient(apiKey);\nvar response = await client.Athletes.GetLoggedInAthleteZonesAsync();\n\n// Example response:\n// [\n//   {\n//     \u0022distribution_buckets\u0022: [\n//       {\n//         \u0022max\u0022: 0,\n//         \u0022min\u0022: 0,\n//         \u0022time\u0022: 1498\n//       },\n//       {\n//         \u0022max\u0022: 50,\n//         \u0022min\u0022: 0,\n//         \u0022time\u0022: 62\n//       },\n//       {\n//         \u0022max\u0022: 100,\n//         \u0022min\u0022: 50,\n//         \u0022time\u0022: 169\n//       },\n//       {\n//         \u0022max\u0022: 150,\n//         \u0022min\u0022: 100,\n//         \u0022time\u0022: 536\n//       },\n//       {\n//         \u0022max\u0022: 200,\n//         \u0022min\u0022: 150,\n//         \u0022time\u0022: 672\n//       },\n//       {\n//         \u0022max\u0022: 250,\n//         \u0022min\u0022: 200,\n//         \u0022time\u0022: 821\n//       },\n//       {\n//         \u0022max\u0022: 300,\n//         \u0022min\u0022: 250,\n//         \u0022time\u0022: 529\n//       },\n//       {\n//         \u0022max\u0022: 350,\n//         \u0022min\u0022: 300,\n//         \u0022time\u0022: 251\n//       },\n//       {\n//         \u0022max\u0022: 400,\n//         \u0022min\u0022: 350,\n//         \u0022time\u0022: 80\n//       },\n//       {\n//         \u0022max\u0022: 450,\n//         \u0022min\u0022: 400,\n//         \u0022time\u0022: 81\n//       },\n//       {\n//         \u0022max\u0022: -1,\n//         \u0022min\u0022: 450,\n//         \u0022time\u0022: 343\n//       }\n//     ],\n//     \u0022type\u0022: \u0022power\u0022,\n//     \u0022resource_state\u0022: 3,\n//     \u0022sensor_based\u0022: true\n//   }\n// ]",
+      "Format": "sdk",
+      "OperationId": "getLoggedInAthleteZones",
+      "Setup": "This example assumes \u0060using Strava;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."
+    },
+    {
+      "Order": 10,
+      "Title": "Update Athlete",
+      "Slug": "updateloggedinathlete",
+      "Description": "Update the currently authenticated athlete. Requires profile:write scope.",
+      "Language": "http",
+      "Code": "### Update Athlete\n# @name updateLoggedInAthlete\nPUT {{host}}/athlete\nAuthorization: Bearer {{token}}\nAccept: application/json\n\n## Responses\n# 200\n# Description: Profile information for the authenticated athlete.\n# Content-Type: application/json\n# default\n# Description: Unexpected error.\n# Content-Type: application/json",
+      "Format": "http",
+      "OperationId": "updateLoggedInAthlete",
+      "Setup": null
+    },
+    {
+      "Order": 11,
+      "Title": "List Club Activities",
+      "Slug": "getclubactivitiesbyid",
+      "Description": "Retrieve recent activities from members of a specific club. The authenticated athlete must belong to the requested club in order to hit this endpoint. Pagination is supported. Athlete profile visibility is respected for all activities.",
+      "Language": "http",
+      "Code": "### List Club Activities\n# @name getClubActivitiesById\nGET {{host}}/clubs/{{id}}/activities?page={{page}}\u0026per_page=30\nAuthorization: Bearer {{token}}\nAccept: application/json\n\n## Responses\n# 200\n# Description: A list of activities.\n# Content-Type: application/json\n# default\n# Description: Unexpected error.\n# Content-Type: application/json",
+      "Format": "http",
+      "OperationId": "getClubActivitiesById",
+      "Setup": null
+    },
+    {
+      "Order": 12,
+      "Title": "List Club Administrators",
+      "Slug": "getclubadminsbyid",
+      "Description": "Returns a list of the administrators of a given club.",
+      "Language": "http",
+      "Code": "### List Club Administrators\n# @name getClubAdminsById\nGET {{host}}/clubs/{{id}}/admins?page={{page}}\u0026per_page=30\nAuthorization: Bearer {{token}}\nAccept: application/json\n\n## Responses\n# 200\n# Description: A list of summary athlete representations.\n# Content-Type: application/json\n# default\n# Description: Unexpected error.\n# Content-Type: application/json",
+      "Format": "http",
+      "OperationId": "getClubAdminsById",
+      "Setup": null
+    },
+    {
+      "Order": 13,
+      "Title": "Get Club",
+      "Slug": "getclubbyid",
+      "Description": "Returns a given a club using its identifier.",
+      "Language": "http",
+      "Code": "### Get Club\n# @name getClubById\nGET {{host}}/clubs/{{id}}\nAuthorization: Bearer {{token}}\nAccept: application/json\n\n## Responses\n# 200\n# Description: The detailed representation of a club.\n# Content-Type: application/json\n# default\n# Description: Unexpected error.\n# Content-Type: application/json",
+      "Format": "http",
+      "OperationId": "getClubById",
+      "Setup": null
+    },
+    {
+      "Order": 14,
+      "Title": "List Club Members",
+      "Slug": "getclubmembersbyid",
+      "Description": "Returns a list of the athletes who are members of a given club.",
+      "Language": "http",
+      "Code": "### List Club Members\n# @name getClubMembersById\nGET {{host}}/clubs/{{id}}/members?page={{page}}\u0026per_page=30\nAuthorization: Bearer {{token}}\nAccept: application/json\n\n## Responses\n# 200\n# Description: A list of club athlete representations.\n# Content-Type: application/json\n# default\n# Description: Unexpected error.\n# Content-Type: application/json",
+      "Format": "http",
+      "OperationId": "getClubMembersById",
+      "Setup": null
+    },
+    {
+      "Order": 15,
+      "Title": "List Athlete Clubs",
+      "Slug": "getloggedinathleteclubs",
+      "Description": "Returns a list of the clubs whose membership includes the authenticated athlete.",
+      "Language": "csharp",
+      "Code": "using var client = new StravaClient(apiKey);\nvar response = await client.Clubs.GetLoggedInAthleteClubsAsync();\n\n// Example response:\n// [\n//   {\n//     \u0022id\u0022: 231407,\n//     \u0022resource_state\u0022: 2,\n//     \u0022name\u0022: \u0022The Strava Club\u0022,\n//     \u0022profile_medium\u0022: \u0022https://xxxxx.cloudfront.net/pictures/clubs/231407/5319085/1/medium.jpg\u0022,\n//     \u0022profile\u0022: \u0022https://xxxxx.cloudfront.net/pictures/clubs/231407/5319085/1/large.jpg\u0022,\n//     \u0022cover_photo\u0022: \u0022https://xxxxx.cloudfront.net/pictures/clubs/231407/5098428/4/large.jpg\u0022,\n//     \u0022cover_photo_small\u0022: \u0022https://xxxxx.cloudfront.net/pictures/clubs/231407/5098428/4/small.jpg\u0022,\n//     \u0022sport_type\u0022: \u0022other\u0022,\n//     \u0022city\u0022: \u0022San Francisco\u0022,\n//     \u0022state\u0022: \u0022California\u0022,\n//     \u0022country\u0022: \u0022United States\u0022,\n//     \u0022private\u0022: false,\n//     \u0022member_count\u0022: 93151,\n//     \u0022featured\u0022: false,\n//     \u0022verified\u0022: true,\n//     \u0022url\u0022: \u0022strava\u0022\n//   }\n// ]",
+      "Format": "sdk",
+      "OperationId": "getLoggedInAthleteClubs",
+      "Setup": "This example assumes \u0060using Strava;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."
+    },
+    {
+      "Order": 16,
+      "Title": "Get Equipment",
+      "Slug": "getgearbyid",
+      "Description": "Returns an equipment using its identifier.",
+      "Language": "http",
+      "Code": "### Get Equipment\n# @name getGearById\nGET {{host}}/gear/{{id}}\nAuthorization: Bearer {{token}}\nAccept: application/json\n\n## Responses\n# 200\n# Description: A representation of the gear.\n# Content-Type: application/json\n# default\n# Description: Unexpected error.\n# Content-Type: application/json",
+      "Format": "http",
+      "OperationId": "getGearById",
+      "Setup": null
+    },
+    {
+      "Order": 17,
+      "Title": "List Segment Efforts",
+      "Slug": "geteffortsbysegmentid",
+      "Description": "Returns a set of the authenticated athlete\u0027s segment efforts for a given segment.  Requires subscription.",
+      "Language": "http",
+      "Code": "### List Segment Efforts\n# @name getEffortsBySegmentId\nGET {{host}}/segment_efforts?segment_id={{segment_id}}\u0026start_date_local={{start_date_local}}\u0026end_date_local={{end_date_local}}\u0026per_page=30\nAuthorization: Bearer {{token}}\nAccept: application/json\n\n## Responses\n# 200\n# Description: List of segment efforts.\n# Content-Type: application/json\n# default\n# Description: Unexpected error.\n# Content-Type: application/json",
+      "Format": "http",
+      "OperationId": "getEffortsBySegmentId",
+      "Setup": null
+    },
+    {
+      "Order": 18,
+      "Title": "Get Segment Effort",
+      "Slug": "getsegmenteffortbyid",
+      "Description": "Returns a segment effort from an activity that is owned by the authenticated athlete. Requires subscription.",
+      "Language": "http",
+      "Code": "### Get Segment Effort\n# @name getSegmentEffortById\nGET {{host}}/segment_efforts/{{id}}\nAuthorization: Bearer {{token}}\nAccept: application/json\n\n## Responses\n# 200\n# Description: Representation of a segment effort.\n# Content-Type: application/json\n# default\n# Description: Unexpected error.\n# Content-Type: application/json",
+      "Format": "http",
+      "OperationId": "getSegmentEffortById",
+      "Setup": null
+    },
+    {
+      "Order": 19,
+      "Title": "Explore segments",
+      "Slug": "exploresegments",
+      "Description": "Returns the top 10 segments matching a specified query.",
+      "Language": "http",
+      "Code": "### Explore segments\n# @name exploreSegments\nGET {{host}}/segments/explore?bounds={{bounds}}\u0026activity_type=running\u0026min_cat={{min_cat}}\u0026max_cat={{max_cat}}\nAuthorization: Bearer {{token}}\nAccept: application/json\n\n## Responses\n# 200\n# Description: List of matching segments.\n# Content-Type: application/json\n# default\n# Description: Unexpected error.\n# Content-Type: application/json",
+      "Format": "http",
+      "OperationId": "exploreSegments",
+      "Setup": null
+    },
+    {
+      "Order": 20,
+      "Title": "List Starred Segments",
+      "Slug": "getloggedinathletestarredsegments",
+      "Description": "List of the authenticated athlete\u0027s starred segments. Private segments are filtered out unless requested by a token with read_all scope.",
+      "Language": "csharp",
+      "Code": "using var client = new StravaClient(apiKey);\nvar response = await client.Segments.GetLoggedInAthleteStarredSegmentsAsync();\n\n// Example response:\n// {\n//   \u0022id\u0022: 229781,\n//   \u0022resource_state\u0022: 3,\n//   \u0022name\u0022: \u0022Hawk Hill\u0022,\n//   \u0022activity_type\u0022: \u0022Ride\u0022,\n//   \u0022distance\u0022: 2684.82,\n//   \u0022average_grade\u0022: 5.7,\n//   \u0022maximum_grade\u0022: 14.2,\n//   \u0022elevation_high\u0022: 245.3,\n//   \u0022elevation_low\u0022: 92.4,\n//   \u0022start_latlng\u0022: [\n//     37.8331119,\n//     -122.4834356\n//   ],\n//   \u0022end_latlng\u0022: [\n//     37.8280722,\n//     -122.4981393\n//   ],\n//   \u0022climb_category\u0022: 1,\n//   \u0022city\u0022: \u0022San Francisco\u0022,\n//   \u0022state\u0022: \u0022CA\u0022,\n//   \u0022country\u0022: \u0022United States\u0022,\n//   \u0022private\u0022: false,\n//   \u0022hazardous\u0022: false,\n//   \u0022starred\u0022: false,\n//   \u0022created_at\u0022: \u00222009-09-21T20:29:41Z\u0022,\n//   \u0022updated_at\u0022: \u00222018-02-15T09:04:18Z\u0022,\n//   \u0022total_elevation_gain\u0022: 155.733,\n//   \u0022map\u0022: {\n//     \u0022id\u0022: \u0022s229781\u0022,\n//     \u0022polyline\u0022: \u0022}g|eFnpqjVl@En@Md@HbAd@d@^h@Xx@VbARjBDh@OPQf@w@d@k@XKXDFPH\\\\EbGT\\u0060AV\\u0060@v@|@NTNb@?XOb@cAxAWLuE@eAFMBoAv@eBt@q@b@}@tAeAt@i@dAC\\u0060AFZj@dB?~@[h@MbAVn@b@b@\\\\d@Eh@Qb@_@d@eB|@c@h@WfBK|AMpA?VF\\\\\\\\t@f@t@h@j@|@b@hCb@b@XTd@Bl@GtA?jAL\\u0060ALp@Tr@RXd@Rx@Pn@^Zh@Tx@Zf@\\u0060@FTCzDy@f@Yx@m@n@Op@VJr@\u0022,\n//     \u0022resource_state\u0022: 3\n//   },\n//   \u0022effort_count\u0022: 309974,\n//   \u0022athlete_count\u0022: 30623,\n//   \u0022star_count\u0022: 2428,\n//   \u0022athlete_segment_stats\u0022: {\n//     \u0022pr_elapsed_time\u0022: 553,\n//     \u0022pr_date\u0022: \u00221993-04-03\u0022,\n//     \u0022effort_count\u0022: 2\n//   }\n// }",
+      "Format": "sdk",
+      "OperationId": "getLoggedInAthleteStarredSegments",
+      "Setup": "This example assumes \u0060using Strava;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."
+    },
+    {
+      "Order": 21,
+      "Title": "Get Segment",
+      "Slug": "getsegmentbyid",
+      "Description": "Returns the specified segment. read_all scope required in order to retrieve athlete-specific segment information, or to retrieve private segments.",
+      "Language": "http",
+      "Code": "### Get Segment\n# @name getSegmentById\nGET {{host}}/segments/{{id}}\nAuthorization: Bearer {{token}}\nAccept: application/json\n\n## Responses\n# 200\n# Description: Representation of a segment.\n# Content-Type: application/json\n# default\n# Description: Unexpected error.\n# Content-Type: application/json",
+      "Format": "http",
+      "OperationId": "getSegmentById",
+      "Setup": null
+    },
+    {
+      "Order": 22,
+      "Title": "Star Segment",
+      "Slug": "starsegment",
+      "Description": "Stars/Unstars the given segment for the authenticated athlete. Requires profile:write scope.",
+      "Language": "http",
+      "Code": "### Star Segment\n# @name starSegment\nPUT {{host}}/segments/{{id}}/starred\nAuthorization: Bearer {{token}}\nContent-Type: application/x-www-form-urlencoded\nAccept: application/json\n\n## Responses\n# 200\n# Description: Representation of a segment.\n# Content-Type: application/json\n# default\n# Description: Unexpected error.\n# Content-Type: application/json",
+      "Format": "http",
+      "OperationId": "starSegment",
+      "Setup": null
+    },
+    {
+      "Order": 23,
+      "Title": "Get Activity Streams",
+      "Slug": "getactivitystreams",
+      "Description": "Returns the given activity\u0027s streams. Requires activity:read scope. Requires activity:read_all scope for Only Me activities.",
+      "Language": "http",
+      "Code": "### Get Activity Streams\n# @name getActivityStreams\nGET {{host}}/activities/{{id}}/streams?keys={{keys}}\u0026key_by_type=true\nAuthorization: Bearer {{token}}\nAccept: application/json\n\n## Responses\n# 200\n# Description: The set of requested streams.\n# Content-Type: application/json\n# default\n# Description: Unexpected error.\n# Content-Type: application/json",
+      "Format": "http",
+      "OperationId": "getActivityStreams",
+      "Setup": null
+    },
+    {
+      "Order": 24,
+      "Title": "Get Route Streams",
+      "Slug": "getroutestreams",
+      "Description": "Returns the given route\u0027s streams. Requires read_all scope for private routes.",
+      "Language": "http",
+      "Code": "### Get Route Streams\n# @name getRouteStreams\nGET {{host}}/routes/{{id}}/streams\nAuthorization: Bearer {{token}}\nAccept: application/json\n\n## Responses\n# 200\n# Description: The set of requested streams.\n# Content-Type: application/json\n# default\n# Description: Unexpected error.\n# Content-Type: application/json",
+      "Format": "http",
+      "OperationId": "getRouteStreams",
+      "Setup": null
+    },
+    {
+      "Order": 25,
+      "Title": "Get Segment Effort Streams",
+      "Slug": "getsegmenteffortstreams",
+      "Description": "Returns a set of streams for a segment effort completed by the authenticated athlete. Requires read_all scope.",
+      "Language": "http",
+      "Code": "### Get Segment Effort Streams\n# @name getSegmentEffortStreams\nGET {{host}}/segment_efforts/{{id}}/streams?keys={{keys}}\u0026key_by_type=true\nAuthorization: Bearer {{token}}\nAccept: application/json\n\n## Responses\n# 200\n# Description: The set of requested streams.\n# Content-Type: application/json\n# default\n# Description: Unexpected error.\n# Content-Type: application/json",
+      "Format": "http",
+      "OperationId": "getSegmentEffortStreams",
+      "Setup": null
+    },
+    {
+      "Order": 26,
+      "Title": "Get Segment Streams",
+      "Slug": "getsegmentstreams",
+      "Description": "Returns the given segment\u0027s streams. Requires read_all scope for private segments.",
+      "Language": "http",
+      "Code": "### Get Segment Streams\n# @name getSegmentStreams\nGET {{host}}/segments/{{id}}/streams?keys={{keys}}\u0026key_by_type=true\nAuthorization: Bearer {{token}}\nAccept: application/json\n\n## Responses\n# 200\n# Description: The set of requested streams.\n# Content-Type: application/json\n# default\n# Description: Unexpected error.\n# Content-Type: application/json",
+      "Format": "http",
+      "OperationId": "getSegmentStreams",
+      "Setup": null
+    }
+  ]
+}
