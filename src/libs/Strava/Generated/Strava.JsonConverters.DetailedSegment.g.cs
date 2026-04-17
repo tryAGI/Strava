@@ -23,13 +23,32 @@ namespace Strava.JsonConverters
                 foreach (var __jsonProp in __jsonDocument.RootElement.EnumerateObject())
                 {
                     __jsonProps.Add(__jsonProp.Name);
+                    if (__jsonProp.Value.ValueKind == global::System.Text.Json.JsonValueKind.Object)
+                    {
+                        foreach (var __nestedJsonProp in __jsonProp.Value.EnumerateObject())
+                        {
+                            __jsonProps.Add(__jsonProp.Name + "." + __nestedJsonProp.Name);
+                        }
+                    }
+
                 }
             }
 
             var __score0 = 0;
             if (__jsonProps.Contains("activity_type")) __score0++;
             if (__jsonProps.Contains("athlete_pr_effort")) __score0++;
+            if (__jsonProps.Contains("athlete_pr_effort.effort_count")) __score0++;
+            if (__jsonProps.Contains("athlete_pr_effort.pr_activity_id")) __score0++;
+            if (__jsonProps.Contains("athlete_pr_effort.pr_date")) __score0++;
+            if (__jsonProps.Contains("athlete_pr_effort.pr_elapsed_time")) __score0++;
             if (__jsonProps.Contains("athlete_segment_stats")) __score0++;
+            if (__jsonProps.Contains("athlete_segment_stats.activity_id")) __score0++;
+            if (__jsonProps.Contains("athlete_segment_stats.distance")) __score0++;
+            if (__jsonProps.Contains("athlete_segment_stats.elapsed_time")) __score0++;
+            if (__jsonProps.Contains("athlete_segment_stats.id")) __score0++;
+            if (__jsonProps.Contains("athlete_segment_stats.is_kom")) __score0++;
+            if (__jsonProps.Contains("athlete_segment_stats.start_date")) __score0++;
+            if (__jsonProps.Contains("athlete_segment_stats.start_date_local")) __score0++;
             if (__jsonProps.Contains("average_grade")) __score0++;
             if (__jsonProps.Contains("city")) __score0++;
             if (__jsonProps.Contains("climb_category")) __score0++;
@@ -50,6 +69,9 @@ namespace Strava.JsonConverters
             if (__jsonProps.Contains("effort_count")) __score1++;
             if (__jsonProps.Contains("hazardous")) __score1++;
             if (__jsonProps.Contains("map")) __score1++;
+            if (__jsonProps.Contains("map.id")) __score1++;
+            if (__jsonProps.Contains("map.polyline")) __score1++;
+            if (__jsonProps.Contains("map.summary_polyline")) __score1++;
             if (__jsonProps.Contains("star_count")) __score1++;
             if (__jsonProps.Contains("total_elevation_gain")) __score1++;
             if (__jsonProps.Contains("updated_at")) __score1++;
