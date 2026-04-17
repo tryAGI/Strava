@@ -23,6 +23,14 @@ namespace Strava.JsonConverters
                 foreach (var __jsonProp in __jsonDocument.RootElement.EnumerateObject())
                 {
                     __jsonProps.Add(__jsonProp.Name);
+                    if (__jsonProp.Value.ValueKind == global::System.Text.Json.JsonValueKind.Object)
+                    {
+                        foreach (var __nestedJsonProp in __jsonProp.Value.EnumerateObject())
+                        {
+                            __jsonProps.Add(__jsonProp.Name + "." + __nestedJsonProp.Name);
+                        }
+                    }
+
                 }
             }
 
@@ -31,6 +39,7 @@ namespace Strava.JsonConverters
             var __score1 = 0;
             if (__jsonProps.Contains("achievement_count")) __score1++;
             if (__jsonProps.Contains("athlete")) __score1++;
+            if (__jsonProps.Contains("athlete.id")) __score1++;
             if (__jsonProps.Contains("athlete_count")) __score1++;
             if (__jsonProps.Contains("average_speed")) __score1++;
             if (__jsonProps.Contains("average_watts")) __score1++;
@@ -52,6 +61,9 @@ namespace Strava.JsonConverters
             if (__jsonProps.Contains("kudos_count")) __score1++;
             if (__jsonProps.Contains("manual")) __score1++;
             if (__jsonProps.Contains("map")) __score1++;
+            if (__jsonProps.Contains("map.id")) __score1++;
+            if (__jsonProps.Contains("map.polyline")) __score1++;
+            if (__jsonProps.Contains("map.summary_polyline")) __score1++;
             if (__jsonProps.Contains("max_speed")) __score1++;
             if (__jsonProps.Contains("max_watts")) __score1++;
             if (__jsonProps.Contains("moving_time")) __score1++;

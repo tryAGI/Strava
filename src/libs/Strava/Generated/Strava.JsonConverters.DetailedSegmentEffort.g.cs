@@ -23,6 +23,14 @@ namespace Strava.JsonConverters
                 foreach (var __jsonProp in __jsonDocument.RootElement.EnumerateObject())
                 {
                     __jsonProps.Add(__jsonProp.Name);
+                    if (__jsonProp.Value.ValueKind == global::System.Text.Json.JsonValueKind.Object)
+                    {
+                        foreach (var __nestedJsonProp in __jsonProp.Value.EnumerateObject())
+                        {
+                            __jsonProps.Add(__jsonProp.Name + "." + __nestedJsonProp.Name);
+                        }
+                    }
+
                 }
             }
 
@@ -36,7 +44,9 @@ namespace Strava.JsonConverters
             if (__jsonProps.Contains("start_date_local")) __score0++;
             var __score1 = 0;
             if (__jsonProps.Contains("activity")) __score1++;
+            if (__jsonProps.Contains("activity.id")) __score1++;
             if (__jsonProps.Contains("athlete")) __score1++;
+            if (__jsonProps.Contains("athlete.id")) __score1++;
             if (__jsonProps.Contains("average_cadence")) __score1++;
             if (__jsonProps.Contains("average_heartrate")) __score1++;
             if (__jsonProps.Contains("average_watts")) __score1++;
@@ -49,6 +59,23 @@ namespace Strava.JsonConverters
             if (__jsonProps.Contains("name")) __score1++;
             if (__jsonProps.Contains("pr_rank")) __score1++;
             if (__jsonProps.Contains("segment")) __score1++;
+            if (__jsonProps.Contains("segment.activity_type")) __score1++;
+            if (__jsonProps.Contains("segment.athlete_pr_effort")) __score1++;
+            if (__jsonProps.Contains("segment.athlete_segment_stats")) __score1++;
+            if (__jsonProps.Contains("segment.average_grade")) __score1++;
+            if (__jsonProps.Contains("segment.city")) __score1++;
+            if (__jsonProps.Contains("segment.climb_category")) __score1++;
+            if (__jsonProps.Contains("segment.country")) __score1++;
+            if (__jsonProps.Contains("segment.distance")) __score1++;
+            if (__jsonProps.Contains("segment.elevation_high")) __score1++;
+            if (__jsonProps.Contains("segment.elevation_low")) __score1++;
+            if (__jsonProps.Contains("segment.end_latlng")) __score1++;
+            if (__jsonProps.Contains("segment.id")) __score1++;
+            if (__jsonProps.Contains("segment.maximum_grade")) __score1++;
+            if (__jsonProps.Contains("segment.name")) __score1++;
+            if (__jsonProps.Contains("segment.private")) __score1++;
+            if (__jsonProps.Contains("segment.start_latlng")) __score1++;
+            if (__jsonProps.Contains("segment.state")) __score1++;
             if (__jsonProps.Contains("start_index")) __score1++;
             var __bestScore = 0;
             var __bestIndex = -1;
