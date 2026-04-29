@@ -146,7 +146,7 @@ namespace Strava
                 PrepareExploreSegmentsRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    bounds: bounds,
+                    bounds: bounds!,
                     activityType: activityType,
                     minCat: minCat,
                     maxCat: maxCat);

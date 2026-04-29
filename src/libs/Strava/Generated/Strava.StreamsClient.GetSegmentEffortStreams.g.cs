@@ -141,9 +141,9 @@ namespace Strava
                 PrepareGetSegmentEffortStreamsRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    id: id,
-                    keys: keys,
-                    keyByType: keyByType);
+                    id: id!,
+                    keys: keys!,
+                    keyByType: keyByType!);
 
                 return __httpRequest;
             }
