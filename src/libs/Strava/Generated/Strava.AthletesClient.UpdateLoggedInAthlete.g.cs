@@ -125,7 +125,7 @@ namespace Strava
                 PrepareUpdateLoggedInAthleteRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    weight: weight);
+                    weight: weight!);
 
                 return __httpRequest;
             }

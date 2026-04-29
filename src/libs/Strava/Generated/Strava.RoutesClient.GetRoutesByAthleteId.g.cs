@@ -143,7 +143,7 @@ namespace Strava
                     httpRequestMessage: __httpRequest,
                     page: page,
                     perPage: perPage,
-                    id: id);
+                    id: id!);
 
                 return __httpRequest;
             }

@@ -148,7 +148,7 @@ namespace Strava
                 PrepareGetEffortsBySegmentIdRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    segmentId: segmentId,
+                    segmentId: segmentId!,
                     startDateLocal: startDateLocal,
                     endDateLocal: endDateLocal,
                     perPage: perPage);

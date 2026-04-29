@@ -135,7 +135,7 @@ namespace Strava
                 PrepareGetActivityByIdRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    id: id,
+                    id: id!,
                     includeAllEfforts: includeAllEfforts);
 
                 return __httpRequest;

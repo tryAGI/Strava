@@ -125,7 +125,7 @@ namespace Strava
                 PrepareGetUploadByIdRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    uploadId: uploadId);
+                    uploadId: uploadId!);
 
                 return __httpRequest;
             }
