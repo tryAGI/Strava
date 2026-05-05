@@ -21,6 +21,19 @@ namespace Strava
         /// Create an Activity<br/>
         /// Creates a manual activity for an athlete, requires activity:write scope.
         /// </summary>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::Strava.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::Strava.AutoSDKHttpResponse<global::Strava.DetailedActivity>> CreateActivityAsResponseAsync(
+
+            global::Strava.CreateActivityRequest request,
+            global::Strava.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Create an Activity<br/>
+        /// Creates a manual activity for an athlete, requires activity:write scope.
+        /// </summary>
         /// <param name="name">
         /// The name of the activity.
         /// </param>

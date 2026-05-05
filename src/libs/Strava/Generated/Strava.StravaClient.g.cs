@@ -43,7 +43,7 @@ namespace Strava
         /// <summary>
         /// 
         /// </summary>
-        public ActivitiesClient Activities => new ActivitiesClient(HttpClient, authorizations: Authorizations, options: Options)
+        public ActivitiesClient Activities => new ActivitiesClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -52,7 +52,7 @@ namespace Strava
         /// <summary>
         /// 
         /// </summary>
-        public AthletesClient Athletes => new AthletesClient(HttpClient, authorizations: Authorizations, options: Options)
+        public AthletesClient Athletes => new AthletesClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -61,7 +61,7 @@ namespace Strava
         /// <summary>
         /// 
         /// </summary>
-        public ClubsClient Clubs => new ClubsClient(HttpClient, authorizations: Authorizations, options: Options)
+        public ClubsClient Clubs => new ClubsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -70,7 +70,7 @@ namespace Strava
         /// <summary>
         /// 
         /// </summary>
-        public GearsClient Gears => new GearsClient(HttpClient, authorizations: Authorizations, options: Options)
+        public GearsClient Gears => new GearsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -79,7 +79,7 @@ namespace Strava
         /// <summary>
         /// 
         /// </summary>
-        public RoutesClient Routes => new RoutesClient(HttpClient, authorizations: Authorizations, options: Options)
+        public RoutesClient Routes => new RoutesClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -88,7 +88,7 @@ namespace Strava
         /// <summary>
         /// 
         /// </summary>
-        public SegmentEffortsClient SegmentEfforts => new SegmentEffortsClient(HttpClient, authorizations: Authorizations, options: Options)
+        public SegmentEffortsClient SegmentEfforts => new SegmentEffortsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -97,7 +97,7 @@ namespace Strava
         /// <summary>
         /// 
         /// </summary>
-        public SegmentsClient Segments => new SegmentsClient(HttpClient, authorizations: Authorizations, options: Options)
+        public SegmentsClient Segments => new SegmentsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -106,7 +106,7 @@ namespace Strava
         /// <summary>
         /// 
         /// </summary>
-        public StreamsClient Streams => new StreamsClient(HttpClient, authorizations: Authorizations, options: Options)
+        public StreamsClient Streams => new StreamsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -115,7 +115,7 @@ namespace Strava
         /// <summary>
         /// 
         /// </summary>
-        public UploadsClient Uploads => new UploadsClient(HttpClient, authorizations: Authorizations, options: Options)
+        public UploadsClient Uploads => new UploadsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -154,10 +154,10 @@ namespace Strava
         /// <param name="options">Client-wide request defaults such as headers, query parameters, retries, and timeout.</param>
         /// <param name="disposeHttpClient">Dispose the HttpClient when the instance is disposed. True by default.</param>
         public StravaClient(
-            global::System.Net.Http.HttpClient? httpClient = null,
-            global::System.Uri? baseUri = null,
-            global::System.Collections.Generic.List<global::Strava.EndPointAuthorization>? authorizations = null,
-            global::Strava.AutoSDKClientOptions? options = null,
+            global::System.Net.Http.HttpClient? httpClient,
+            global::System.Uri? baseUri,
+            global::System.Collections.Generic.List<global::Strava.EndPointAuthorization>? authorizations,
+            global::Strava.AutoSDKClientOptions? options,
             bool disposeHttpClient = true)
         {
 
