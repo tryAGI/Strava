@@ -29,6 +29,19 @@ namespace Strava
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickSummary(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Strava.SummarySegmentEffort? value)
+        {
+            value = Summary;
+            return IsSummary;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Strava.DetailedSegmentEffortVariant2? DetailedSegmentEffortVariant2 { get; init; }
 #else
@@ -42,6 +55,19 @@ namespace Strava
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(DetailedSegmentEffortVariant2))]
 #endif
         public bool IsDetailedSegmentEffortVariant2 => DetailedSegmentEffortVariant2 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickDetailedSegmentEffortVariant2(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Strava.DetailedSegmentEffortVariant2? value)
+        {
+            value = DetailedSegmentEffortVariant2;
+            return IsDetailedSegmentEffortVariant2;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -118,8 +144,8 @@ namespace Strava
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::Strava.SummarySegmentEffort?, TResult>? summary = null,
-            global::System.Func<global::Strava.DetailedSegmentEffortVariant2?, TResult>? detailedSegmentEffortVariant2 = null,
+            global::System.Func<global::Strava.SummarySegmentEffort, TResult>? summary = null,
+            global::System.Func<global::Strava.DetailedSegmentEffortVariant2, TResult>? detailedSegmentEffortVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -143,8 +169,32 @@ namespace Strava
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::Strava.SummarySegmentEffort?>? summary = null,
-            global::System.Action<global::Strava.DetailedSegmentEffortVariant2?>? detailedSegmentEffortVariant2 = null,
+            global::System.Action<global::Strava.SummarySegmentEffort>? summary = null,
+
+            global::System.Action<global::Strava.DetailedSegmentEffortVariant2>? detailedSegmentEffortVariant2 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsSummary)
+            {
+                summary?.Invoke(Summary!);
+            }
+            else if (IsDetailedSegmentEffortVariant2)
+            {
+                detailedSegmentEffortVariant2?.Invoke(DetailedSegmentEffortVariant2!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::Strava.SummarySegmentEffort>? summary = null,
+            global::System.Action<global::Strava.DetailedSegmentEffortVariant2>? detailedSegmentEffortVariant2 = null,
             bool validate = true)
         {
             if (validate)

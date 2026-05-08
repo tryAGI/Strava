@@ -29,6 +29,19 @@ namespace Strava
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickZoneRange(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Strava.ZoneRange? value)
+        {
+            value = ZoneRange;
+            return IsZoneRange;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Strava.TimedZoneRangeVariant2? TimedZoneRangeVariant2 { get; init; }
 #else
@@ -42,6 +55,19 @@ namespace Strava
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(TimedZoneRangeVariant2))]
 #endif
         public bool IsTimedZoneRangeVariant2 => TimedZoneRangeVariant2 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickTimedZoneRangeVariant2(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Strava.TimedZoneRangeVariant2? value)
+        {
+            value = TimedZoneRangeVariant2;
+            return IsTimedZoneRangeVariant2;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -118,8 +144,8 @@ namespace Strava
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::Strava.ZoneRange?, TResult>? zoneRange = null,
-            global::System.Func<global::Strava.TimedZoneRangeVariant2?, TResult>? timedZoneRangeVariant2 = null,
+            global::System.Func<global::Strava.ZoneRange, TResult>? zoneRange = null,
+            global::System.Func<global::Strava.TimedZoneRangeVariant2, TResult>? timedZoneRangeVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -143,8 +169,32 @@ namespace Strava
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::Strava.ZoneRange?>? zoneRange = null,
-            global::System.Action<global::Strava.TimedZoneRangeVariant2?>? timedZoneRangeVariant2 = null,
+            global::System.Action<global::Strava.ZoneRange>? zoneRange = null,
+
+            global::System.Action<global::Strava.TimedZoneRangeVariant2>? timedZoneRangeVariant2 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsZoneRange)
+            {
+                zoneRange?.Invoke(ZoneRange!);
+            }
+            else if (IsTimedZoneRangeVariant2)
+            {
+                timedZoneRangeVariant2?.Invoke(TimedZoneRangeVariant2!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::Strava.ZoneRange>? zoneRange = null,
+            global::System.Action<global::Strava.TimedZoneRangeVariant2>? timedZoneRangeVariant2 = null,
             bool validate = true)
         {
             if (validate)

@@ -29,6 +29,19 @@ namespace Strava
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickMeta(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Strava.MetaActivity? value)
+        {
+            value = Meta;
+            return IsMeta;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Strava.SummaryActivityVariant2? SummaryActivityVariant2 { get; init; }
 #else
@@ -42,6 +55,19 @@ namespace Strava
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(SummaryActivityVariant2))]
 #endif
         public bool IsSummaryActivityVariant2 => SummaryActivityVariant2 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickSummaryActivityVariant2(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Strava.SummaryActivityVariant2? value)
+        {
+            value = SummaryActivityVariant2;
+            return IsSummaryActivityVariant2;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -118,8 +144,8 @@ namespace Strava
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::Strava.MetaActivity?, TResult>? meta = null,
-            global::System.Func<global::Strava.SummaryActivityVariant2?, TResult>? summaryActivityVariant2 = null,
+            global::System.Func<global::Strava.MetaActivity, TResult>? meta = null,
+            global::System.Func<global::Strava.SummaryActivityVariant2, TResult>? summaryActivityVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -143,8 +169,32 @@ namespace Strava
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::Strava.MetaActivity?>? meta = null,
-            global::System.Action<global::Strava.SummaryActivityVariant2?>? summaryActivityVariant2 = null,
+            global::System.Action<global::Strava.MetaActivity>? meta = null,
+
+            global::System.Action<global::Strava.SummaryActivityVariant2>? summaryActivityVariant2 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsMeta)
+            {
+                meta?.Invoke(Meta!);
+            }
+            else if (IsSummaryActivityVariant2)
+            {
+                summaryActivityVariant2?.Invoke(SummaryActivityVariant2!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::Strava.MetaActivity>? meta = null,
+            global::System.Action<global::Strava.SummaryActivityVariant2>? summaryActivityVariant2 = null,
             bool validate = true)
         {
             if (validate)
