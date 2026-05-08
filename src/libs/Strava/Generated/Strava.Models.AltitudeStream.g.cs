@@ -29,6 +29,19 @@ namespace Strava
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickBase(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Strava.BaseStream? value)
+        {
+            value = Base;
+            return IsBase;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Strava.AltitudeStreamVariant2? AltitudeStreamVariant2 { get; init; }
 #else
@@ -42,6 +55,19 @@ namespace Strava
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(AltitudeStreamVariant2))]
 #endif
         public bool IsAltitudeStreamVariant2 => AltitudeStreamVariant2 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickAltitudeStreamVariant2(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Strava.AltitudeStreamVariant2? value)
+        {
+            value = AltitudeStreamVariant2;
+            return IsAltitudeStreamVariant2;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -118,8 +144,8 @@ namespace Strava
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::Strava.BaseStream?, TResult>? @base = null,
-            global::System.Func<global::Strava.AltitudeStreamVariant2?, TResult>? altitudeStreamVariant2 = null,
+            global::System.Func<global::Strava.BaseStream, TResult>? @base = null,
+            global::System.Func<global::Strava.AltitudeStreamVariant2, TResult>? altitudeStreamVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -143,8 +169,32 @@ namespace Strava
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::Strava.BaseStream?>? @base = null,
-            global::System.Action<global::Strava.AltitudeStreamVariant2?>? altitudeStreamVariant2 = null,
+            global::System.Action<global::Strava.BaseStream>? @base = null,
+
+            global::System.Action<global::Strava.AltitudeStreamVariant2>? altitudeStreamVariant2 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsBase)
+            {
+                @base?.Invoke(Base!);
+            }
+            else if (IsAltitudeStreamVariant2)
+            {
+                altitudeStreamVariant2?.Invoke(AltitudeStreamVariant2!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::Strava.BaseStream>? @base = null,
+            global::System.Action<global::Strava.AltitudeStreamVariant2>? altitudeStreamVariant2 = null,
             bool validate = true)
         {
             if (validate)

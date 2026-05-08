@@ -29,6 +29,19 @@ namespace Strava
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickSummary(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Strava.SummaryActivity? value)
+        {
+            value = Summary;
+            return IsSummary;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Strava.DetailedActivityVariant2? DetailedActivityVariant2 { get; init; }
 #else
@@ -42,6 +55,19 @@ namespace Strava
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(DetailedActivityVariant2))]
 #endif
         public bool IsDetailedActivityVariant2 => DetailedActivityVariant2 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickDetailedActivityVariant2(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Strava.DetailedActivityVariant2? value)
+        {
+            value = DetailedActivityVariant2;
+            return IsDetailedActivityVariant2;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -119,7 +145,7 @@ namespace Strava
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::Strava.SummaryActivity?, TResult>? summary = null,
-            global::System.Func<global::Strava.DetailedActivityVariant2?, TResult>? detailedActivityVariant2 = null,
+            global::System.Func<global::Strava.DetailedActivityVariant2, TResult>? detailedActivityVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -144,7 +170,31 @@ namespace Strava
         /// </summary>
         public void Match(
             global::System.Action<global::Strava.SummaryActivity?>? summary = null,
-            global::System.Action<global::Strava.DetailedActivityVariant2?>? detailedActivityVariant2 = null,
+
+            global::System.Action<global::Strava.DetailedActivityVariant2>? detailedActivityVariant2 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsSummary)
+            {
+                summary?.Invoke(Summary!);
+            }
+            else if (IsDetailedActivityVariant2)
+            {
+                detailedActivityVariant2?.Invoke(DetailedActivityVariant2!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::Strava.SummaryActivity?>? summary = null,
+            global::System.Action<global::Strava.DetailedActivityVariant2>? detailedActivityVariant2 = null,
             bool validate = true)
         {
             if (validate)
