@@ -120,6 +120,7 @@ namespace Strava.JsonConverters
             {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Strava.SummarySegment), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Strava.SummarySegment> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Strava.SummarySegment).Name}");
                     summary = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -130,9 +131,13 @@ namespace Strava.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (summary == null && detailedSegmentVariant2 == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Strava.DetailedSegmentVariant2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Strava.DetailedSegmentVariant2> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Strava.DetailedSegmentVariant2).Name}");
                     detailedSegmentVariant2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);

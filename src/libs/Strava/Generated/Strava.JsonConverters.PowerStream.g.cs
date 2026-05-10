@@ -78,6 +78,7 @@ namespace Strava.JsonConverters
             {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Strava.BaseStream), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Strava.BaseStream> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Strava.BaseStream).Name}");
                     @base = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -88,9 +89,13 @@ namespace Strava.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (@base == null && powerStreamVariant2 == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Strava.PowerStreamVariant2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Strava.PowerStreamVariant2> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Strava.PowerStreamVariant2).Name}");
                     powerStreamVariant2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
