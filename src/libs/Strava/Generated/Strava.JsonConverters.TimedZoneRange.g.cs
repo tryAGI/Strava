@@ -77,6 +77,7 @@ namespace Strava.JsonConverters
             {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Strava.ZoneRange), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Strava.ZoneRange> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Strava.ZoneRange).Name}");
                     zoneRange = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -87,9 +88,13 @@ namespace Strava.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (zoneRange == null && timedZoneRangeVariant2 == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Strava.TimedZoneRangeVariant2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Strava.TimedZoneRangeVariant2> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Strava.TimedZoneRangeVariant2).Name}");
                     timedZoneRangeVariant2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);

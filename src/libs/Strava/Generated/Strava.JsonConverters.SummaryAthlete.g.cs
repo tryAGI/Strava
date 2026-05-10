@@ -88,6 +88,7 @@ namespace Strava.JsonConverters
             {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Strava.MetaAthlete), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Strava.MetaAthlete> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Strava.MetaAthlete).Name}");
                     meta = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -98,9 +99,13 @@ namespace Strava.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (meta == null && summaryAthleteVariant2 == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Strava.SummaryAthleteVariant2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Strava.SummaryAthleteVariant2> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Strava.SummaryAthleteVariant2).Name}");
                     summaryAthleteVariant2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
