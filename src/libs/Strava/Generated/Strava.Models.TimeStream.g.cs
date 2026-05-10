@@ -89,6 +89,11 @@ namespace Strava
         /// <summary>
         /// 
         /// </summary>
+        public static TimeStream FromBase(global::Strava.BaseStream? value) => new TimeStream(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator TimeStream(global::Strava.TimeStreamVariant2 value) => new TimeStream((global::Strava.TimeStreamVariant2?)value);
 
         /// <summary>
@@ -103,6 +108,11 @@ namespace Strava
         {
             TimeStreamVariant2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static TimeStream FromTimeStreamVariant2(global::Strava.TimeStreamVariant2? value) => new TimeStream(value);
 
         /// <summary>
         /// 

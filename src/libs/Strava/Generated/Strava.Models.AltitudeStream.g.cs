@@ -89,6 +89,11 @@ namespace Strava
         /// <summary>
         /// 
         /// </summary>
+        public static AltitudeStream FromBase(global::Strava.BaseStream? value) => new AltitudeStream(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator AltitudeStream(global::Strava.AltitudeStreamVariant2 value) => new AltitudeStream((global::Strava.AltitudeStreamVariant2?)value);
 
         /// <summary>
@@ -103,6 +108,11 @@ namespace Strava
         {
             AltitudeStreamVariant2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static AltitudeStream FromAltitudeStreamVariant2(global::Strava.AltitudeStreamVariant2? value) => new AltitudeStream(value);
 
         /// <summary>
         /// 

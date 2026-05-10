@@ -89,6 +89,11 @@ namespace Strava
         /// <summary>
         /// 
         /// </summary>
+        public static DetailedSegment FromSummary(global::Strava.SummarySegment? value) => new DetailedSegment(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator DetailedSegment(global::Strava.DetailedSegmentVariant2 value) => new DetailedSegment((global::Strava.DetailedSegmentVariant2?)value);
 
         /// <summary>
@@ -103,6 +108,11 @@ namespace Strava
         {
             DetailedSegmentVariant2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static DetailedSegment FromDetailedSegmentVariant2(global::Strava.DetailedSegmentVariant2? value) => new DetailedSegment(value);
 
         /// <summary>
         /// 

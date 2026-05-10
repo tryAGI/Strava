@@ -89,6 +89,11 @@ namespace Strava
         /// <summary>
         /// 
         /// </summary>
+        public static SummaryClub FromMeta(global::Strava.MetaClub? value) => new SummaryClub(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator SummaryClub(global::Strava.SummaryClubVariant2 value) => new SummaryClub((global::Strava.SummaryClubVariant2?)value);
 
         /// <summary>
@@ -103,6 +108,11 @@ namespace Strava
         {
             SummaryClubVariant2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static SummaryClub FromSummaryClubVariant2(global::Strava.SummaryClubVariant2? value) => new SummaryClub(value);
 
         /// <summary>
         /// 
