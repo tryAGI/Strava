@@ -42,6 +42,13 @@ namespace Strava
         /// <summary>
         /// 
         /// </summary>
+        public global::Strava.BaseStream PickBase() => IsBase
+            ? Base!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Base' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Strava.TimeStreamVariant2? TimeStreamVariant2 { get; init; }
 #else
@@ -68,6 +75,13 @@ namespace Strava
             value = TimeStreamVariant2;
             return IsTimeStreamVariant2;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Strava.TimeStreamVariant2 PickTimeStreamVariant2() => IsTimeStreamVariant2
+            ? TimeStreamVariant2!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'TimeStreamVariant2' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

@@ -50,5 +50,6 @@ namespace Strava
         public PhotosSummary()
         {
         }
+
     }
 }

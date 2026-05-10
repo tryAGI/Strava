@@ -42,6 +42,13 @@ namespace Strava
         /// <summary>
         /// 
         /// </summary>
+        public global::Strava.BaseStream PickBase() => IsBase
+            ? Base!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Base' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Strava.SmoothGradeStreamVariant2? SmoothGradeStreamVariant2 { get; init; }
 #else
@@ -68,6 +75,13 @@ namespace Strava
             value = SmoothGradeStreamVariant2;
             return IsSmoothGradeStreamVariant2;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Strava.SmoothGradeStreamVariant2 PickSmoothGradeStreamVariant2() => IsSmoothGradeStreamVariant2
+            ? SmoothGradeStreamVariant2!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'SmoothGradeStreamVariant2' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

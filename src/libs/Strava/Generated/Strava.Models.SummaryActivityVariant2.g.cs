@@ -490,5 +490,6 @@ namespace Strava
         public SummaryActivityVariant2()
         {
         }
+
     }
 }

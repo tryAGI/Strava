@@ -119,5 +119,6 @@ namespace Strava
         public DetailedAthleteVariant2()
         {
         }
+
     }
 }

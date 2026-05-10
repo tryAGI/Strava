@@ -44,5 +44,6 @@ namespace Strava
         public StarSegmentRequest()
         {
         }
+
     }
 }

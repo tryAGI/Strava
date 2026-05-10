@@ -189,5 +189,6 @@ namespace Strava
         public DetailedSegmentEffortVariant2()
         {
         }
+
     }
 }

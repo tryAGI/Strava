@@ -85,5 +85,6 @@ namespace Strava
         public SummaryGear()
         {
         }
+
     }
 }

@@ -174,5 +174,6 @@ namespace Strava
         public SummaryClubVariant2()
         {
         }
+
     }
 }

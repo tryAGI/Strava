@@ -66,5 +66,6 @@ namespace Strava
         public PhotosSummaryPrimary()
         {
         }
+
     }
 }
