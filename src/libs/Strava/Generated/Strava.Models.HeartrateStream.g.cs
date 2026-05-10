@@ -89,6 +89,11 @@ namespace Strava
         /// <summary>
         /// 
         /// </summary>
+        public static HeartrateStream FromBase(global::Strava.BaseStream? value) => new HeartrateStream(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator HeartrateStream(global::Strava.HeartrateStreamVariant2 value) => new HeartrateStream((global::Strava.HeartrateStreamVariant2?)value);
 
         /// <summary>
@@ -103,6 +108,11 @@ namespace Strava
         {
             HeartrateStreamVariant2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static HeartrateStream FromHeartrateStreamVariant2(global::Strava.HeartrateStreamVariant2? value) => new HeartrateStream(value);
 
         /// <summary>
         /// 

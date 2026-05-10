@@ -89,6 +89,11 @@ namespace Strava
         /// <summary>
         /// 
         /// </summary>
+        public static DetailedAthlete FromSummary(global::Strava.SummaryAthlete? value) => new DetailedAthlete(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator DetailedAthlete(global::Strava.DetailedAthleteVariant2 value) => new DetailedAthlete((global::Strava.DetailedAthleteVariant2?)value);
 
         /// <summary>
@@ -103,6 +108,11 @@ namespace Strava
         {
             DetailedAthleteVariant2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static DetailedAthlete FromDetailedAthleteVariant2(global::Strava.DetailedAthleteVariant2? value) => new DetailedAthlete(value);
 
         /// <summary>
         /// 

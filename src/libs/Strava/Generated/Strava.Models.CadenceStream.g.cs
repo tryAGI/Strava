@@ -89,6 +89,11 @@ namespace Strava
         /// <summary>
         /// 
         /// </summary>
+        public static CadenceStream FromBase(global::Strava.BaseStream? value) => new CadenceStream(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator CadenceStream(global::Strava.CadenceStreamVariant2 value) => new CadenceStream((global::Strava.CadenceStreamVariant2?)value);
 
         /// <summary>
@@ -103,6 +108,11 @@ namespace Strava
         {
             CadenceStreamVariant2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static CadenceStream FromCadenceStreamVariant2(global::Strava.CadenceStreamVariant2? value) => new CadenceStream(value);
 
         /// <summary>
         /// 

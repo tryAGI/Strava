@@ -89,6 +89,11 @@ namespace Strava
         /// <summary>
         /// 
         /// </summary>
+        public static PowerStream FromBase(global::Strava.BaseStream? value) => new PowerStream(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator PowerStream(global::Strava.PowerStreamVariant2 value) => new PowerStream((global::Strava.PowerStreamVariant2?)value);
 
         /// <summary>
@@ -103,6 +108,11 @@ namespace Strava
         {
             PowerStreamVariant2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static PowerStream FromPowerStreamVariant2(global::Strava.PowerStreamVariant2? value) => new PowerStream(value);
 
         /// <summary>
         /// 

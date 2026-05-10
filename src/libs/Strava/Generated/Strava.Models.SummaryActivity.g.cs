@@ -89,6 +89,11 @@ namespace Strava
         /// <summary>
         /// 
         /// </summary>
+        public static SummaryActivity FromMeta(global::Strava.MetaActivity? value) => new SummaryActivity(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator SummaryActivity(global::Strava.SummaryActivityVariant2 value) => new SummaryActivity((global::Strava.SummaryActivityVariant2?)value);
 
         /// <summary>
@@ -103,6 +108,11 @@ namespace Strava
         {
             SummaryActivityVariant2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static SummaryActivity FromSummaryActivityVariant2(global::Strava.SummaryActivityVariant2? value) => new SummaryActivity(value);
 
         /// <summary>
         /// 

@@ -89,6 +89,11 @@ namespace Strava
         /// <summary>
         /// 
         /// </summary>
+        public static TemperatureStream FromBase(global::Strava.BaseStream? value) => new TemperatureStream(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator TemperatureStream(global::Strava.TemperatureStreamVariant2 value) => new TemperatureStream((global::Strava.TemperatureStreamVariant2?)value);
 
         /// <summary>
@@ -103,6 +108,11 @@ namespace Strava
         {
             TemperatureStreamVariant2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static TemperatureStream FromTemperatureStreamVariant2(global::Strava.TemperatureStreamVariant2? value) => new TemperatureStream(value);
 
         /// <summary>
         /// 

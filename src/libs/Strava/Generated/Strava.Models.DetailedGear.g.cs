@@ -89,6 +89,11 @@ namespace Strava
         /// <summary>
         /// 
         /// </summary>
+        public static DetailedGear FromSummary(global::Strava.SummaryGear? value) => new DetailedGear(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator DetailedGear(global::Strava.DetailedGearVariant2 value) => new DetailedGear((global::Strava.DetailedGearVariant2?)value);
 
         /// <summary>
@@ -103,6 +108,11 @@ namespace Strava
         {
             DetailedGearVariant2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static DetailedGear FromDetailedGearVariant2(global::Strava.DetailedGearVariant2? value) => new DetailedGear(value);
 
         /// <summary>
         /// 

@@ -89,6 +89,11 @@ namespace Strava
         /// <summary>
         /// 
         /// </summary>
+        public static DistanceStream FromBase(global::Strava.BaseStream? value) => new DistanceStream(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator DistanceStream(global::Strava.DistanceStreamVariant2 value) => new DistanceStream((global::Strava.DistanceStreamVariant2?)value);
 
         /// <summary>
@@ -103,6 +108,11 @@ namespace Strava
         {
             DistanceStreamVariant2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static DistanceStream FromDistanceStreamVariant2(global::Strava.DistanceStreamVariant2? value) => new DistanceStream(value);
 
         /// <summary>
         /// 

@@ -89,6 +89,11 @@ namespace Strava
         /// <summary>
         /// 
         /// </summary>
+        public static MovingStream FromBase(global::Strava.BaseStream? value) => new MovingStream(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator MovingStream(global::Strava.MovingStreamVariant2 value) => new MovingStream((global::Strava.MovingStreamVariant2?)value);
 
         /// <summary>
@@ -103,6 +108,11 @@ namespace Strava
         {
             MovingStreamVariant2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static MovingStream FromMovingStreamVariant2(global::Strava.MovingStreamVariant2? value) => new MovingStream(value);
 
         /// <summary>
         /// 

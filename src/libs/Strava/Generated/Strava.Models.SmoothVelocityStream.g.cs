@@ -89,6 +89,11 @@ namespace Strava
         /// <summary>
         /// 
         /// </summary>
+        public static SmoothVelocityStream FromBase(global::Strava.BaseStream? value) => new SmoothVelocityStream(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator SmoothVelocityStream(global::Strava.SmoothVelocityStreamVariant2 value) => new SmoothVelocityStream((global::Strava.SmoothVelocityStreamVariant2?)value);
 
         /// <summary>
@@ -103,6 +108,11 @@ namespace Strava
         {
             SmoothVelocityStreamVariant2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static SmoothVelocityStream FromSmoothVelocityStreamVariant2(global::Strava.SmoothVelocityStreamVariant2? value) => new SmoothVelocityStream(value);
 
         /// <summary>
         /// 

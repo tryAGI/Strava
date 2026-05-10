@@ -89,6 +89,11 @@ namespace Strava
         /// <summary>
         /// 
         /// </summary>
+        public static LatLngStream FromBase(global::Strava.BaseStream? value) => new LatLngStream(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator LatLngStream(global::Strava.LatLngStreamVariant2 value) => new LatLngStream((global::Strava.LatLngStreamVariant2?)value);
 
         /// <summary>
@@ -103,6 +108,11 @@ namespace Strava
         {
             LatLngStreamVariant2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static LatLngStream FromLatLngStreamVariant2(global::Strava.LatLngStreamVariant2? value) => new LatLngStream(value);
 
         /// <summary>
         /// 

@@ -89,6 +89,11 @@ namespace Strava
         /// <summary>
         /// 
         /// </summary>
+        public static TimedZoneRange FromZoneRange(global::Strava.ZoneRange? value) => new TimedZoneRange(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator TimedZoneRange(global::Strava.TimedZoneRangeVariant2 value) => new TimedZoneRange((global::Strava.TimedZoneRangeVariant2?)value);
 
         /// <summary>
@@ -103,6 +108,11 @@ namespace Strava
         {
             TimedZoneRangeVariant2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static TimedZoneRange FromTimedZoneRangeVariant2(global::Strava.TimedZoneRangeVariant2? value) => new TimedZoneRange(value);
 
         /// <summary>
         /// 
