@@ -42,6 +42,13 @@ namespace Strava
         /// <summary>
         /// 
         /// </summary>
+        public global::Strava.SummaryActivity PickSummary() => IsSummary
+            ? Summary!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Summary' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Strava.DetailedActivityVariant2? DetailedActivityVariant2 { get; init; }
 #else
@@ -68,6 +75,13 @@ namespace Strava
             value = DetailedActivityVariant2;
             return IsDetailedActivityVariant2;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Strava.DetailedActivityVariant2 PickDetailedActivityVariant2() => IsDetailedActivityVariant2
+            ? DetailedActivityVariant2!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'DetailedActivityVariant2' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

@@ -42,6 +42,13 @@ namespace Strava
         /// <summary>
         /// 
         /// </summary>
+        public global::Strava.ZoneRange PickZoneRange() => IsZoneRange
+            ? ZoneRange!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ZoneRange' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Strava.TimedZoneRangeVariant2? TimedZoneRangeVariant2 { get; init; }
 #else
@@ -68,6 +75,13 @@ namespace Strava
             value = TimedZoneRangeVariant2;
             return IsTimedZoneRangeVariant2;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Strava.TimedZoneRangeVariant2 PickTimedZoneRangeVariant2() => IsTimedZoneRangeVariant2
+            ? TimedZoneRangeVariant2!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'TimedZoneRangeVariant2' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

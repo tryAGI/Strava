@@ -120,5 +120,6 @@ namespace Strava
         public UpdatableActivity()
         {
         }
+
     }
 }

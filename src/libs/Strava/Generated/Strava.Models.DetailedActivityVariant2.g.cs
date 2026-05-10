@@ -141,5 +141,6 @@ namespace Strava
         public DetailedActivityVariant2()
         {
         }
+
     }
 }

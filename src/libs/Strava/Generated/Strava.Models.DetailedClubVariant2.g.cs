@@ -75,5 +75,6 @@ namespace Strava
         public DetailedClubVariant2()
         {
         }
+
     }
 }

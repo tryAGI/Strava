@@ -96,5 +96,6 @@ namespace Strava
         public ActivityZone()
         {
         }
+
     }
 }

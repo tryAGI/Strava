@@ -129,5 +129,6 @@ namespace Strava
         public ClubActivity()
         {
         }
+
     }
 }

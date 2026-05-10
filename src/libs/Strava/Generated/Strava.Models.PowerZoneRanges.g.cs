@@ -39,5 +39,6 @@ namespace Strava
         public PowerZoneRanges()
         {
         }
+
     }
 }
