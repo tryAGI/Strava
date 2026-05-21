@@ -29,6 +29,26 @@ namespace Strava
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickBase(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Strava.BaseStream? value)
+        {
+            value = Base;
+            return IsBase;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Strava.BaseStream PickBase() => IsBase
+            ? Base!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Base' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Strava.HeartrateStreamVariant2? HeartrateStreamVariant2 { get; init; }
 #else
@@ -42,6 +62,26 @@ namespace Strava
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(HeartrateStreamVariant2))]
 #endif
         public bool IsHeartrateStreamVariant2 => HeartrateStreamVariant2 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickHeartrateStreamVariant2(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Strava.HeartrateStreamVariant2? value)
+        {
+            value = HeartrateStreamVariant2;
+            return IsHeartrateStreamVariant2;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Strava.HeartrateStreamVariant2 PickHeartrateStreamVariant2() => IsHeartrateStreamVariant2
+            ? HeartrateStreamVariant2!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'HeartrateStreamVariant2' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -63,6 +103,11 @@ namespace Strava
         /// <summary>
         /// 
         /// </summary>
+        public static HeartrateStream FromBase(global::Strava.BaseStream? value) => new HeartrateStream(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator HeartrateStream(global::Strava.HeartrateStreamVariant2 value) => new HeartrateStream((global::Strava.HeartrateStreamVariant2?)value);
 
         /// <summary>
@@ -77,6 +122,11 @@ namespace Strava
         {
             HeartrateStreamVariant2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static HeartrateStream FromHeartrateStreamVariant2(global::Strava.HeartrateStreamVariant2? value) => new HeartrateStream(value);
 
         /// <summary>
         /// 
@@ -118,8 +168,8 @@ namespace Strava
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::Strava.BaseStream?, TResult>? @base = null,
-            global::System.Func<global::Strava.HeartrateStreamVariant2?, TResult>? heartrateStreamVariant2 = null,
+            global::System.Func<global::Strava.BaseStream, TResult>? @base = null,
+            global::System.Func<global::Strava.HeartrateStreamVariant2, TResult>? heartrateStreamVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -143,8 +193,32 @@ namespace Strava
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::Strava.BaseStream?>? @base = null,
-            global::System.Action<global::Strava.HeartrateStreamVariant2?>? heartrateStreamVariant2 = null,
+            global::System.Action<global::Strava.BaseStream>? @base = null,
+
+            global::System.Action<global::Strava.HeartrateStreamVariant2>? heartrateStreamVariant2 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsBase)
+            {
+                @base?.Invoke(Base!);
+            }
+            else if (IsHeartrateStreamVariant2)
+            {
+                heartrateStreamVariant2?.Invoke(HeartrateStreamVariant2!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::Strava.BaseStream>? @base = null,
+            global::System.Action<global::Strava.HeartrateStreamVariant2>? heartrateStreamVariant2 = null,
             bool validate = true)
         {
             if (validate)

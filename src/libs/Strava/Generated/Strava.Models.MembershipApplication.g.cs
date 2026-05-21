@@ -64,5 +64,6 @@ namespace Strava
         public MembershipApplication()
         {
         }
+
     }
 }

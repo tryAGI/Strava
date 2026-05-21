@@ -29,6 +29,26 @@ namespace Strava
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickBase(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Strava.BaseStream? value)
+        {
+            value = Base;
+            return IsBase;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Strava.BaseStream PickBase() => IsBase
+            ? Base!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Base' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Strava.PowerStreamVariant2? PowerStreamVariant2 { get; init; }
 #else
@@ -42,6 +62,26 @@ namespace Strava
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(PowerStreamVariant2))]
 #endif
         public bool IsPowerStreamVariant2 => PowerStreamVariant2 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickPowerStreamVariant2(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Strava.PowerStreamVariant2? value)
+        {
+            value = PowerStreamVariant2;
+            return IsPowerStreamVariant2;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Strava.PowerStreamVariant2 PickPowerStreamVariant2() => IsPowerStreamVariant2
+            ? PowerStreamVariant2!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'PowerStreamVariant2' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -63,6 +103,11 @@ namespace Strava
         /// <summary>
         /// 
         /// </summary>
+        public static PowerStream FromBase(global::Strava.BaseStream? value) => new PowerStream(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator PowerStream(global::Strava.PowerStreamVariant2 value) => new PowerStream((global::Strava.PowerStreamVariant2?)value);
 
         /// <summary>
@@ -77,6 +122,11 @@ namespace Strava
         {
             PowerStreamVariant2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static PowerStream FromPowerStreamVariant2(global::Strava.PowerStreamVariant2? value) => new PowerStream(value);
 
         /// <summary>
         /// 
@@ -118,8 +168,8 @@ namespace Strava
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::Strava.BaseStream?, TResult>? @base = null,
-            global::System.Func<global::Strava.PowerStreamVariant2?, TResult>? powerStreamVariant2 = null,
+            global::System.Func<global::Strava.BaseStream, TResult>? @base = null,
+            global::System.Func<global::Strava.PowerStreamVariant2, TResult>? powerStreamVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -143,8 +193,32 @@ namespace Strava
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::Strava.BaseStream?>? @base = null,
-            global::System.Action<global::Strava.PowerStreamVariant2?>? powerStreamVariant2 = null,
+            global::System.Action<global::Strava.BaseStream>? @base = null,
+
+            global::System.Action<global::Strava.PowerStreamVariant2>? powerStreamVariant2 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsBase)
+            {
+                @base?.Invoke(Base!);
+            }
+            else if (IsPowerStreamVariant2)
+            {
+                powerStreamVariant2?.Invoke(PowerStreamVariant2!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::Strava.BaseStream>? @base = null,
+            global::System.Action<global::Strava.PowerStreamVariant2>? powerStreamVariant2 = null,
             bool validate = true)
         {
             if (validate)

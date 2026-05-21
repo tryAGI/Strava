@@ -41,5 +41,6 @@ namespace Strava
         public TemperatureStreamVariant2()
         {
         }
+
     }
 }

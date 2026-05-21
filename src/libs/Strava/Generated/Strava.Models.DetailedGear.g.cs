@@ -29,6 +29,26 @@ namespace Strava
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickSummary(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Strava.SummaryGear? value)
+        {
+            value = Summary;
+            return IsSummary;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Strava.SummaryGear PickSummary() => IsSummary
+            ? Summary!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Summary' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Strava.DetailedGearVariant2? DetailedGearVariant2 { get; init; }
 #else
@@ -42,6 +62,26 @@ namespace Strava
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(DetailedGearVariant2))]
 #endif
         public bool IsDetailedGearVariant2 => DetailedGearVariant2 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickDetailedGearVariant2(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Strava.DetailedGearVariant2? value)
+        {
+            value = DetailedGearVariant2;
+            return IsDetailedGearVariant2;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Strava.DetailedGearVariant2 PickDetailedGearVariant2() => IsDetailedGearVariant2
+            ? DetailedGearVariant2!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'DetailedGearVariant2' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -63,6 +103,11 @@ namespace Strava
         /// <summary>
         /// 
         /// </summary>
+        public static DetailedGear FromSummary(global::Strava.SummaryGear? value) => new DetailedGear(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator DetailedGear(global::Strava.DetailedGearVariant2 value) => new DetailedGear((global::Strava.DetailedGearVariant2?)value);
 
         /// <summary>
@@ -77,6 +122,11 @@ namespace Strava
         {
             DetailedGearVariant2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static DetailedGear FromDetailedGearVariant2(global::Strava.DetailedGearVariant2? value) => new DetailedGear(value);
 
         /// <summary>
         /// 
@@ -118,8 +168,8 @@ namespace Strava
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::Strava.SummaryGear?, TResult>? summary = null,
-            global::System.Func<global::Strava.DetailedGearVariant2?, TResult>? detailedGearVariant2 = null,
+            global::System.Func<global::Strava.SummaryGear, TResult>? summary = null,
+            global::System.Func<global::Strava.DetailedGearVariant2, TResult>? detailedGearVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -143,8 +193,32 @@ namespace Strava
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::Strava.SummaryGear?>? summary = null,
-            global::System.Action<global::Strava.DetailedGearVariant2?>? detailedGearVariant2 = null,
+            global::System.Action<global::Strava.SummaryGear>? summary = null,
+
+            global::System.Action<global::Strava.DetailedGearVariant2>? detailedGearVariant2 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsSummary)
+            {
+                summary?.Invoke(Summary!);
+            }
+            else if (IsDetailedGearVariant2)
+            {
+                detailedGearVariant2?.Invoke(DetailedGearVariant2!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::Strava.SummaryGear>? summary = null,
+            global::System.Action<global::Strava.DetailedGearVariant2>? detailedGearVariant2 = null,
             bool validate = true)
         {
             if (validate)

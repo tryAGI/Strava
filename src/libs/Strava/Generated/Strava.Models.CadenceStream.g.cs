@@ -29,6 +29,26 @@ namespace Strava
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickBase(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Strava.BaseStream? value)
+        {
+            value = Base;
+            return IsBase;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Strava.BaseStream PickBase() => IsBase
+            ? Base!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Base' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Strava.CadenceStreamVariant2? CadenceStreamVariant2 { get; init; }
 #else
@@ -42,6 +62,26 @@ namespace Strava
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(CadenceStreamVariant2))]
 #endif
         public bool IsCadenceStreamVariant2 => CadenceStreamVariant2 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickCadenceStreamVariant2(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Strava.CadenceStreamVariant2? value)
+        {
+            value = CadenceStreamVariant2;
+            return IsCadenceStreamVariant2;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Strava.CadenceStreamVariant2 PickCadenceStreamVariant2() => IsCadenceStreamVariant2
+            ? CadenceStreamVariant2!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'CadenceStreamVariant2' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -63,6 +103,11 @@ namespace Strava
         /// <summary>
         /// 
         /// </summary>
+        public static CadenceStream FromBase(global::Strava.BaseStream? value) => new CadenceStream(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator CadenceStream(global::Strava.CadenceStreamVariant2 value) => new CadenceStream((global::Strava.CadenceStreamVariant2?)value);
 
         /// <summary>
@@ -77,6 +122,11 @@ namespace Strava
         {
             CadenceStreamVariant2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static CadenceStream FromCadenceStreamVariant2(global::Strava.CadenceStreamVariant2? value) => new CadenceStream(value);
 
         /// <summary>
         /// 
@@ -118,8 +168,8 @@ namespace Strava
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::Strava.BaseStream?, TResult>? @base = null,
-            global::System.Func<global::Strava.CadenceStreamVariant2?, TResult>? cadenceStreamVariant2 = null,
+            global::System.Func<global::Strava.BaseStream, TResult>? @base = null,
+            global::System.Func<global::Strava.CadenceStreamVariant2, TResult>? cadenceStreamVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -143,8 +193,32 @@ namespace Strava
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::Strava.BaseStream?>? @base = null,
-            global::System.Action<global::Strava.CadenceStreamVariant2?>? cadenceStreamVariant2 = null,
+            global::System.Action<global::Strava.BaseStream>? @base = null,
+
+            global::System.Action<global::Strava.CadenceStreamVariant2>? cadenceStreamVariant2 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsBase)
+            {
+                @base?.Invoke(Base!);
+            }
+            else if (IsCadenceStreamVariant2)
+            {
+                cadenceStreamVariant2?.Invoke(CadenceStreamVariant2!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::Strava.BaseStream>? @base = null,
+            global::System.Action<global::Strava.CadenceStreamVariant2>? cadenceStreamVariant2 = null,
             bool validate = true)
         {
             if (validate)

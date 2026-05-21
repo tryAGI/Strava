@@ -29,6 +29,26 @@ namespace Strava
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickBase(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Strava.BaseStream? value)
+        {
+            value = Base;
+            return IsBase;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Strava.BaseStream PickBase() => IsBase
+            ? Base!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Base' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Strava.TemperatureStreamVariant2? TemperatureStreamVariant2 { get; init; }
 #else
@@ -42,6 +62,26 @@ namespace Strava
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(TemperatureStreamVariant2))]
 #endif
         public bool IsTemperatureStreamVariant2 => TemperatureStreamVariant2 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickTemperatureStreamVariant2(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Strava.TemperatureStreamVariant2? value)
+        {
+            value = TemperatureStreamVariant2;
+            return IsTemperatureStreamVariant2;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Strava.TemperatureStreamVariant2 PickTemperatureStreamVariant2() => IsTemperatureStreamVariant2
+            ? TemperatureStreamVariant2!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'TemperatureStreamVariant2' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -63,6 +103,11 @@ namespace Strava
         /// <summary>
         /// 
         /// </summary>
+        public static TemperatureStream FromBase(global::Strava.BaseStream? value) => new TemperatureStream(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator TemperatureStream(global::Strava.TemperatureStreamVariant2 value) => new TemperatureStream((global::Strava.TemperatureStreamVariant2?)value);
 
         /// <summary>
@@ -77,6 +122,11 @@ namespace Strava
         {
             TemperatureStreamVariant2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static TemperatureStream FromTemperatureStreamVariant2(global::Strava.TemperatureStreamVariant2? value) => new TemperatureStream(value);
 
         /// <summary>
         /// 
@@ -118,8 +168,8 @@ namespace Strava
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::Strava.BaseStream?, TResult>? @base = null,
-            global::System.Func<global::Strava.TemperatureStreamVariant2?, TResult>? temperatureStreamVariant2 = null,
+            global::System.Func<global::Strava.BaseStream, TResult>? @base = null,
+            global::System.Func<global::Strava.TemperatureStreamVariant2, TResult>? temperatureStreamVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -143,8 +193,32 @@ namespace Strava
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::Strava.BaseStream?>? @base = null,
-            global::System.Action<global::Strava.TemperatureStreamVariant2?>? temperatureStreamVariant2 = null,
+            global::System.Action<global::Strava.BaseStream>? @base = null,
+
+            global::System.Action<global::Strava.TemperatureStreamVariant2>? temperatureStreamVariant2 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsBase)
+            {
+                @base?.Invoke(Base!);
+            }
+            else if (IsTemperatureStreamVariant2)
+            {
+                temperatureStreamVariant2?.Invoke(TemperatureStreamVariant2!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::Strava.BaseStream>? @base = null,
+            global::System.Action<global::Strava.TemperatureStreamVariant2>? temperatureStreamVariant2 = null,
             bool validate = true)
         {
             if (validate)

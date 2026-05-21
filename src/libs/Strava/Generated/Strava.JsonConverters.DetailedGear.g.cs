@@ -83,6 +83,7 @@ namespace Strava.JsonConverters
             {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Strava.SummaryGear), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Strava.SummaryGear> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Strava.SummaryGear).Name}");
                     summary = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -93,9 +94,13 @@ namespace Strava.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (summary == null && detailedGearVariant2 == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Strava.DetailedGearVariant2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Strava.DetailedGearVariant2> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Strava.DetailedGearVariant2).Name}");
                     detailedGearVariant2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);

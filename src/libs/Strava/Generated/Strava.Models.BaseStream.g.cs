@@ -65,5 +65,6 @@ namespace Strava
         public BaseStream()
         {
         }
+
     }
 }

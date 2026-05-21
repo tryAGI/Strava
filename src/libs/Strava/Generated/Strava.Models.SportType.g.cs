@@ -23,11 +23,23 @@ namespace Strava
         /// <summary>
         /// 
         /// </summary>
+        Basketball,
+        /// <summary>
+        /// 
+        /// </summary>
         Canoeing,
         /// <summary>
         /// 
         /// </summary>
+        Cricket,
+        /// <summary>
+        /// 
+        /// </summary>
         Crossfit,
+        /// <summary>
+        /// 
+        /// </summary>
+        Dance,
         /// <summary>
         /// 
         /// </summary>
@@ -84,6 +96,14 @@ namespace Strava
         /// 
         /// </summary>
         NordicSki,
+        /// <summary>
+        /// 
+        /// </summary>
+        Padel,
+        /// <summary>
+        /// 
+        /// </summary>
+        PhysicalTherapy,
         /// <summary>
         /// 
         /// </summary>
@@ -187,6 +207,10 @@ namespace Strava
         /// <summary>
         /// 
         /// </summary>
+        Volleyball,
+        /// <summary>
+        /// 
+        /// </summary>
         Walk,
         /// <summary>
         /// 
@@ -225,8 +249,11 @@ namespace Strava
                 SportType.AlpineSki => "AlpineSki",
                 SportType.BackcountrySki => "BackcountrySki",
                 SportType.Badminton => "Badminton",
+                SportType.Basketball => "Basketball",
                 SportType.Canoeing => "Canoeing",
+                SportType.Cricket => "Cricket",
                 SportType.Crossfit => "Crossfit",
+                SportType.Dance => "Dance",
                 SportType.EBikeRide => "EBikeRide",
                 SportType.EMountainBikeRide => "EMountainBikeRide",
                 SportType.Elliptical => "Elliptical",
@@ -241,6 +268,8 @@ namespace Strava
                 SportType.Kitesurf => "Kitesurf",
                 SportType.MountainBikeRide => "MountainBikeRide",
                 SportType.NordicSki => "NordicSki",
+                SportType.Padel => "Padel",
+                SportType.PhysicalTherapy => "PhysicalTherapy",
                 SportType.Pickleball => "Pickleball",
                 SportType.Pilates => "Pilates",
                 SportType.Racquetball => "Racquetball",
@@ -266,6 +295,7 @@ namespace Strava
                 SportType.VirtualRide => "VirtualRide",
                 SportType.VirtualRow => "VirtualRow",
                 SportType.VirtualRun => "VirtualRun",
+                SportType.Volleyball => "Volleyball",
                 SportType.Walk => "Walk",
                 SportType.WeightTraining => "WeightTraining",
                 SportType.Wheelchair => "Wheelchair",
@@ -285,8 +315,11 @@ namespace Strava
                 "AlpineSki" => SportType.AlpineSki,
                 "BackcountrySki" => SportType.BackcountrySki,
                 "Badminton" => SportType.Badminton,
+                "Basketball" => SportType.Basketball,
                 "Canoeing" => SportType.Canoeing,
+                "Cricket" => SportType.Cricket,
                 "Crossfit" => SportType.Crossfit,
+                "Dance" => SportType.Dance,
                 "EBikeRide" => SportType.EBikeRide,
                 "EMountainBikeRide" => SportType.EMountainBikeRide,
                 "Elliptical" => SportType.Elliptical,
@@ -301,6 +334,8 @@ namespace Strava
                 "Kitesurf" => SportType.Kitesurf,
                 "MountainBikeRide" => SportType.MountainBikeRide,
                 "NordicSki" => SportType.NordicSki,
+                "Padel" => SportType.Padel,
+                "PhysicalTherapy" => SportType.PhysicalTherapy,
                 "Pickleball" => SportType.Pickleball,
                 "Pilates" => SportType.Pilates,
                 "Racquetball" => SportType.Racquetball,
@@ -326,6 +361,7 @@ namespace Strava
                 "VirtualRide" => SportType.VirtualRide,
                 "VirtualRow" => SportType.VirtualRow,
                 "VirtualRun" => SportType.VirtualRun,
+                "Volleyball" => SportType.Volleyball,
                 "Walk" => SportType.Walk,
                 "WeightTraining" => SportType.WeightTraining,
                 "Wheelchair" => SportType.Wheelchair,

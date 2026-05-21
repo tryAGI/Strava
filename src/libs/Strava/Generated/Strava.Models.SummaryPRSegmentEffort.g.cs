@@ -74,5 +74,6 @@ namespace Strava
         public SummaryPRSegmentEffort()
         {
         }
+
     }
 }

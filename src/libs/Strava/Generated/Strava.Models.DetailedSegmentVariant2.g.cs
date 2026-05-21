@@ -116,5 +116,6 @@ namespace Strava
         public DetailedSegmentVariant2()
         {
         }
+
     }
 }

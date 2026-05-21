@@ -63,5 +63,6 @@ namespace Strava
         public MetaClub()
         {
         }
+
     }
 }

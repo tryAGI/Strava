@@ -212,5 +212,6 @@ namespace Strava
         public SummarySegment()
         {
         }
+
     }
 }

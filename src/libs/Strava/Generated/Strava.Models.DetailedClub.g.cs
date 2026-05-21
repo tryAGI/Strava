@@ -29,6 +29,26 @@ namespace Strava
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickSummary(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Strava.SummaryClub? value)
+        {
+            value = Summary;
+            return IsSummary;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Strava.SummaryClub PickSummary() => IsSummary
+            ? Summary!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Summary' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Strava.DetailedClubVariant2? DetailedClubVariant2 { get; init; }
 #else
@@ -42,6 +62,26 @@ namespace Strava
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(DetailedClubVariant2))]
 #endif
         public bool IsDetailedClubVariant2 => DetailedClubVariant2 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickDetailedClubVariant2(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Strava.DetailedClubVariant2? value)
+        {
+            value = DetailedClubVariant2;
+            return IsDetailedClubVariant2;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Strava.DetailedClubVariant2 PickDetailedClubVariant2() => IsDetailedClubVariant2
+            ? DetailedClubVariant2!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'DetailedClubVariant2' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -63,6 +103,11 @@ namespace Strava
         /// <summary>
         /// 
         /// </summary>
+        public static DetailedClub FromSummary(global::Strava.SummaryClub? value) => new DetailedClub(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator DetailedClub(global::Strava.DetailedClubVariant2 value) => new DetailedClub((global::Strava.DetailedClubVariant2?)value);
 
         /// <summary>
@@ -77,6 +122,11 @@ namespace Strava
         {
             DetailedClubVariant2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static DetailedClub FromDetailedClubVariant2(global::Strava.DetailedClubVariant2? value) => new DetailedClub(value);
 
         /// <summary>
         /// 
@@ -119,7 +169,7 @@ namespace Strava
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::Strava.SummaryClub?, TResult>? summary = null,
-            global::System.Func<global::Strava.DetailedClubVariant2?, TResult>? detailedClubVariant2 = null,
+            global::System.Func<global::Strava.DetailedClubVariant2, TResult>? detailedClubVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -144,7 +194,31 @@ namespace Strava
         /// </summary>
         public void Match(
             global::System.Action<global::Strava.SummaryClub?>? summary = null,
-            global::System.Action<global::Strava.DetailedClubVariant2?>? detailedClubVariant2 = null,
+
+            global::System.Action<global::Strava.DetailedClubVariant2>? detailedClubVariant2 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsSummary)
+            {
+                summary?.Invoke(Summary!);
+            }
+            else if (IsDetailedClubVariant2)
+            {
+                detailedClubVariant2?.Invoke(DetailedClubVariant2!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::Strava.SummaryClub?>? summary = null,
+            global::System.Action<global::Strava.DetailedClubVariant2>? detailedClubVariant2 = null,
             bool validate = true)
         {
             if (validate)
