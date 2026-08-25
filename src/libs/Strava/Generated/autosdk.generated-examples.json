@@ -6,7 +6,7 @@
       "Slug": "createactivity",
       "Description": "Creates a manual activity for an athlete, requires activity:write scope.",
       "Language": "http",
-      "Code": "### Create an Activity\n# @name createActivity\nPOST {{host}}/activities\nAuthorization: Bearer {{token}}\nContent-Type: application/x-www-form-urlencoded\nAccept: application/json\n\n## Responses\n# 201\n# Description: The activity\u0027s detailed representation.\n# Content-Type: application/json\n# default\n# Description: Unexpected error.\n# Content-Type: application/json",
+      "Code": "### Create an Activity\n# @name createActivity\nPOST {{host}}/activities\nAuthorization: Bearer {{token}}\nContent-Type: application/x-www-form-urlencoded\nAccept: application/json\n\nname=string\u0026type=string\u0026sport_type=string\u0026start_date_local=string\u0026elapsed_time=0\u0026description=string\u0026distance=0.0\u0026trainer=0\u0026commute=0\n\n## Responses\n# 201\n# Description: The activity\u0027s detailed representation.\n# Content-Type: application/json\n# default\n# Description: Unexpected error.\n# Content-Type: application/json",
       "Format": "http",
       "OperationId": "createActivity",
       "Setup": null
@@ -237,7 +237,7 @@
       "Slug": "starsegment",
       "Description": "Stars/Unstars the given segment for the authenticated athlete. Requires profile:write scope.",
       "Language": "http",
-      "Code": "### Star Segment\n# @name starSegment\nPUT {{host}}/segments/{{id}}/starred\nAuthorization: Bearer {{token}}\nContent-Type: application/x-www-form-urlencoded\nAccept: application/json\n\n## Responses\n# 200\n# Description: Representation of a segment.\n# Content-Type: application/json\n# default\n# Description: Unexpected error.\n# Content-Type: application/json",
+      "Code": "### Star Segment\n# @name starSegment\nPUT {{host}}/segments/{{id}}/starred\nAuthorization: Bearer {{token}}\nContent-Type: application/x-www-form-urlencoded\nAccept: application/json\n\nstarred=false\n\n## Responses\n# 200\n# Description: Representation of a segment.\n# Content-Type: application/json\n# default\n# Description: Unexpected error.\n# Content-Type: application/json",
       "Format": "http",
       "OperationId": "starSegment",
       "Setup": null
