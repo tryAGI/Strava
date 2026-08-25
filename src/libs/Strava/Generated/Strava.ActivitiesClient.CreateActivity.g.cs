@@ -141,12 +141,52 @@ namespace Strava
                     __httpRequest.Headers.Add(__authorization.Name, __authorization.Value);
                 } 
             }
-                            var __httpRequestContentBody = request.ToJson(JsonSerializerContext);
-                            var __httpRequestContent = new global::System.Net.Http.StringContent(
-                                content: __httpRequestContentBody,
-                                encoding: global::System.Text.Encoding.UTF8,
-                                mediaType: "application/x-www-form-urlencoded");
+                            var __formValues = new global::System.Collections.Generic.List<global::System.Collections.Generic.KeyValuePair<string, string>>();
+                            __formValues.Add(new global::System.Collections.Generic.KeyValuePair<string, string>(
+                                "name",
+                                request.Name ?? string.Empty));
+                            if (request.Type != default)
+                            {
+                                __formValues.Add(new global::System.Collections.Generic.KeyValuePair<string, string>(
+                                    "type",
+                                    request.Type ?? string.Empty));
+                            }
+                            __formValues.Add(new global::System.Collections.Generic.KeyValuePair<string, string>(
+                                "sport_type",
+                                request.SportType ?? string.Empty));
+                            __formValues.Add(new global::System.Collections.Generic.KeyValuePair<string, string>(
+                                "start_date_local",
+                                request.StartDateLocal.ToString("yyyy-MM-ddTHH:mm:ssZ")));
+                            __formValues.Add(new global::System.Collections.Generic.KeyValuePair<string, string>(
+                                "elapsed_time",
+                                global::System.Convert.ToString(request.ElapsedTime, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty));
+                            if (request.Description != default)
+                            {
+                                __formValues.Add(new global::System.Collections.Generic.KeyValuePair<string, string>(
+                                    "description",
+                                    request.Description ?? string.Empty));
+                            }
+                            if (request.Distance != default)
+                            {
+                                __formValues.Add(new global::System.Collections.Generic.KeyValuePair<string, string>(
+                                    "distance",
+                                    global::System.Convert.ToString(request.Distance, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty));
+                            }
+                            if (request.Trainer != default)
+                            {
+                                __formValues.Add(new global::System.Collections.Generic.KeyValuePair<string, string>(
+                                    "trainer",
+                                    global::System.Convert.ToString(request.Trainer, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty));
+                            }
+                            if (request.Commute != default)
+                            {
+                                __formValues.Add(new global::System.Collections.Generic.KeyValuePair<string, string>(
+                                    "commute",
+                                    global::System.Convert.ToString(request.Commute, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty));
+                            }
+                            var __httpRequestContent = new global::System.Net.Http.FormUrlEncodedContent(__formValues);
                             __httpRequest.Content = __httpRequestContent;
+
                 global::Strava.AutoSDKRequestOptionsSupport.ApplyHeaders(
                     request: __httpRequest,
                     clientHeaders: Options.Headers,
