@@ -4,7 +4,7 @@
 namespace Strava
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class SummaryActivityVariant2
     {
@@ -21,7 +21,7 @@ namespace Strava
         public long? UploadId { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("athlete")]
         public global::Strava.MetaAthlete? Athlete { get; set; }
@@ -149,7 +149,7 @@ namespace Strava
         public int? TotalPhotoCount { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("map")]
         public global::Strava.PolylineMap? Map { get; set; }

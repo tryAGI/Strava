@@ -4,16 +4,16 @@
 namespace Strava
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum ActivityZoneType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Heartrate,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Power,
     }

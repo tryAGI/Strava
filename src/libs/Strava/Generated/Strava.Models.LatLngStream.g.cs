@@ -5,12 +5,12 @@
 namespace Strava
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public readonly partial struct LatLngStream : global::System.IEquatable<LatLngStream>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Strava.BaseStream? Base { get; init; }
@@ -19,7 +19,7 @@ namespace Strava
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Base))]
@@ -27,7 +27,7 @@ namespace Strava
         public bool IsBase => Base != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickBase(
 #if NET6_0_OR_GREATER
@@ -40,14 +40,14 @@ namespace Strava
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Strava.BaseStream PickBase() => IsBase
             ? Base!
             : throw new global::System.InvalidOperationException($"Expected union variant 'Base' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Strava.LatLngStreamVariant2? LatLngStreamVariant2 { get; init; }
@@ -56,7 +56,7 @@ namespace Strava
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(LatLngStreamVariant2))]
@@ -64,7 +64,7 @@ namespace Strava
         public bool IsLatLngStreamVariant2 => LatLngStreamVariant2 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickLatLngStreamVariant2(
 #if NET6_0_OR_GREATER
@@ -77,23 +77,23 @@ namespace Strava
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Strava.LatLngStreamVariant2 PickLatLngStreamVariant2() => IsLatLngStreamVariant2
             ? LatLngStreamVariant2!
             : throw new global::System.InvalidOperationException($"Expected union variant 'LatLngStreamVariant2' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator LatLngStream(global::Strava.BaseStream value) => new LatLngStream((global::Strava.BaseStream?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Strava.BaseStream?(LatLngStream @this) => @this.Base;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public LatLngStream(global::Strava.BaseStream? value)
         {
@@ -101,22 +101,22 @@ namespace Strava
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static LatLngStream FromBase(global::Strava.BaseStream? value) => new LatLngStream(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator LatLngStream(global::Strava.LatLngStreamVariant2 value) => new LatLngStream((global::Strava.LatLngStreamVariant2?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Strava.LatLngStreamVariant2?(LatLngStream @this) => @this.LatLngStreamVariant2;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public LatLngStream(global::Strava.LatLngStreamVariant2? value)
         {
@@ -124,12 +124,12 @@ namespace Strava
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static LatLngStream FromLatLngStreamVariant2(global::Strava.LatLngStreamVariant2? value) => new LatLngStream(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public LatLngStream(
             global::Strava.BaseStream? @base,
@@ -141,23 +141,23 @@ namespace Strava
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             LatLngStreamVariant2 as object ??
-            Base as object 
+            Base as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             Base?.ToString() ??
-            LatLngStreamVariant2?.ToString() 
+            LatLngStreamVariant2?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -165,7 +165,7 @@ namespace Strava
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::Strava.BaseStream, TResult>? @base = null,
@@ -190,7 +190,7 @@ namespace Strava
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::Strava.BaseStream>? @base = null,
@@ -214,7 +214,7 @@ namespace Strava
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::Strava.BaseStream>? @base = null,
@@ -237,7 +237,7 @@ namespace Strava
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -258,18 +258,18 @@ namespace Strava
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(LatLngStream other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::Strava.BaseStream?>.Default.Equals(Base, other.Base) &&
-                global::System.Collections.Generic.EqualityComparer<global::Strava.LatLngStreamVariant2?>.Default.Equals(LatLngStreamVariant2, other.LatLngStreamVariant2) 
+                global::System.Collections.Generic.EqualityComparer<global::Strava.LatLngStreamVariant2?>.Default.Equals(LatLngStreamVariant2, other.LatLngStreamVariant2)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(LatLngStream obj1, LatLngStream obj2)
         {
@@ -277,7 +277,7 @@ namespace Strava
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(LatLngStream obj1, LatLngStream obj2)
         {
@@ -285,7 +285,7 @@ namespace Strava
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

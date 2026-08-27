@@ -9,11 +9,11 @@ namespace Strava
     public enum DetailedClubVariant2Membership
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Member,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Pending,
     }

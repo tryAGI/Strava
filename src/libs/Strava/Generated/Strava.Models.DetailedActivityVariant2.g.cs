@@ -4,7 +4,7 @@
 namespace Strava
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class DetailedActivityVariant2
     {
@@ -15,13 +15,13 @@ namespace Strava
         public string? Description { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("photos")]
         public global::Strava.PhotosSummary? Photos { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("gear")]
         public global::Strava.SummaryGear? Gear { get; set; }
@@ -33,7 +33,7 @@ namespace Strava
         public float? Calories { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("segment_efforts")]
         public global::System.Collections.Generic.IList<global::Strava.DetailedSegmentEffort>? SegmentEfforts { get; set; }
@@ -63,13 +63,13 @@ namespace Strava
         public global::System.Collections.Generic.IList<global::Strava.Split>? SplitsStandard { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("laps")]
         public global::System.Collections.Generic.IList<global::Strava.Lap>? Laps { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("best_efforts")]
         public global::System.Collections.Generic.IList<global::Strava.DetailedSegmentEffort>? BestEfforts { get; set; }

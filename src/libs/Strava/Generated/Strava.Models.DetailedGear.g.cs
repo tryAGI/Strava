@@ -5,12 +5,12 @@
 namespace Strava
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public readonly partial struct DetailedGear : global::System.IEquatable<DetailedGear>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Strava.SummaryGear? Summary { get; init; }
@@ -19,7 +19,7 @@ namespace Strava
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Summary))]
@@ -27,7 +27,7 @@ namespace Strava
         public bool IsSummary => Summary != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickSummary(
 #if NET6_0_OR_GREATER
@@ -40,14 +40,14 @@ namespace Strava
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Strava.SummaryGear PickSummary() => IsSummary
             ? Summary!
             : throw new global::System.InvalidOperationException($"Expected union variant 'Summary' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Strava.DetailedGearVariant2? DetailedGearVariant2 { get; init; }
@@ -56,7 +56,7 @@ namespace Strava
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(DetailedGearVariant2))]
@@ -64,7 +64,7 @@ namespace Strava
         public bool IsDetailedGearVariant2 => DetailedGearVariant2 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickDetailedGearVariant2(
 #if NET6_0_OR_GREATER
@@ -77,23 +77,23 @@ namespace Strava
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Strava.DetailedGearVariant2 PickDetailedGearVariant2() => IsDetailedGearVariant2
             ? DetailedGearVariant2!
             : throw new global::System.InvalidOperationException($"Expected union variant 'DetailedGearVariant2' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator DetailedGear(global::Strava.SummaryGear value) => new DetailedGear((global::Strava.SummaryGear?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Strava.SummaryGear?(DetailedGear @this) => @this.Summary;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public DetailedGear(global::Strava.SummaryGear? value)
         {
@@ -101,22 +101,22 @@ namespace Strava
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static DetailedGear FromSummary(global::Strava.SummaryGear? value) => new DetailedGear(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator DetailedGear(global::Strava.DetailedGearVariant2 value) => new DetailedGear((global::Strava.DetailedGearVariant2?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Strava.DetailedGearVariant2?(DetailedGear @this) => @this.DetailedGearVariant2;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public DetailedGear(global::Strava.DetailedGearVariant2? value)
         {
@@ -124,12 +124,12 @@ namespace Strava
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static DetailedGear FromDetailedGearVariant2(global::Strava.DetailedGearVariant2? value) => new DetailedGear(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public DetailedGear(
             global::Strava.SummaryGear? summary,
@@ -141,23 +141,23 @@ namespace Strava
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             DetailedGearVariant2 as object ??
-            Summary as object 
+            Summary as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             Summary?.ToString() ??
-            DetailedGearVariant2?.ToString() 
+            DetailedGearVariant2?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -165,7 +165,7 @@ namespace Strava
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::Strava.SummaryGear, TResult>? summary = null,
@@ -190,7 +190,7 @@ namespace Strava
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::Strava.SummaryGear>? summary = null,
@@ -214,7 +214,7 @@ namespace Strava
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::Strava.SummaryGear>? summary = null,
@@ -237,7 +237,7 @@ namespace Strava
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -258,18 +258,18 @@ namespace Strava
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(DetailedGear other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::Strava.SummaryGear?>.Default.Equals(Summary, other.Summary) &&
-                global::System.Collections.Generic.EqualityComparer<global::Strava.DetailedGearVariant2?>.Default.Equals(DetailedGearVariant2, other.DetailedGearVariant2) 
+                global::System.Collections.Generic.EqualityComparer<global::Strava.DetailedGearVariant2?>.Default.Equals(DetailedGearVariant2, other.DetailedGearVariant2)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(DetailedGear obj1, DetailedGear obj2)
         {
@@ -277,7 +277,7 @@ namespace Strava
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(DetailedGear obj1, DetailedGear obj2)
         {
@@ -285,7 +285,7 @@ namespace Strava
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

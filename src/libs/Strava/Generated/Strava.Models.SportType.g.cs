@@ -9,227 +9,227 @@ namespace Strava
     public enum SportType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         AlpineSki,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         BackcountrySki,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Badminton,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Basketball,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Canoeing,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Cricket,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Crossfit,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Dance,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         EBikeRide,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         EMountainBikeRide,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Elliptical,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Golf,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         GravelRide,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Handcycle,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         HighIntensityIntervalTraining,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Hike,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         IceSkate,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         InlineSkate,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Kayaking,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Kitesurf,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         MountainBikeRide,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         NordicSki,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Padel,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         PhysicalTherapy,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Pickleball,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Pilates,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Racquetball,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Ride,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         RockClimbing,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         RollerSki,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Rowing,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Run,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Sail,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Skateboard,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Snowboard,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Snowshoe,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Soccer,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Squash,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         StairStepper,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         StandUpPaddling,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Surfing,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Swim,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         TableTennis,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Tennis,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         TrailRun,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Velomobile,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         VirtualRide,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         VirtualRow,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         VirtualRun,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Volleyball,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Walk,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         WeightTraining,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Wheelchair,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Windsurf,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Workout,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Yoga,
     }

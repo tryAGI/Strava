@@ -5,12 +5,12 @@
 namespace Strava
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public readonly partial struct DetailedSegmentEffort : global::System.IEquatable<DetailedSegmentEffort>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Strava.SummarySegmentEffort? Summary { get; init; }
@@ -19,7 +19,7 @@ namespace Strava
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Summary))]
@@ -27,7 +27,7 @@ namespace Strava
         public bool IsSummary => Summary != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickSummary(
 #if NET6_0_OR_GREATER
@@ -40,14 +40,14 @@ namespace Strava
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Strava.SummarySegmentEffort PickSummary() => IsSummary
             ? Summary!
             : throw new global::System.InvalidOperationException($"Expected union variant 'Summary' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Strava.DetailedSegmentEffortVariant2? DetailedSegmentEffortVariant2 { get; init; }
@@ -56,7 +56,7 @@ namespace Strava
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(DetailedSegmentEffortVariant2))]
@@ -64,7 +64,7 @@ namespace Strava
         public bool IsDetailedSegmentEffortVariant2 => DetailedSegmentEffortVariant2 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickDetailedSegmentEffortVariant2(
 #if NET6_0_OR_GREATER
@@ -77,23 +77,23 @@ namespace Strava
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Strava.DetailedSegmentEffortVariant2 PickDetailedSegmentEffortVariant2() => IsDetailedSegmentEffortVariant2
             ? DetailedSegmentEffortVariant2!
             : throw new global::System.InvalidOperationException($"Expected union variant 'DetailedSegmentEffortVariant2' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator DetailedSegmentEffort(global::Strava.SummarySegmentEffort value) => new DetailedSegmentEffort((global::Strava.SummarySegmentEffort?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Strava.SummarySegmentEffort?(DetailedSegmentEffort @this) => @this.Summary;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public DetailedSegmentEffort(global::Strava.SummarySegmentEffort? value)
         {
@@ -101,22 +101,22 @@ namespace Strava
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static DetailedSegmentEffort FromSummary(global::Strava.SummarySegmentEffort? value) => new DetailedSegmentEffort(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator DetailedSegmentEffort(global::Strava.DetailedSegmentEffortVariant2 value) => new DetailedSegmentEffort((global::Strava.DetailedSegmentEffortVariant2?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Strava.DetailedSegmentEffortVariant2?(DetailedSegmentEffort @this) => @this.DetailedSegmentEffortVariant2;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public DetailedSegmentEffort(global::Strava.DetailedSegmentEffortVariant2? value)
         {
@@ -124,12 +124,12 @@ namespace Strava
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static DetailedSegmentEffort FromDetailedSegmentEffortVariant2(global::Strava.DetailedSegmentEffortVariant2? value) => new DetailedSegmentEffort(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public DetailedSegmentEffort(
             global::Strava.SummarySegmentEffort? summary,
@@ -141,23 +141,23 @@ namespace Strava
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             DetailedSegmentEffortVariant2 as object ??
-            Summary as object 
+            Summary as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             Summary?.ToString() ??
-            DetailedSegmentEffortVariant2?.ToString() 
+            DetailedSegmentEffortVariant2?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -165,7 +165,7 @@ namespace Strava
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::Strava.SummarySegmentEffort, TResult>? summary = null,
@@ -190,7 +190,7 @@ namespace Strava
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::Strava.SummarySegmentEffort>? summary = null,
@@ -214,7 +214,7 @@ namespace Strava
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::Strava.SummarySegmentEffort>? summary = null,
@@ -237,7 +237,7 @@ namespace Strava
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -258,18 +258,18 @@ namespace Strava
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(DetailedSegmentEffort other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::Strava.SummarySegmentEffort?>.Default.Equals(Summary, other.Summary) &&
-                global::System.Collections.Generic.EqualityComparer<global::Strava.DetailedSegmentEffortVariant2?>.Default.Equals(DetailedSegmentEffortVariant2, other.DetailedSegmentEffortVariant2) 
+                global::System.Collections.Generic.EqualityComparer<global::Strava.DetailedSegmentEffortVariant2?>.Default.Equals(DetailedSegmentEffortVariant2, other.DetailedSegmentEffortVariant2)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(DetailedSegmentEffort obj1, DetailedSegmentEffort obj2)
         {
@@ -277,7 +277,7 @@ namespace Strava
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(DetailedSegmentEffort obj1, DetailedSegmentEffort obj2)
         {
@@ -285,7 +285,7 @@ namespace Strava
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

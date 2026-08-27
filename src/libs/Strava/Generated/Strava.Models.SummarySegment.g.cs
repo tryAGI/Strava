@@ -4,7 +4,7 @@
 namespace Strava
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class SummarySegment
     {
@@ -21,7 +21,7 @@ namespace Strava
         public string? Name { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("activity_type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Strava.JsonConverters.SummarySegmentActivityTypeJsonConverter))]
@@ -100,13 +100,13 @@ namespace Strava
         public bool? Private { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("athlete_pr_effort")]
         public global::Strava.SummaryPRSegmentEffort? AthletePrEffort { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("athlete_segment_stats")]
         public global::Strava.SummarySegmentEffort? AthleteSegmentStats { get; set; }

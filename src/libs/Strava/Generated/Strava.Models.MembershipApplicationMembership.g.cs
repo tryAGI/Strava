@@ -9,11 +9,11 @@ namespace Strava
     public enum MembershipApplicationMembership
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Member,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Pending,
     }

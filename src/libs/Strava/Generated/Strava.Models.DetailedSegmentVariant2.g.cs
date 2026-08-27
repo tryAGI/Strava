@@ -4,7 +4,7 @@
 namespace Strava
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class DetailedSegmentVariant2
     {
@@ -27,7 +27,7 @@ namespace Strava
         public float? TotalElevationGain { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("map")]
         public global::Strava.PolylineMap? Map { get; set; }

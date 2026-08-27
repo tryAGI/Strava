@@ -4,7 +4,7 @@
 namespace Strava
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class HeartRateZoneRanges
     {
@@ -15,7 +15,7 @@ namespace Strava
         public bool? CustomZones { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("zones")]
         public global::System.Collections.Generic.IList<global::Strava.ZoneRange>? Zones { get; set; }

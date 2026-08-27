@@ -9,19 +9,19 @@ namespace Strava
     public enum SummaryClubVariant2SportType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Cycling,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Other,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Running,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Triathlon,
     }

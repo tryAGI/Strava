@@ -5,12 +5,12 @@
 namespace Strava
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public readonly partial struct SummaryAthlete : global::System.IEquatable<SummaryAthlete>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Strava.MetaAthlete? Meta { get; init; }
@@ -19,7 +19,7 @@ namespace Strava
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Meta))]
@@ -27,7 +27,7 @@ namespace Strava
         public bool IsMeta => Meta != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickMeta(
 #if NET6_0_OR_GREATER
@@ -40,14 +40,14 @@ namespace Strava
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Strava.MetaAthlete PickMeta() => IsMeta
             ? Meta!
             : throw new global::System.InvalidOperationException($"Expected union variant 'Meta' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Strava.SummaryAthleteVariant2? SummaryAthleteVariant2 { get; init; }
@@ -56,7 +56,7 @@ namespace Strava
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(SummaryAthleteVariant2))]
@@ -64,7 +64,7 @@ namespace Strava
         public bool IsSummaryAthleteVariant2 => SummaryAthleteVariant2 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickSummaryAthleteVariant2(
 #if NET6_0_OR_GREATER
@@ -77,23 +77,23 @@ namespace Strava
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Strava.SummaryAthleteVariant2 PickSummaryAthleteVariant2() => IsSummaryAthleteVariant2
             ? SummaryAthleteVariant2!
             : throw new global::System.InvalidOperationException($"Expected union variant 'SummaryAthleteVariant2' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator SummaryAthlete(global::Strava.MetaAthlete value) => new SummaryAthlete((global::Strava.MetaAthlete?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Strava.MetaAthlete?(SummaryAthlete @this) => @this.Meta;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public SummaryAthlete(global::Strava.MetaAthlete? value)
         {
@@ -101,22 +101,22 @@ namespace Strava
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static SummaryAthlete FromMeta(global::Strava.MetaAthlete? value) => new SummaryAthlete(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator SummaryAthlete(global::Strava.SummaryAthleteVariant2 value) => new SummaryAthlete((global::Strava.SummaryAthleteVariant2?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Strava.SummaryAthleteVariant2?(SummaryAthlete @this) => @this.SummaryAthleteVariant2;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public SummaryAthlete(global::Strava.SummaryAthleteVariant2? value)
         {
@@ -124,12 +124,12 @@ namespace Strava
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static SummaryAthlete FromSummaryAthleteVariant2(global::Strava.SummaryAthleteVariant2? value) => new SummaryAthlete(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public SummaryAthlete(
             global::Strava.MetaAthlete? meta,
@@ -141,23 +141,23 @@ namespace Strava
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             SummaryAthleteVariant2 as object ??
-            Meta as object 
+            Meta as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             Meta?.ToString() ??
-            SummaryAthleteVariant2?.ToString() 
+            SummaryAthleteVariant2?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -165,7 +165,7 @@ namespace Strava
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::Strava.MetaAthlete, TResult>? meta = null,
@@ -190,7 +190,7 @@ namespace Strava
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::Strava.MetaAthlete>? meta = null,
@@ -214,7 +214,7 @@ namespace Strava
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::Strava.MetaAthlete>? meta = null,
@@ -237,7 +237,7 @@ namespace Strava
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -258,18 +258,18 @@ namespace Strava
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(SummaryAthlete other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::Strava.MetaAthlete?>.Default.Equals(Meta, other.Meta) &&
-                global::System.Collections.Generic.EqualityComparer<global::Strava.SummaryAthleteVariant2?>.Default.Equals(SummaryAthleteVariant2, other.SummaryAthleteVariant2) 
+                global::System.Collections.Generic.EqualityComparer<global::Strava.SummaryAthleteVariant2?>.Default.Equals(SummaryAthleteVariant2, other.SummaryAthleteVariant2)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(SummaryAthlete obj1, SummaryAthlete obj2)
         {
@@ -277,7 +277,7 @@ namespace Strava
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(SummaryAthlete obj1, SummaryAthlete obj2)
         {
@@ -285,7 +285,7 @@ namespace Strava
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

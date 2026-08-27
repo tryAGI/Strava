@@ -20,7 +20,7 @@ namespace Strava.JsonConverters
                     {
                         return global::Strava.ExploreSegmentsActivityTypeExtensions.ToEnum(stringValue) ?? default;
                     }
-                    
+
                     break;
                 }
                 case global::System.Text.Json.JsonTokenType.Number:

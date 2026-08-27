@@ -4,7 +4,7 @@
 namespace Strava
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class PhotosSummary
     {
@@ -15,7 +15,7 @@ namespace Strava
         public int? Count { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("primary")]
         public global::Strava.PhotosSummaryPrimary? Primary { get; set; }
