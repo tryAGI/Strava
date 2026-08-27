@@ -4,7 +4,7 @@
 namespace Strava
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class DetailedSegmentEffortVariant2
     {
@@ -15,13 +15,13 @@ namespace Strava
         public string? Name { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("activity")]
         public global::Strava.MetaActivity? Activity { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("athlete")]
         public global::Strava.MetaAthlete? Athlete { get; set; }
@@ -75,7 +75,7 @@ namespace Strava
         public float? MaxHeartrate { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("segment")]
         public global::Strava.SummarySegment? Segment { get; set; }

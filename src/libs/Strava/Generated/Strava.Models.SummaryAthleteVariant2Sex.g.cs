@@ -9,11 +9,11 @@ namespace Strava
     public enum SummaryAthleteVariant2Sex
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         F,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         M,
     }

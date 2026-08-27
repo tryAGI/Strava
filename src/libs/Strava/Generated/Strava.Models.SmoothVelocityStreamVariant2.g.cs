@@ -4,7 +4,7 @@
 namespace Strava
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class SmoothVelocityStreamVariant2
     {

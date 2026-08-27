@@ -10,7 +10,7 @@ namespace Strava
     public readonly partial struct TimedZoneRange : global::System.IEquatable<TimedZoneRange>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Strava.ZoneRange? ZoneRange { get; init; }
@@ -19,7 +19,7 @@ namespace Strava
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ZoneRange))]
@@ -27,7 +27,7 @@ namespace Strava
         public bool IsZoneRange => ZoneRange != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickZoneRange(
 #if NET6_0_OR_GREATER
@@ -40,14 +40,14 @@ namespace Strava
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Strava.ZoneRange PickZoneRange() => IsZoneRange
             ? ZoneRange!
             : throw new global::System.InvalidOperationException($"Expected union variant 'ZoneRange' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Strava.TimedZoneRangeVariant2? TimedZoneRangeVariant2 { get; init; }
@@ -56,7 +56,7 @@ namespace Strava
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(TimedZoneRangeVariant2))]
@@ -64,7 +64,7 @@ namespace Strava
         public bool IsTimedZoneRangeVariant2 => TimedZoneRangeVariant2 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickTimedZoneRangeVariant2(
 #if NET6_0_OR_GREATER
@@ -77,23 +77,23 @@ namespace Strava
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Strava.TimedZoneRangeVariant2 PickTimedZoneRangeVariant2() => IsTimedZoneRangeVariant2
             ? TimedZoneRangeVariant2!
             : throw new global::System.InvalidOperationException($"Expected union variant 'TimedZoneRangeVariant2' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator TimedZoneRange(global::Strava.ZoneRange value) => new TimedZoneRange((global::Strava.ZoneRange?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Strava.ZoneRange?(TimedZoneRange @this) => @this.ZoneRange;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TimedZoneRange(global::Strava.ZoneRange? value)
         {
@@ -101,22 +101,22 @@ namespace Strava
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static TimedZoneRange FromZoneRange(global::Strava.ZoneRange? value) => new TimedZoneRange(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator TimedZoneRange(global::Strava.TimedZoneRangeVariant2 value) => new TimedZoneRange((global::Strava.TimedZoneRangeVariant2?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Strava.TimedZoneRangeVariant2?(TimedZoneRange @this) => @this.TimedZoneRangeVariant2;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TimedZoneRange(global::Strava.TimedZoneRangeVariant2? value)
         {
@@ -124,12 +124,12 @@ namespace Strava
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static TimedZoneRange FromTimedZoneRangeVariant2(global::Strava.TimedZoneRangeVariant2? value) => new TimedZoneRange(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TimedZoneRange(
             global::Strava.ZoneRange? zoneRange,
@@ -141,23 +141,23 @@ namespace Strava
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             TimedZoneRangeVariant2 as object ??
-            ZoneRange as object 
+            ZoneRange as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             ZoneRange?.ToString() ??
-            TimedZoneRangeVariant2?.ToString() 
+            TimedZoneRangeVariant2?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -165,7 +165,7 @@ namespace Strava
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::Strava.ZoneRange, TResult>? zoneRange = null,
@@ -190,7 +190,7 @@ namespace Strava
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::Strava.ZoneRange>? zoneRange = null,
@@ -214,7 +214,7 @@ namespace Strava
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::Strava.ZoneRange>? zoneRange = null,
@@ -237,7 +237,7 @@ namespace Strava
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -258,18 +258,18 @@ namespace Strava
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(TimedZoneRange other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::Strava.ZoneRange?>.Default.Equals(ZoneRange, other.ZoneRange) &&
-                global::System.Collections.Generic.EqualityComparer<global::Strava.TimedZoneRangeVariant2?>.Default.Equals(TimedZoneRangeVariant2, other.TimedZoneRangeVariant2) 
+                global::System.Collections.Generic.EqualityComparer<global::Strava.TimedZoneRangeVariant2?>.Default.Equals(TimedZoneRangeVariant2, other.TimedZoneRangeVariant2)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(TimedZoneRange obj1, TimedZoneRange obj2)
         {
@@ -277,7 +277,7 @@ namespace Strava
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(TimedZoneRange obj1, TimedZoneRange obj2)
         {
@@ -285,7 +285,7 @@ namespace Strava
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

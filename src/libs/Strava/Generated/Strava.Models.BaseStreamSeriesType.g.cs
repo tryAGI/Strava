@@ -9,11 +9,11 @@ namespace Strava
     public enum BaseStreamSeriesType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Distance,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Time,
     }

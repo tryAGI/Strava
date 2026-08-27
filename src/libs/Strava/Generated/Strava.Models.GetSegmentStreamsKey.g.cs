@@ -4,20 +4,20 @@
 namespace Strava
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum GetSegmentStreamsKey
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Altitude,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Distance,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Latlng,
     }

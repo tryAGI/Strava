@@ -40,53 +40,53 @@ namespace Strava
 
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         global::System.Text.Json.Serialization.JsonSerializerContext JsonSerializerContext { get; set; }
 
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ActivitiesClient Activities { get; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public AthletesClient Athletes { get; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ClubsClient Clubs { get; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public GearsClient Gears { get; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public RoutesClient Routes { get; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public SegmentEffortsClient SegmentEfforts { get; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public SegmentsClient Segments { get; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public StreamsClient Streams { get; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public UploadsClient Uploads { get; }
 

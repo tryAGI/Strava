@@ -9,27 +9,27 @@ namespace Strava
     public enum CreateUploadRequestDataType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Fit,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         FitGz,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Gpx,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         GpxGz,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Tcx,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         TcxGz,
     }

@@ -11,7 +11,7 @@ namespace Strava
     public sealed partial class StravaClient : global::Strava.IStravaClient, global::System.IDisposable
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public const string DefaultBaseUrl = "https://www.strava.com/api/v3";
 
@@ -38,7 +38,7 @@ namespace Strava
         internal global::System.Lazy<global::System.Text.Json.Serialization.JsonSerializerContext> JsonSerializerContextProvider { get; set; } = new(() => global::Strava.SourceGenerationContext.Default);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::System.Text.Json.Serialization.JsonSerializerContext JsonSerializerContext
         {
@@ -48,7 +48,7 @@ namespace Strava
 
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ActivitiesClient Activities => new ActivitiesClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
@@ -57,7 +57,7 @@ namespace Strava
         };
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public AthletesClient Athletes => new AthletesClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
@@ -66,7 +66,7 @@ namespace Strava
         };
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ClubsClient Clubs => new ClubsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
@@ -75,7 +75,7 @@ namespace Strava
         };
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public GearsClient Gears => new GearsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
@@ -84,7 +84,7 @@ namespace Strava
         };
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public RoutesClient Routes => new RoutesClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
@@ -93,7 +93,7 @@ namespace Strava
         };
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public SegmentEffortsClient SegmentEfforts => new SegmentEffortsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
@@ -102,7 +102,7 @@ namespace Strava
         };
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public SegmentsClient Segments => new SegmentsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
@@ -111,7 +111,7 @@ namespace Strava
         };
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public StreamsClient Streams => new StreamsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
@@ -120,7 +120,7 @@ namespace Strava
         };
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public UploadsClient Uploads => new UploadsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {

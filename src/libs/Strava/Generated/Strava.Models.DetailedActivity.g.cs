@@ -5,12 +5,12 @@
 namespace Strava
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public readonly partial struct DetailedActivity : global::System.IEquatable<DetailedActivity>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Strava.SummaryActivity? Summary { get; init; }
@@ -19,7 +19,7 @@ namespace Strava
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Summary))]
@@ -27,7 +27,7 @@ namespace Strava
         public bool IsSummary => Summary != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickSummary(
 #if NET6_0_OR_GREATER
@@ -40,14 +40,14 @@ namespace Strava
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Strava.SummaryActivity PickSummary() => IsSummary
             ? Summary!.Value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Summary' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Strava.DetailedActivityVariant2? DetailedActivityVariant2 { get; init; }
@@ -56,7 +56,7 @@ namespace Strava
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(DetailedActivityVariant2))]
@@ -64,7 +64,7 @@ namespace Strava
         public bool IsDetailedActivityVariant2 => DetailedActivityVariant2 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickDetailedActivityVariant2(
 #if NET6_0_OR_GREATER
@@ -77,23 +77,23 @@ namespace Strava
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Strava.DetailedActivityVariant2 PickDetailedActivityVariant2() => IsDetailedActivityVariant2
             ? DetailedActivityVariant2!
             : throw new global::System.InvalidOperationException($"Expected union variant 'DetailedActivityVariant2' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator DetailedActivity(global::Strava.SummaryActivity value) => new DetailedActivity((global::Strava.SummaryActivity?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Strava.SummaryActivity?(DetailedActivity @this) => @this.Summary;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public DetailedActivity(global::Strava.SummaryActivity? value)
         {
@@ -101,22 +101,22 @@ namespace Strava
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static DetailedActivity FromSummary(global::Strava.SummaryActivity? value) => new DetailedActivity(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator DetailedActivity(global::Strava.DetailedActivityVariant2 value) => new DetailedActivity((global::Strava.DetailedActivityVariant2?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Strava.DetailedActivityVariant2?(DetailedActivity @this) => @this.DetailedActivityVariant2;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public DetailedActivity(global::Strava.DetailedActivityVariant2? value)
         {
@@ -124,12 +124,12 @@ namespace Strava
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static DetailedActivity FromDetailedActivityVariant2(global::Strava.DetailedActivityVariant2? value) => new DetailedActivity(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public DetailedActivity(
             global::Strava.SummaryActivity? summary,
@@ -141,23 +141,23 @@ namespace Strava
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             DetailedActivityVariant2 as object ??
-            Summary as object 
+            Summary as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             Summary?.ToString() ??
-            DetailedActivityVariant2?.ToString() 
+            DetailedActivityVariant2?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -165,7 +165,7 @@ namespace Strava
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::Strava.SummaryActivity?, TResult>? summary = null,
@@ -190,7 +190,7 @@ namespace Strava
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::Strava.SummaryActivity?>? summary = null,
@@ -214,7 +214,7 @@ namespace Strava
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::Strava.SummaryActivity?>? summary = null,
@@ -237,7 +237,7 @@ namespace Strava
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -258,18 +258,18 @@ namespace Strava
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(DetailedActivity other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::Strava.SummaryActivity?>.Default.Equals(Summary, other.Summary) &&
-                global::System.Collections.Generic.EqualityComparer<global::Strava.DetailedActivityVariant2?>.Default.Equals(DetailedActivityVariant2, other.DetailedActivityVariant2) 
+                global::System.Collections.Generic.EqualityComparer<global::Strava.DetailedActivityVariant2?>.Default.Equals(DetailedActivityVariant2, other.DetailedActivityVariant2)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(DetailedActivity obj1, DetailedActivity obj2)
         {
@@ -277,7 +277,7 @@ namespace Strava
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(DetailedActivity obj1, DetailedActivity obj2)
         {
@@ -285,7 +285,7 @@ namespace Strava
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

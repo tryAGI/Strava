@@ -4,7 +4,7 @@
 namespace Strava
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class Lap
     {
@@ -15,13 +15,13 @@ namespace Strava
         public long? Id { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("activity")]
         public global::Strava.MetaActivity? Activity { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("athlete")]
         public global::Strava.MetaAthlete? Athlete { get; set; }
@@ -93,7 +93,7 @@ namespace Strava
         public int? PaceZone { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("split")]
         public int? Split { get; set; }

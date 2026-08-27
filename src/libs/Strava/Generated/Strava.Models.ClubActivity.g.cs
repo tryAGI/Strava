@@ -4,12 +4,12 @@
 namespace Strava
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class ClubActivity
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("athlete")]
         public global::Strava.MetaAthlete? Athlete { get; set; }

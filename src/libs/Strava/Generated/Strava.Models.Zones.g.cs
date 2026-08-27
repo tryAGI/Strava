@@ -4,18 +4,18 @@
 namespace Strava
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class Zones
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("heart_rate")]
         public global::Strava.HeartRateZoneRanges? HeartRate { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("power")]
         public global::Strava.PowerZoneRanges? Power { get; set; }

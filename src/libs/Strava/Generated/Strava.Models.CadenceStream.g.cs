@@ -5,12 +5,12 @@
 namespace Strava
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public readonly partial struct CadenceStream : global::System.IEquatable<CadenceStream>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Strava.BaseStream? Base { get; init; }
@@ -19,7 +19,7 @@ namespace Strava
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Base))]
@@ -27,7 +27,7 @@ namespace Strava
         public bool IsBase => Base != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickBase(
 #if NET6_0_OR_GREATER
@@ -40,14 +40,14 @@ namespace Strava
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Strava.BaseStream PickBase() => IsBase
             ? Base!
             : throw new global::System.InvalidOperationException($"Expected union variant 'Base' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Strava.CadenceStreamVariant2? CadenceStreamVariant2 { get; init; }
@@ -56,7 +56,7 @@ namespace Strava
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(CadenceStreamVariant2))]
@@ -64,7 +64,7 @@ namespace Strava
         public bool IsCadenceStreamVariant2 => CadenceStreamVariant2 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickCadenceStreamVariant2(
 #if NET6_0_OR_GREATER
@@ -77,23 +77,23 @@ namespace Strava
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Strava.CadenceStreamVariant2 PickCadenceStreamVariant2() => IsCadenceStreamVariant2
             ? CadenceStreamVariant2!
             : throw new global::System.InvalidOperationException($"Expected union variant 'CadenceStreamVariant2' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator CadenceStream(global::Strava.BaseStream value) => new CadenceStream((global::Strava.BaseStream?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Strava.BaseStream?(CadenceStream @this) => @this.Base;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public CadenceStream(global::Strava.BaseStream? value)
         {
@@ -101,22 +101,22 @@ namespace Strava
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static CadenceStream FromBase(global::Strava.BaseStream? value) => new CadenceStream(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator CadenceStream(global::Strava.CadenceStreamVariant2 value) => new CadenceStream((global::Strava.CadenceStreamVariant2?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Strava.CadenceStreamVariant2?(CadenceStream @this) => @this.CadenceStreamVariant2;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public CadenceStream(global::Strava.CadenceStreamVariant2? value)
         {
@@ -124,12 +124,12 @@ namespace Strava
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static CadenceStream FromCadenceStreamVariant2(global::Strava.CadenceStreamVariant2? value) => new CadenceStream(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public CadenceStream(
             global::Strava.BaseStream? @base,
@@ -141,23 +141,23 @@ namespace Strava
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             CadenceStreamVariant2 as object ??
-            Base as object 
+            Base as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             Base?.ToString() ??
-            CadenceStreamVariant2?.ToString() 
+            CadenceStreamVariant2?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -165,7 +165,7 @@ namespace Strava
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::Strava.BaseStream, TResult>? @base = null,
@@ -190,7 +190,7 @@ namespace Strava
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::Strava.BaseStream>? @base = null,
@@ -214,7 +214,7 @@ namespace Strava
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::Strava.BaseStream>? @base = null,
@@ -237,7 +237,7 @@ namespace Strava
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -258,18 +258,18 @@ namespace Strava
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(CadenceStream other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::Strava.BaseStream?>.Default.Equals(Base, other.Base) &&
-                global::System.Collections.Generic.EqualityComparer<global::Strava.CadenceStreamVariant2?>.Default.Equals(CadenceStreamVariant2, other.CadenceStreamVariant2) 
+                global::System.Collections.Generic.EqualityComparer<global::Strava.CadenceStreamVariant2?>.Default.Equals(CadenceStreamVariant2, other.CadenceStreamVariant2)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(CadenceStream obj1, CadenceStream obj2)
         {
@@ -277,7 +277,7 @@ namespace Strava
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(CadenceStream obj1, CadenceStream obj2)
         {
@@ -285,7 +285,7 @@ namespace Strava
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

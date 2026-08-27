@@ -4,52 +4,52 @@
 namespace Strava
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum GetSegmentEffortStreamsKey
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Altitude,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Cadence,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Distance,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         GradeSmooth,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Heartrate,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Latlng,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Moving,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Temp,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Time,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         VelocitySmooth,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Watts,
     }

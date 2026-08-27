@@ -4,16 +4,16 @@
 namespace Strava
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum SummarySegmentActivityType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Ride,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Run,
     }

@@ -9,11 +9,11 @@ namespace Strava
     public enum DetailedAthleteVariant2MeasurementPreference
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Feet,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Meters,
     }

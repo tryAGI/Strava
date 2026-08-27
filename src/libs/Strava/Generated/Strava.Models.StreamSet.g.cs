@@ -4,82 +4,82 @@
 namespace Strava
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class StreamSet
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("time")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Strava.JsonConverters.TimeStreamJsonConverter))]
         public global::Strava.TimeStream? Time { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("distance")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Strava.JsonConverters.DistanceStreamJsonConverter))]
         public global::Strava.DistanceStream? Distance { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("latlng")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Strava.JsonConverters.LatLngStreamJsonConverter))]
         public global::Strava.LatLngStream? Latlng { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("altitude")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Strava.JsonConverters.AltitudeStreamJsonConverter))]
         public global::Strava.AltitudeStream? Altitude { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("velocity_smooth")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Strava.JsonConverters.SmoothVelocityStreamJsonConverter))]
         public global::Strava.SmoothVelocityStream? VelocitySmooth { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("heartrate")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Strava.JsonConverters.HeartrateStreamJsonConverter))]
         public global::Strava.HeartrateStream? Heartrate { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("cadence")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Strava.JsonConverters.CadenceStreamJsonConverter))]
         public global::Strava.CadenceStream? Cadence { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("watts")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Strava.JsonConverters.PowerStreamJsonConverter))]
         public global::Strava.PowerStream? Watts { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("temp")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Strava.JsonConverters.TemperatureStreamJsonConverter))]
         public global::Strava.TemperatureStream? Temp { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("moving")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Strava.JsonConverters.MovingStreamJsonConverter))]
         public global::Strava.MovingStream? Moving { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("grade_smooth")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Strava.JsonConverters.SmoothGradeStreamJsonConverter))]

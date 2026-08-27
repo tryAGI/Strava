@@ -20,7 +20,7 @@ namespace Strava.JsonConverters
                     {
                         return global::Strava.SummaryAthleteVariant2SexExtensions.ToEnum(stringValue);
                     }
-                    
+
                     break;
                 }
                 case global::System.Text.Json.JsonTokenType.Number:

@@ -4,7 +4,7 @@
 namespace Strava
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class Comment
     {
@@ -27,7 +27,7 @@ namespace Strava
         public string? Text { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("athlete")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Strava.JsonConverters.SummaryAthleteJsonConverter))]
