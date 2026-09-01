@@ -112,28 +112,6 @@
     },
     {
       "Order": 11,
-      "Title": "List Club Activities",
-      "Slug": "getclubactivitiesbyid",
-      "Description": "Retrieve recent activities from members of a specific club. The authenticated athlete must belong to the requested club in order to hit this endpoint. Pagination is supported. Athlete profile visibility is respected for all activities.",
-      "Language": "http",
-      "Code": "### List Club Activities\n# @name getClubActivitiesById\nGET {{host}}/clubs/{{id}}/activities?page={{page}}\u0026per_page=30\nAuthorization: Bearer {{token}}\nAccept: application/json\n\n## Responses\n# 200\n# Description: A list of activities.\n# Content-Type: application/json\n# default\n# Description: Unexpected error.\n# Content-Type: application/json",
-      "Format": "http",
-      "OperationId": "getClubActivitiesById",
-      "Setup": null
-    },
-    {
-      "Order": 12,
-      "Title": "List Club Administrators",
-      "Slug": "getclubadminsbyid",
-      "Description": "Returns a list of the administrators of a given club.",
-      "Language": "http",
-      "Code": "### List Club Administrators\n# @name getClubAdminsById\nGET {{host}}/clubs/{{id}}/admins?page={{page}}\u0026per_page=30\nAuthorization: Bearer {{token}}\nAccept: application/json\n\n## Responses\n# 200\n# Description: A list of summary athlete representations.\n# Content-Type: application/json\n# default\n# Description: Unexpected error.\n# Content-Type: application/json",
-      "Format": "http",
-      "OperationId": "getClubAdminsById",
-      "Setup": null
-    },
-    {
-      "Order": 13,
       "Title": "Get Club",
       "Slug": "getclubbyid",
       "Description": "Returns a given a club using its identifier.",
@@ -144,18 +122,7 @@
       "Setup": null
     },
     {
-      "Order": 14,
-      "Title": "List Club Members",
-      "Slug": "getclubmembersbyid",
-      "Description": "Returns a list of the athletes who are members of a given club.",
-      "Language": "http",
-      "Code": "### List Club Members\n# @name getClubMembersById\nGET {{host}}/clubs/{{id}}/members?page={{page}}\u0026per_page=30\nAuthorization: Bearer {{token}}\nAccept: application/json\n\n## Responses\n# 200\n# Description: A list of club athlete representations.\n# Content-Type: application/json\n# default\n# Description: Unexpected error.\n# Content-Type: application/json",
-      "Format": "http",
-      "OperationId": "getClubMembersById",
-      "Setup": null
-    },
-    {
-      "Order": 15,
+      "Order": 12,
       "Title": "List Athlete Clubs",
       "Slug": "getloggedinathleteclubs",
       "Description": "Returns a list of the clubs whose membership includes the authenticated athlete.",
@@ -166,7 +133,7 @@
       "Setup": "This example assumes \u0060using Strava;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."
     },
     {
-      "Order": 16,
+      "Order": 13,
       "Title": "Get Equipment",
       "Slug": "getgearbyid",
       "Description": "Returns an equipment using its identifier.",
@@ -177,7 +144,7 @@
       "Setup": null
     },
     {
-      "Order": 17,
+      "Order": 14,
       "Title": "List Segment Efforts",
       "Slug": "geteffortsbysegmentid",
       "Description": "Returns a set of the authenticated athlete\u0027s segment efforts for a given segment.  Requires subscription.",
@@ -188,7 +155,7 @@
       "Setup": null
     },
     {
-      "Order": 18,
+      "Order": 15,
       "Title": "Get Segment Effort",
       "Slug": "getsegmenteffortbyid",
       "Description": "Returns a segment effort from an activity that is owned by the authenticated athlete. Requires subscription.",
@@ -199,10 +166,10 @@
       "Setup": null
     },
     {
-      "Order": 19,
+      "Order": 16,
       "Title": "Explore segments",
       "Slug": "exploresegments",
-      "Description": "Returns the top 10 segments matching a specified query.",
+      "Description": "Returns the top 10 segments matching a specified query. Available only to Extended Access Tier apps with granted permission.",
       "Language": "http",
       "Code": "### Explore segments\n# @name exploreSegments\nGET {{host}}/segments/explore?bounds={{bounds}}\u0026activity_type=running\u0026min_cat={{min_cat}}\u0026max_cat={{max_cat}}\nAuthorization: Bearer {{token}}\nAccept: application/json\n\n## Responses\n# 200\n# Description: List of matching segments.\n# Content-Type: application/json\n# default\n# Description: Unexpected error.\n# Content-Type: application/json",
       "Format": "http",
@@ -210,7 +177,7 @@
       "Setup": null
     },
     {
-      "Order": 20,
+      "Order": 17,
       "Title": "List Starred Segments",
       "Slug": "getloggedinathletestarredsegments",
       "Description": "List of the authenticated athlete\u0027s starred segments. Private segments are filtered out unless requested by a token with read_all scope.",
@@ -221,7 +188,7 @@
       "Setup": "This example assumes \u0060using Strava;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."
     },
     {
-      "Order": 21,
+      "Order": 18,
       "Title": "Get Segment",
       "Slug": "getsegmentbyid",
       "Description": "Returns the specified segment. read_all scope required in order to retrieve athlete-specific segment information, or to retrieve private segments.",
@@ -232,7 +199,7 @@
       "Setup": null
     },
     {
-      "Order": 22,
+      "Order": 19,
       "Title": "Star Segment",
       "Slug": "starsegment",
       "Description": "Stars/Unstars the given segment for the authenticated athlete. Requires profile:write scope.",
@@ -243,7 +210,7 @@
       "Setup": null
     },
     {
-      "Order": 23,
+      "Order": 20,
       "Title": "Get Activity Streams",
       "Slug": "getactivitystreams",
       "Description": "Returns the given activity\u0027s streams. Requires activity:read scope. Requires activity:read_all scope for Only Me activities.",
@@ -254,7 +221,7 @@
       "Setup": null
     },
     {
-      "Order": 24,
+      "Order": 21,
       "Title": "Get Route Streams",
       "Slug": "getroutestreams",
       "Description": "Returns the given route\u0027s streams. Requires read_all scope for private routes.",
@@ -265,7 +232,7 @@
       "Setup": null
     },
     {
-      "Order": 25,
+      "Order": 22,
       "Title": "Get Segment Effort Streams",
       "Slug": "getsegmenteffortstreams",
       "Description": "Returns a set of streams for a segment effort completed by the authenticated athlete. Requires read_all scope.",
@@ -276,7 +243,7 @@
       "Setup": null
     },
     {
-      "Order": 26,
+      "Order": 23,
       "Title": "Get Segment Streams",
       "Slug": "getsegmentstreams",
       "Description": "Returns the given segment\u0027s streams. Requires read_all scope for private segments.",
