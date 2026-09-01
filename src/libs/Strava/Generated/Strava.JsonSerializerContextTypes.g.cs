@@ -553,15 +553,7 @@ namespace Strava
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Strava.ClubAthlete>? Type130 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::System.Collections.Generic.IList<global::Strava.ClubActivity>? Type131 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::System.Collections.Generic.IList<global::Strava.Route>? Type132 { get; set; }
+        public global::System.Collections.Generic.IList<global::Strava.Route>? Type130 { get; set; }
 
         /// <summary>
         ///
@@ -662,14 +654,6 @@ namespace Strava
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.List<global::Strava.ClubAthlete>? ListType24 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::System.Collections.Generic.List<global::Strava.ClubActivity>? ListType25 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::System.Collections.Generic.List<global::Strava.Route>? ListType26 { get; set; }
+        public global::System.Collections.Generic.List<global::Strava.Route>? ListType24 { get; set; }
     }
 }

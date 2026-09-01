@@ -76,13 +76,13 @@ namespace Strava
         public int? Timestamp { get; set; }
 
         /// <summary>
-        /// This route's type (1 for ride, 2 for runs)
+        /// This route's type (1 = Ride, 2 = Run, 3 = Walk, 4 = Hike, 5 = Trail Run, 6 = Gravel Ride, 7 = Mountain Bike Ride)
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         public int? Type { get; set; }
 
         /// <summary>
-        /// This route's sub-type (1 for road, 2 for mountain bike, 3 for cross, 4 for trail, 5 for mixed)
+        /// This route's sub-type (1 = Road, 2 = MTB, 3 = Gravel, 4 = Trail, 5 = Mixed)
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("sub_type")]
         public int? SubType { get; set; }
@@ -156,10 +156,10 @@ namespace Strava
         /// An epoch timestamp of when the route was created
         /// </param>
         /// <param name="type">
-        /// This route's type (1 for ride, 2 for runs)
+        /// This route's type (1 = Ride, 2 = Run, 3 = Walk, 4 = Hike, 5 = Trail Run, 6 = Gravel Ride, 7 = Mountain Bike Ride)
         /// </param>
         /// <param name="subType">
-        /// This route's sub-type (1 for road, 2 for mountain bike, 3 for cross, 4 for trail, 5 for mixed)
+        /// This route's sub-type (1 = Road, 2 = MTB, 3 = Gravel, 4 = Trail, 5 = Mixed)
         /// </param>
         /// <param name="createdAt">
         /// The time at which the route was created

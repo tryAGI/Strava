@@ -49,7 +49,7 @@ namespace Strava
 
         /// <summary>
         /// Explore segments<br/>
-        /// Returns the top 10 segments matching a specified query.
+        /// Returns the top 10 segments matching a specified query. Available only to Extended Access Tier apps with granted permission.
         /// </summary>
         /// <param name="bounds"></param>
         /// <param name="activityType"></param>
@@ -79,7 +79,7 @@ namespace Strava
         }
         /// <summary>
         /// Explore segments<br/>
-        /// Returns the top 10 segments matching a specified query.
+        /// Returns the top 10 segments matching a specified query. Available only to Extended Access Tier apps with granted permission.
         /// </summary>
         /// <param name="bounds"></param>
         /// <param name="activityType"></param>
