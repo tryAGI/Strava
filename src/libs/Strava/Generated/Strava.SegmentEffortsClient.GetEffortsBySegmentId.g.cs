@@ -136,7 +136,7 @@ namespace Strava
                                 path: "/segment_efforts",
                                 baseUri: HttpClient.BaseAddress);
                             __pathBuilder
-                                .AddRequiredParameter("segment_id", segmentId.ToString()!)
+                                .AddRequiredParameter("segment_id", segmentId.ToString() ?? throw new global::System.InvalidOperationException("A required query parameter returned null from ToString()."))
                                 .AddOptionalParameter("start_date_local", startDateLocal?.ToString("yyyy-MM-ddTHH:mm:ssZ"))
                                 .AddOptionalParameter("end_date_local", endDateLocal?.ToString("yyyy-MM-ddTHH:mm:ssZ"))
                                 .AddOptionalParameter("per_page", perPage?.ToString())
@@ -181,7 +181,7 @@ namespace Strava
                 PrepareGetEffortsBySegmentIdRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    segmentId: segmentId!,
+                    segmentId: segmentId,
                     startDateLocal: startDateLocal,
                     endDateLocal: endDateLocal,
                     perPage: perPage);
@@ -206,7 +206,7 @@ namespace Strava
                                 pathTemplate: "\"/segment_efforts\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: null,
                                 clientOptions: Options,
@@ -240,7 +240,7 @@ namespace Strava
                                 pathTemplate: "\"/segment_efforts\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: __exception,
                                 clientOptions: Options,
@@ -281,7 +281,7 @@ namespace Strava
                                 pathTemplate: "\"/segment_efforts\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -329,7 +329,7 @@ namespace Strava
                                 pathTemplate: "\"/segment_efforts\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -351,7 +351,7 @@ namespace Strava
                                 pathTemplate: "\"/segment_efforts\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,

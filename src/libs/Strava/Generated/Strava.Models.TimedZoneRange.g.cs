@@ -42,8 +42,8 @@ namespace Strava
         /// <summary>
         ///
         /// </summary>
-        public global::Strava.ZoneRange PickZoneRange() => IsZoneRange
-            ? ZoneRange!
+        public global::Strava.ZoneRange PickZoneRange() => ZoneRange is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ZoneRange' but the value was {ToString()}.");
 
         /// <summary>
@@ -79,8 +79,8 @@ namespace Strava
         /// <summary>
         ///
         /// </summary>
-        public global::Strava.TimedZoneRangeVariant2 PickTimedZoneRangeVariant2() => IsTimedZoneRangeVariant2
-            ? TimedZoneRangeVariant2!
+        public global::Strava.TimedZoneRangeVariant2 PickTimedZoneRangeVariant2() => TimedZoneRangeVariant2 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'TimedZoneRangeVariant2' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -177,13 +177,13 @@ namespace Strava
                 Validate();
             }
 
-            if (IsZoneRange && zoneRange != null)
+            if (ZoneRange is { } __value0 && zoneRange != null)
             {
-                return zoneRange(ZoneRange!);
+                return zoneRange(__value0);
             }
-            else if (IsTimedZoneRangeVariant2 && timedZoneRangeVariant2 != null)
+            else if (TimedZoneRangeVariant2 is { } __value1 && timedZoneRangeVariant2 != null)
             {
-                return timedZoneRangeVariant2(TimedZoneRangeVariant2!);
+                return timedZoneRangeVariant2(__value1);
             }
 
             return default(TResult);
@@ -203,13 +203,13 @@ namespace Strava
                 Validate();
             }
 
-            if (IsZoneRange)
+            if (ZoneRange is { } __value0)
             {
-                zoneRange?.Invoke(ZoneRange!);
+                zoneRange?.Invoke(__value0);
             }
-            else if (IsTimedZoneRangeVariant2)
+            else if (TimedZoneRangeVariant2 is { } __value1)
             {
-                timedZoneRangeVariant2?.Invoke(TimedZoneRangeVariant2!);
+                timedZoneRangeVariant2?.Invoke(__value1);
             }
         }
 
@@ -226,13 +226,13 @@ namespace Strava
                 Validate();
             }
 
-            if (IsZoneRange)
+            if (ZoneRange is { } __value0)
             {
-                zoneRange?.Invoke(ZoneRange!);
+                zoneRange?.Invoke(__value0);
             }
-            else if (IsTimedZoneRangeVariant2)
+            else if (TimedZoneRangeVariant2 is { } __value1)
             {
-                timedZoneRangeVariant2?.Invoke(TimedZoneRangeVariant2!);
+                timedZoneRangeVariant2?.Invoke(__value1);
             }
         }
 

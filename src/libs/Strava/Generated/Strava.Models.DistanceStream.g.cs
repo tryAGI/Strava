@@ -42,8 +42,8 @@ namespace Strava
         /// <summary>
         ///
         /// </summary>
-        public global::Strava.BaseStream PickBase() => IsBase
-            ? Base!
+        public global::Strava.BaseStream PickBase() => Base is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Base' but the value was {ToString()}.");
 
         /// <summary>
@@ -79,8 +79,8 @@ namespace Strava
         /// <summary>
         ///
         /// </summary>
-        public global::Strava.DistanceStreamVariant2 PickDistanceStreamVariant2() => IsDistanceStreamVariant2
-            ? DistanceStreamVariant2!
+        public global::Strava.DistanceStreamVariant2 PickDistanceStreamVariant2() => DistanceStreamVariant2 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'DistanceStreamVariant2' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -177,13 +177,13 @@ namespace Strava
                 Validate();
             }
 
-            if (IsBase && @base != null)
+            if (Base is { } __value0 && @base != null)
             {
-                return @base(Base!);
+                return @base(__value0);
             }
-            else if (IsDistanceStreamVariant2 && distanceStreamVariant2 != null)
+            else if (DistanceStreamVariant2 is { } __value1 && distanceStreamVariant2 != null)
             {
-                return distanceStreamVariant2(DistanceStreamVariant2!);
+                return distanceStreamVariant2(__value1);
             }
 
             return default(TResult);
@@ -203,13 +203,13 @@ namespace Strava
                 Validate();
             }
 
-            if (IsBase)
+            if (Base is { } __value0)
             {
-                @base?.Invoke(Base!);
+                @base?.Invoke(__value0);
             }
-            else if (IsDistanceStreamVariant2)
+            else if (DistanceStreamVariant2 is { } __value1)
             {
-                distanceStreamVariant2?.Invoke(DistanceStreamVariant2!);
+                distanceStreamVariant2?.Invoke(__value1);
             }
         }
 
@@ -226,13 +226,13 @@ namespace Strava
                 Validate();
             }
 
-            if (IsBase)
+            if (Base is { } __value0)
             {
-                @base?.Invoke(Base!);
+                @base?.Invoke(__value0);
             }
-            else if (IsDistanceStreamVariant2)
+            else if (DistanceStreamVariant2 is { } __value1)
             {
-                distanceStreamVariant2?.Invoke(DistanceStreamVariant2!);
+                distanceStreamVariant2?.Invoke(__value1);
             }
         }
 

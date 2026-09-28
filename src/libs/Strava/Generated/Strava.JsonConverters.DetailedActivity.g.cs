@@ -70,7 +70,7 @@ namespace Strava.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Strava.SummaryActivity), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Strava.SummaryActivity> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Strava.SummaryActivity).Name}");
-                var __element0 = global::System.Text.Json.JsonSerializer.SerializeToElement(value.Summary!.Value, typeInfo);
+                var __element0 = global::System.Text.Json.JsonSerializer.SerializeToElement(value.PickSummary(), typeInfo);
                 if (__element0.ValueKind != global::System.Text.Json.JsonValueKind.Object)
                 {
                     throw new global::System.Text.Json.JsonException("AllOf values must serialize as JSON objects.");
@@ -88,7 +88,7 @@ namespace Strava.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Strava.DetailedActivityVariant2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Strava.DetailedActivityVariant2?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Strava.DetailedActivityVariant2).Name}");
-                var __element1 = global::System.Text.Json.JsonSerializer.SerializeToElement(value.DetailedActivityVariant2!, typeInfo);
+                var __element1 = global::System.Text.Json.JsonSerializer.SerializeToElement(value.PickDetailedActivityVariant2(), typeInfo);
                 if (__element1.ValueKind != global::System.Text.Json.JsonValueKind.Object)
                 {
                     throw new global::System.Text.Json.JsonException("AllOf values must serialize as JSON objects.");
