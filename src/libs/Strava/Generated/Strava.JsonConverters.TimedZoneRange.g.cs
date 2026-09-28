@@ -70,7 +70,7 @@ namespace Strava.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Strava.ZoneRange), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Strava.ZoneRange?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Strava.ZoneRange).Name}");
-                var __element0 = global::System.Text.Json.JsonSerializer.SerializeToElement(value.ZoneRange!, typeInfo);
+                var __element0 = global::System.Text.Json.JsonSerializer.SerializeToElement(value.PickZoneRange(), typeInfo);
                 if (__element0.ValueKind != global::System.Text.Json.JsonValueKind.Object)
                 {
                     throw new global::System.Text.Json.JsonException("AllOf values must serialize as JSON objects.");
@@ -88,7 +88,7 @@ namespace Strava.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Strava.TimedZoneRangeVariant2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Strava.TimedZoneRangeVariant2?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Strava.TimedZoneRangeVariant2).Name}");
-                var __element1 = global::System.Text.Json.JsonSerializer.SerializeToElement(value.TimedZoneRangeVariant2!, typeInfo);
+                var __element1 = global::System.Text.Json.JsonSerializer.SerializeToElement(value.PickTimedZoneRangeVariant2(), typeInfo);
                 if (__element1.ValueKind != global::System.Text.Json.JsonValueKind.Object)
                 {
                     throw new global::System.Text.Json.JsonException("AllOf values must serialize as JSON objects.");

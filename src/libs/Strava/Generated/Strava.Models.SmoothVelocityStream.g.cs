@@ -42,8 +42,8 @@ namespace Strava
         /// <summary>
         ///
         /// </summary>
-        public global::Strava.BaseStream PickBase() => IsBase
-            ? Base!
+        public global::Strava.BaseStream PickBase() => Base is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Base' but the value was {ToString()}.");
 
         /// <summary>
@@ -79,8 +79,8 @@ namespace Strava
         /// <summary>
         ///
         /// </summary>
-        public global::Strava.SmoothVelocityStreamVariant2 PickSmoothVelocityStreamVariant2() => IsSmoothVelocityStreamVariant2
-            ? SmoothVelocityStreamVariant2!
+        public global::Strava.SmoothVelocityStreamVariant2 PickSmoothVelocityStreamVariant2() => SmoothVelocityStreamVariant2 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'SmoothVelocityStreamVariant2' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -177,13 +177,13 @@ namespace Strava
                 Validate();
             }
 
-            if (IsBase && @base != null)
+            if (Base is { } __value0 && @base != null)
             {
-                return @base(Base!);
+                return @base(__value0);
             }
-            else if (IsSmoothVelocityStreamVariant2 && smoothVelocityStreamVariant2 != null)
+            else if (SmoothVelocityStreamVariant2 is { } __value1 && smoothVelocityStreamVariant2 != null)
             {
-                return smoothVelocityStreamVariant2(SmoothVelocityStreamVariant2!);
+                return smoothVelocityStreamVariant2(__value1);
             }
 
             return default(TResult);
@@ -203,13 +203,13 @@ namespace Strava
                 Validate();
             }
 
-            if (IsBase)
+            if (Base is { } __value0)
             {
-                @base?.Invoke(Base!);
+                @base?.Invoke(__value0);
             }
-            else if (IsSmoothVelocityStreamVariant2)
+            else if (SmoothVelocityStreamVariant2 is { } __value1)
             {
-                smoothVelocityStreamVariant2?.Invoke(SmoothVelocityStreamVariant2!);
+                smoothVelocityStreamVariant2?.Invoke(__value1);
             }
         }
 
@@ -226,13 +226,13 @@ namespace Strava
                 Validate();
             }
 
-            if (IsBase)
+            if (Base is { } __value0)
             {
-                @base?.Invoke(Base!);
+                @base?.Invoke(__value0);
             }
-            else if (IsSmoothVelocityStreamVariant2)
+            else if (SmoothVelocityStreamVariant2 is { } __value1)
             {
-                smoothVelocityStreamVariant2?.Invoke(SmoothVelocityStreamVariant2!);
+                smoothVelocityStreamVariant2?.Invoke(__value1);
             }
         }
 

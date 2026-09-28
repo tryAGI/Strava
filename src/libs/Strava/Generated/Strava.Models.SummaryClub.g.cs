@@ -42,8 +42,8 @@ namespace Strava
         /// <summary>
         ///
         /// </summary>
-        public global::Strava.MetaClub PickMeta() => IsMeta
-            ? Meta!
+        public global::Strava.MetaClub PickMeta() => Meta is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Meta' but the value was {ToString()}.");
 
         /// <summary>
@@ -79,8 +79,8 @@ namespace Strava
         /// <summary>
         ///
         /// </summary>
-        public global::Strava.SummaryClubVariant2 PickSummaryClubVariant2() => IsSummaryClubVariant2
-            ? SummaryClubVariant2!
+        public global::Strava.SummaryClubVariant2 PickSummaryClubVariant2() => SummaryClubVariant2 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'SummaryClubVariant2' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -177,13 +177,13 @@ namespace Strava
                 Validate();
             }
 
-            if (IsMeta && meta != null)
+            if (Meta is { } __value0 && meta != null)
             {
-                return meta(Meta!);
+                return meta(__value0);
             }
-            else if (IsSummaryClubVariant2 && summaryClubVariant2 != null)
+            else if (SummaryClubVariant2 is { } __value1 && summaryClubVariant2 != null)
             {
-                return summaryClubVariant2(SummaryClubVariant2!);
+                return summaryClubVariant2(__value1);
             }
 
             return default(TResult);
@@ -203,13 +203,13 @@ namespace Strava
                 Validate();
             }
 
-            if (IsMeta)
+            if (Meta is { } __value0)
             {
-                meta?.Invoke(Meta!);
+                meta?.Invoke(__value0);
             }
-            else if (IsSummaryClubVariant2)
+            else if (SummaryClubVariant2 is { } __value1)
             {
-                summaryClubVariant2?.Invoke(SummaryClubVariant2!);
+                summaryClubVariant2?.Invoke(__value1);
             }
         }
 
@@ -226,13 +226,13 @@ namespace Strava
                 Validate();
             }
 
-            if (IsMeta)
+            if (Meta is { } __value0)
             {
-                meta?.Invoke(Meta!);
+                meta?.Invoke(__value0);
             }
-            else if (IsSummaryClubVariant2)
+            else if (SummaryClubVariant2 is { } __value1)
             {
-                summaryClubVariant2?.Invoke(SummaryClubVariant2!);
+                summaryClubVariant2?.Invoke(__value1);
             }
         }
 

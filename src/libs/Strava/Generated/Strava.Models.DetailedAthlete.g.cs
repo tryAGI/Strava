@@ -42,8 +42,8 @@ namespace Strava
         /// <summary>
         ///
         /// </summary>
-        public global::Strava.SummaryAthlete PickSummary() => IsSummary
-            ? Summary!.Value
+        public global::Strava.SummaryAthlete PickSummary() => Summary is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Summary' but the value was {ToString()}.");
 
         /// <summary>
@@ -79,8 +79,8 @@ namespace Strava
         /// <summary>
         ///
         /// </summary>
-        public global::Strava.DetailedAthleteVariant2 PickDetailedAthleteVariant2() => IsDetailedAthleteVariant2
-            ? DetailedAthleteVariant2!
+        public global::Strava.DetailedAthleteVariant2 PickDetailedAthleteVariant2() => DetailedAthleteVariant2 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'DetailedAthleteVariant2' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -177,13 +177,13 @@ namespace Strava
                 Validate();
             }
 
-            if (IsSummary && summary != null)
+            if (Summary is { } __value0 && summary != null)
             {
-                return summary(Summary!);
+                return summary(__value0);
             }
-            else if (IsDetailedAthleteVariant2 && detailedAthleteVariant2 != null)
+            else if (DetailedAthleteVariant2 is { } __value1 && detailedAthleteVariant2 != null)
             {
-                return detailedAthleteVariant2(DetailedAthleteVariant2!);
+                return detailedAthleteVariant2(__value1);
             }
 
             return default(TResult);
@@ -203,13 +203,13 @@ namespace Strava
                 Validate();
             }
 
-            if (IsSummary)
+            if (Summary is { } __value0)
             {
-                summary?.Invoke(Summary!);
+                summary?.Invoke(__value0);
             }
-            else if (IsDetailedAthleteVariant2)
+            else if (DetailedAthleteVariant2 is { } __value1)
             {
-                detailedAthleteVariant2?.Invoke(DetailedAthleteVariant2!);
+                detailedAthleteVariant2?.Invoke(__value1);
             }
         }
 
@@ -226,13 +226,13 @@ namespace Strava
                 Validate();
             }
 
-            if (IsSummary)
+            if (Summary is { } __value0)
             {
-                summary?.Invoke(Summary!);
+                summary?.Invoke(__value0);
             }
-            else if (IsDetailedAthleteVariant2)
+            else if (DetailedAthleteVariant2 is { } __value1)
             {
-                detailedAthleteVariant2?.Invoke(DetailedAthleteVariant2!);
+                detailedAthleteVariant2?.Invoke(__value1);
             }
         }
 

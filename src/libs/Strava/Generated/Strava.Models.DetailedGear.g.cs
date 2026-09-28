@@ -42,8 +42,8 @@ namespace Strava
         /// <summary>
         ///
         /// </summary>
-        public global::Strava.SummaryGear PickSummary() => IsSummary
-            ? Summary!
+        public global::Strava.SummaryGear PickSummary() => Summary is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Summary' but the value was {ToString()}.");
 
         /// <summary>
@@ -79,8 +79,8 @@ namespace Strava
         /// <summary>
         ///
         /// </summary>
-        public global::Strava.DetailedGearVariant2 PickDetailedGearVariant2() => IsDetailedGearVariant2
-            ? DetailedGearVariant2!
+        public global::Strava.DetailedGearVariant2 PickDetailedGearVariant2() => DetailedGearVariant2 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'DetailedGearVariant2' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -177,13 +177,13 @@ namespace Strava
                 Validate();
             }
 
-            if (IsSummary && summary != null)
+            if (Summary is { } __value0 && summary != null)
             {
-                return summary(Summary!);
+                return summary(__value0);
             }
-            else if (IsDetailedGearVariant2 && detailedGearVariant2 != null)
+            else if (DetailedGearVariant2 is { } __value1 && detailedGearVariant2 != null)
             {
-                return detailedGearVariant2(DetailedGearVariant2!);
+                return detailedGearVariant2(__value1);
             }
 
             return default(TResult);
@@ -203,13 +203,13 @@ namespace Strava
                 Validate();
             }
 
-            if (IsSummary)
+            if (Summary is { } __value0)
             {
-                summary?.Invoke(Summary!);
+                summary?.Invoke(__value0);
             }
-            else if (IsDetailedGearVariant2)
+            else if (DetailedGearVariant2 is { } __value1)
             {
-                detailedGearVariant2?.Invoke(DetailedGearVariant2!);
+                detailedGearVariant2?.Invoke(__value1);
             }
         }
 
@@ -226,13 +226,13 @@ namespace Strava
                 Validate();
             }
 
-            if (IsSummary)
+            if (Summary is { } __value0)
             {
-                summary?.Invoke(Summary!);
+                summary?.Invoke(__value0);
             }
-            else if (IsDetailedGearVariant2)
+            else if (DetailedGearVariant2 is { } __value1)
             {
-                detailedGearVariant2?.Invoke(DetailedGearVariant2!);
+                detailedGearVariant2?.Invoke(__value1);
             }
         }
 
