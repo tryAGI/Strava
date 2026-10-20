@@ -21,6 +21,12 @@ namespace Strava
         public bool? Trainer { get; set; }
 
         /// <summary>
+        /// Activity tags to set, keyed by tag name with a boolean value (true to add, false to remove). Only the tags you include are changed; any tag you omit — and every other tag on the activity — is left unchanged. Any tag outside the supported set is rejected. Commute is set here rather than via the legacy commute param, and the two cannot be combined in the same request.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("tags")]
+        public global::Strava.UpdatableActivityTags? Tags { get; set; }
+
+        /// <summary>
         /// Whether this activity is muted
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("hide_from_home")]
@@ -73,6 +79,9 @@ namespace Strava
         /// <param name="trainer">
         /// Whether this activity was recorded on a training machine
         /// </param>
+        /// <param name="tags">
+        /// Activity tags to set, keyed by tag name with a boolean value (true to add, false to remove). Only the tags you include are changed; any tag you omit — and every other tag on the activity — is left unchanged. Any tag outside the supported set is rejected. Commute is set here rather than via the legacy commute param, and the two cannot be combined in the same request.
+        /// </param>
         /// <param name="hideFromHome">
         /// Whether this activity is muted
         /// </param>
@@ -97,6 +106,7 @@ namespace Strava
         public UpdatableActivity(
             bool? commute,
             bool? trainer,
+            global::Strava.UpdatableActivityTags? tags,
             bool? hideFromHome,
             string? description,
             string? name,
@@ -106,6 +116,7 @@ namespace Strava
         {
             this.Commute = commute;
             this.Trainer = trainer;
+            this.Tags = tags;
             this.HideFromHome = hideFromHome;
             this.Description = description;
             this.Name = name;

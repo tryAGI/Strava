@@ -11,6 +11,10 @@ namespace Strava
         DefaultIgnoreCondition = global::System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull,
         Converters = new global::System.Type[]
         {
+            typeof(global::Strava.JsonConverters.SummaryActivityVariant2TagJsonConverter),
+
+            typeof(global::Strava.JsonConverters.SummaryActivityVariant2TagNullableJsonConverter),
+
             typeof(global::Strava.JsonConverters.ActivityTypeJsonConverter),
 
             typeof(global::Strava.JsonConverters.ActivityTypeNullableJsonConverter),
@@ -154,7 +158,10 @@ namespace Strava
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<float>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Strava.PolylineMap))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(bool))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Strava.SummaryActivityVariant2Tag>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Strava.SummaryActivityVariant2Tag), TypeInfoPropertyName = "SummaryActivityVariant2Tag2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Strava.UpdatableActivity))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Strava.UpdatableActivityTags))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Strava.ClubActivity))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Strava.ActivityStats))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(double))]
@@ -265,6 +272,7 @@ namespace Strava
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Strava.Split>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Strava.Lap>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<float>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Strava.SummaryActivityVariant2Tag>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Strava.SummaryClub>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Strava.SummaryGear>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Strava.ActivityType>))]

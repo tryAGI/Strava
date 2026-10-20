@@ -61,6 +61,9 @@ namespace Strava
         /// <param name="commute">
         /// Set to 1 to mark as commute.
         /// </param>
+        /// <param name="tags">
+        /// Activity tags to set, sent as form fields keyed by tag name with a boolean value, e.g. `tags[WithPet]=true` (true adds, false removes). Supported tags: WithPet, Recovery, Competition, ForACause, Commute. Any other tag is rejected. This cannot be combined with the legacy commute param in the same request.
+        /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
@@ -74,6 +77,7 @@ namespace Strava
             float? distance = default,
             int? trainer = default,
             int? commute = default,
+            string? tags = default,
             global::Strava.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

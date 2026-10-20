@@ -173,6 +173,12 @@ namespace Strava
         public bool? Commute { get; set; }
 
         /// <summary>
+        /// The activity tags currently applied to this activity
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("tags")]
+        public global::System.Collections.Generic.IList<global::Strava.SummaryActivityVariant2Tag>? Tags { get; set; }
+
+        /// <summary>
         /// Whether this activity was created manually
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("manual")]
@@ -348,6 +354,9 @@ namespace Strava
         /// <param name="commute">
         /// Whether this activity is a commute
         /// </param>
+        /// <param name="tags">
+        /// The activity tags currently applied to this activity
+        /// </param>
         /// <param name="manual">
         /// Whether this activity was created manually
         /// </param>
@@ -424,6 +433,7 @@ namespace Strava
             string? deviceName,
             bool? trainer,
             bool? commute,
+            global::System.Collections.Generic.IList<global::Strava.SummaryActivityVariant2Tag>? tags,
             bool? manual,
             bool? @private,
             bool? flagged,
@@ -467,6 +477,7 @@ namespace Strava
             this.DeviceName = deviceName;
             this.Trainer = trainer;
             this.Commute = commute;
+            this.Tags = tags;
             this.Manual = manual;
             this.Private = @private;
             this.Flagged = flagged;

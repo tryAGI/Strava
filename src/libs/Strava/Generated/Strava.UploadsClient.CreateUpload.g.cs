@@ -217,6 +217,14 @@ namespace Strava
                                     name: "\"commute\"");
 
                             }
+                            if (request.Tags != default)
+                            {
+
+                                __httpRequestContent.Add(
+                                    content: new global::System.Net.Http.StringContent(request.Tags ?? string.Empty),
+                                    name: "\"tags\"");
+
+                            }
                             if (request.DataType != default)
                             {
 
@@ -581,6 +589,9 @@ namespace Strava
         /// <param name="commute">
         /// Whether the resulting activity should be tagged as a commute.
         /// </param>
+        /// <param name="tags">
+        /// Activity tags to set on the resulting activity, sent as form fields keyed by tag name with a boolean value, e.g. `tags[WithPet]=true` (true adds, false removes). Supported tags: WithPet, Recovery, Competition, ForACause, Commute. Any other tag is rejected. This cannot be combined with the legacy commute param in the same request.
+        /// </param>
         /// <param name="dataType">
         /// The format of the uploaded file.
         /// </param>
@@ -597,6 +608,7 @@ namespace Strava
             string? description = default,
             string? trainer = default,
             string? commute = default,
+            string? tags = default,
             global::Strava.CreateUploadRequestDataType? dataType = default,
             string? externalId = default,
             global::Strava.AutoSDKRequestOptions? requestOptions = default,
@@ -610,6 +622,7 @@ namespace Strava
                 Description = description,
                 Trainer = trainer,
                 Commute = commute,
+                Tags = tags,
                 DataType = dataType,
                 ExternalId = externalId,
             };
