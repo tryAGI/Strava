@@ -67,6 +67,12 @@ namespace Strava
         public int? Commute { get; set; }
 
         /// <summary>
+        /// Activity tags to set, sent as form fields keyed by tag name with a boolean value, e.g. `tags[WithPet]=true` (true adds, false removes). Supported tags: WithPet, Recovery, Competition, ForACause, Commute. Any other tag is rejected. This cannot be combined with the legacy commute param in the same request.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("tags")]
+        public string? Tags { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -102,6 +108,9 @@ namespace Strava
         /// <param name="commute">
         /// Set to 1 to mark as commute.
         /// </param>
+        /// <param name="tags">
+        /// Activity tags to set, sent as form fields keyed by tag name with a boolean value, e.g. `tags[WithPet]=true` (true adds, false removes). Supported tags: WithPet, Recovery, Competition, ForACause, Commute. Any other tag is rejected. This cannot be combined with the legacy commute param in the same request.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -114,7 +123,8 @@ namespace Strava
             string? description,
             float? distance,
             int? trainer,
-            int? commute)
+            int? commute,
+            string? tags)
         {
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.Type = type;
@@ -125,6 +135,7 @@ namespace Strava
             this.Distance = distance;
             this.Trainer = trainer;
             this.Commute = commute;
+            this.Tags = tags;
         }
 
         /// <summary>

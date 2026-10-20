@@ -6,7 +6,7 @@
       "Slug": "createactivity",
       "Description": "Creates a manual activity for an athlete, requires activity:write scope.",
       "Language": "http",
-      "Code": "### Create an Activity\n# @name createActivity\nPOST {{host}}/activities\nAuthorization: Bearer {{token}}\nContent-Type: application/x-www-form-urlencoded\nAccept: application/json\n\nname=string\u0026type=string\u0026sport_type=string\u0026start_date_local=string\u0026elapsed_time=0\u0026description=string\u0026distance=0.0\u0026trainer=0\u0026commute=0\n\n## Responses\n# 201\n# Description: The activity\u0027s detailed representation.\n# Content-Type: application/json\n# default\n# Description: Unexpected error.\n# Content-Type: application/json",
+      "Code": "### Create an Activity\n# @name createActivity\nPOST {{host}}/activities\nAuthorization: Bearer {{token}}\nContent-Type: application/x-www-form-urlencoded\nAccept: application/json\n\nname=string\u0026type=string\u0026sport_type=string\u0026start_date_local=string\u0026elapsed_time=0\u0026description=string\u0026distance=0.0\u0026trainer=0\u0026commute=0\u0026tags=string\n\n## Responses\n# 201\n# Description: The activity\u0027s detailed representation.\n# Content-Type: application/json\n# default\n# Description: Unexpected error.\n# Content-Type: application/json",
       "Format": "http",
       "OperationId": "createActivity",
       "Setup": null
@@ -72,7 +72,7 @@
       "Slug": "updateactivitybyid",
       "Description": "Updates the given activity that is owned by the authenticated athlete. Requires activity:write. Also requires activity:read_all in order to update Only Me activities",
       "Language": "http",
-      "Code": "### Update Activity\n# @name updateActivityById\nPUT {{host}}/activities/{{id}}\nAuthorization: Bearer {{token}}\nContent-Type: application/json\nAccept: application/json\n\n{\n  \u0022commute\u0022: true,\n  \u0022trainer\u0022: true,\n  \u0022hide_from_home\u0022: true,\n  \u0022description\u0022: \u0022string\u0022,\n  \u0022name\u0022: \u0022string\u0022,\n  \u0022type\u0022: \u0022AlpineSki\u0022,\n  \u0022sport_type\u0022: \u0022AlpineSki\u0022,\n  \u0022gear_id\u0022: \u0022string\u0022\n}\n\n## Responses\n# 200\n# Description: The activity\u0027s detailed representation.\n# Content-Type: application/json\n# default\n# Description: Unexpected error.\n# Content-Type: application/json",
+      "Code": "### Update Activity\n# @name updateActivityById\nPUT {{host}}/activities/{{id}}\nAuthorization: Bearer {{token}}\nContent-Type: application/json\nAccept: application/json\n\n{\n  \u0022commute\u0022: true,\n  \u0022trainer\u0022: true,\n  \u0022tags\u0022: {\n    \u0022WithPet\u0022: true,\n    \u0022Recovery\u0022: true,\n    \u0022Competition\u0022: true,\n    \u0022ForACause\u0022: true,\n    \u0022Commute\u0022: true\n  },\n  \u0022hide_from_home\u0022: true,\n  \u0022description\u0022: \u0022string\u0022,\n  \u0022name\u0022: \u0022string\u0022,\n  \u0022type\u0022: \u0022AlpineSki\u0022,\n  \u0022sport_type\u0022: \u0022AlpineSki\u0022,\n  \u0022gear_id\u0022: \u0022string\u0022\n}\n\n## Responses\n# 200\n# Description: The activity\u0027s detailed representation.\n# Content-Type: application/json\n# default\n# Description: Unexpected error.\n# Content-Type: application/json",
       "Format": "http",
       "OperationId": "updateActivityById",
       "Setup": null

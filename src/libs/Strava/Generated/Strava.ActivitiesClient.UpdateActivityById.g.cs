@@ -490,6 +490,9 @@ namespace Strava
         /// <param name="trainer">
         /// Whether this activity was recorded on a training machine
         /// </param>
+        /// <param name="tags">
+        /// Activity tags to set, keyed by tag name with a boolean value (true to add, false to remove). Only the tags you include are changed; any tag you omit — and every other tag on the activity — is left unchanged. Any tag outside the supported set is rejected. Commute is set here rather than via the legacy commute param, and the two cannot be combined in the same request.
+        /// </param>
         /// <param name="hideFromHome">
         /// Whether this activity is muted
         /// </param>
@@ -515,6 +518,7 @@ namespace Strava
             long id,
             bool? commute = default,
             bool? trainer = default,
+            global::Strava.UpdatableActivityTags? tags = default,
             bool? hideFromHome = default,
             string? description = default,
             string? name = default,
@@ -528,6 +532,7 @@ namespace Strava
             {
                 Commute = commute,
                 Trainer = trainer,
+                Tags = tags,
                 HideFromHome = hideFromHome,
                 Description = description,
                 Name = name,
