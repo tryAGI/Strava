@@ -134,6 +134,7 @@ namespace Strava
     #pragma warning restore CS3016
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Strava.JsonSerializerContextTypes))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<object>), TypeInfoPropertyName = "SystemCollectionsGeneric_ObjectList")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(string[]))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Strava.DetailedActivity), TypeInfoPropertyName = "DetailedActivity2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Strava.SummaryActivity), TypeInfoPropertyName = "SummaryActivity2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Strava.DetailedActivityVariant2))]
