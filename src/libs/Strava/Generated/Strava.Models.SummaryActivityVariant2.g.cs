@@ -15,6 +15,12 @@ namespace Strava
         public string? ExternalId { get; set; }
 
         /// <summary>
+        /// The unique identifier of the upload in string format
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("id_str")]
+        public string? IdStr { get; set; }
+
+        /// <summary>
         /// The identifier of the upload that resulted in this activity
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("upload_id")]
@@ -137,13 +143,13 @@ namespace Strava
         public int? AthleteCount { get; set; }
 
         /// <summary>
-        /// The number of Instagram photos for this activity
+        /// Deprecated, use total_photo_count
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("photo_count")]
         public int? PhotoCount { get; set; }
 
         /// <summary>
-        /// The number of Instagram and Strava photos for this activity
+        /// The number of media items (photo &amp; video) attached to this activity
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("total_photo_count")]
         public int? TotalPhotoCount { get; set; }
@@ -280,6 +286,9 @@ namespace Strava
         /// <param name="externalId">
         /// The identifier provided at upload time
         /// </param>
+        /// <param name="idStr">
+        /// The unique identifier of the upload in string format
+        /// </param>
         /// <param name="uploadId">
         /// The identifier of the upload that resulted in this activity
         /// </param>
@@ -339,10 +348,10 @@ namespace Strava
         /// The number of athletes for taking part in a group activity
         /// </param>
         /// <param name="photoCount">
-        /// The number of Instagram photos for this activity
+        /// Deprecated, use total_photo_count
         /// </param>
         /// <param name="totalPhotoCount">
-        /// The number of Instagram and Strava photos for this activity
+        /// The number of media items (photo &amp; video) attached to this activity
         /// </param>
         /// <param name="map"></param>
         /// <param name="deviceName">
@@ -407,6 +416,7 @@ namespace Strava
 #endif
         public SummaryActivityVariant2(
             string? externalId,
+            string? idStr,
             long? uploadId,
             global::Strava.MetaAthlete? athlete,
             string? name,
@@ -451,6 +461,7 @@ namespace Strava
             int? weightedAverageWatts)
         {
             this.ExternalId = externalId;
+            this.IdStr = idStr;
             this.UploadId = uploadId;
             this.Athlete = athlete;
             this.Name = name;
