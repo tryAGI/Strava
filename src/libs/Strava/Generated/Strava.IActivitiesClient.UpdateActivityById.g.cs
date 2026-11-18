@@ -63,6 +63,9 @@ namespace Strava
         /// <param name="sportType">
         /// An enumeration of the sport types an activity may have. Distinct from ActivityType in that it has new types (e.g. MountainBikeRide)
         /// </param>
+        /// <param name="visibility">
+        /// The visibility of the activity. Can only be set to a more restrictive visibility setting than currently set on the activity (Followers Only or Only Me) by passing followers_only or only_me
+        /// </param>
         /// <param name="gearId">
         /// Identifier for the gear associated with the activity. ‘none’ clears gear from activity
         /// </param>
@@ -79,6 +82,7 @@ namespace Strava
             string? name = default,
             global::Strava.ActivityType? type = default,
             global::Strava.SportType? sportType = default,
+            string? visibility = default,
             string? gearId = default,
             global::Strava.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);

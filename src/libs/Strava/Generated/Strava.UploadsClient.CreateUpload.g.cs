@@ -217,6 +217,14 @@ namespace Strava
                                     name: "\"commute\"");
 
                             }
+                            if (request.Visibility != default)
+                            {
+
+                                __httpRequestContent.Add(
+                                    content: new global::System.Net.Http.StringContent(request.Visibility ?? string.Empty),
+                                    name: "\"visibility\"");
+
+                            }
                             if (request.Tags != default)
                             {
 
@@ -589,6 +597,9 @@ namespace Strava
         /// <param name="commute">
         /// Whether the resulting activity should be tagged as a commute.
         /// </param>
+        /// <param name="visibility">
+        /// Set the activity's visibility to a more restrictive visibility setting (Followers Only or Only Me) by passing followers_only or only_me
+        /// </param>
         /// <param name="tags">
         /// Activity tags to set on the resulting activity, sent as form fields keyed by tag name with a boolean value, e.g. `tags[WithPet]=true` (true adds, false removes). Supported tags: WithPet, Recovery, Competition, ForACause, Commute. Any other tag is rejected. This cannot be combined with the legacy commute param in the same request.
         /// </param>
@@ -608,6 +619,7 @@ namespace Strava
             string? description = default,
             string? trainer = default,
             string? commute = default,
+            string? visibility = default,
             string? tags = default,
             global::Strava.CreateUploadRequestDataType? dataType = default,
             string? externalId = default,
@@ -622,6 +634,7 @@ namespace Strava
                 Description = description,
                 Trainer = trainer,
                 Commute = commute,
+                Visibility = visibility,
                 Tags = tags,
                 DataType = dataType,
                 ExternalId = externalId,

@@ -59,6 +59,12 @@ namespace Strava
         public global::Strava.SportType? SportType { get; set; }
 
         /// <summary>
+        /// The visibility of the activity. Can only be set to a more restrictive visibility setting than currently set on the activity (Followers Only or Only Me) by passing followers_only or only_me
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("visibility")]
+        public string? Visibility { get; set; }
+
+        /// <summary>
         /// Identifier for the gear associated with the activity. ‘none’ clears gear from activity
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("gear_id")]
@@ -97,6 +103,9 @@ namespace Strava
         /// <param name="sportType">
         /// An enumeration of the sport types an activity may have. Distinct from ActivityType in that it has new types (e.g. MountainBikeRide)
         /// </param>
+        /// <param name="visibility">
+        /// The visibility of the activity. Can only be set to a more restrictive visibility setting than currently set on the activity (Followers Only or Only Me) by passing followers_only or only_me
+        /// </param>
         /// <param name="gearId">
         /// Identifier for the gear associated with the activity. ‘none’ clears gear from activity
         /// </param>
@@ -112,6 +121,7 @@ namespace Strava
             string? name,
             global::Strava.ActivityType? type,
             global::Strava.SportType? sportType,
+            string? visibility,
             string? gearId)
         {
             this.Commute = commute;
@@ -122,6 +132,7 @@ namespace Strava
             this.Name = name;
             this.Type = type;
             this.SportType = sportType;
+            this.Visibility = visibility;
             this.GearId = gearId;
         }
 

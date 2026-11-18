@@ -184,6 +184,12 @@ namespace Strava
                                     "commute",
                                     global::System.Convert.ToString(request.Commute, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty));
                             }
+                            if (request.Visibility != default)
+                            {
+                                __formValues.Add(new global::System.Collections.Generic.KeyValuePair<string, string>(
+                                    "visibility",
+                                    request.Visibility ?? string.Empty));
+                            }
                             if (request.Tags != default)
                             {
                                 __formValues.Add(new global::System.Collections.Generic.KeyValuePair<string, string>(
@@ -547,6 +553,9 @@ namespace Strava
         /// <param name="commute">
         /// Set to 1 to mark as commute.
         /// </param>
+        /// <param name="visibility">
+        /// Set the activity's visibility to a more restrictive visibility setting (Followers Only or Only Me) by passing followers_only or only_me
+        /// </param>
         /// <param name="tags">
         /// Activity tags to set, sent as form fields keyed by tag name with a boolean value, e.g. `tags[WithPet]=true` (true adds, false removes). Supported tags: WithPet, Recovery, Competition, ForACause, Commute. Any other tag is rejected. This cannot be combined with the legacy commute param in the same request.
         /// </param>
@@ -563,6 +572,7 @@ namespace Strava
             float? distance = default,
             int? trainer = default,
             int? commute = default,
+            string? visibility = default,
             string? tags = default,
             global::Strava.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
@@ -578,6 +588,7 @@ namespace Strava
                 Distance = distance,
                 Trainer = trainer,
                 Commute = commute,
+                Visibility = visibility,
                 Tags = tags,
             };
 

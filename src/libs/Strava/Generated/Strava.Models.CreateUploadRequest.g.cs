@@ -45,6 +45,12 @@ namespace Strava
         public string? Commute { get; set; }
 
         /// <summary>
+        /// Set the activity's visibility to a more restrictive visibility setting (Followers Only or Only Me) by passing followers_only or only_me
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("visibility")]
+        public string? Visibility { get; set; }
+
+        /// <summary>
         /// Activity tags to set on the resulting activity, sent as form fields keyed by tag name with a boolean value, e.g. `tags[WithPet]=true` (true adds, false removes). Supported tags: WithPet, Recovery, Competition, ForACause, Commute. Any other tag is rejected. This cannot be combined with the legacy commute param in the same request.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tags")]
@@ -90,6 +96,9 @@ namespace Strava
         /// <param name="commute">
         /// Whether the resulting activity should be tagged as a commute.
         /// </param>
+        /// <param name="visibility">
+        /// Set the activity's visibility to a more restrictive visibility setting (Followers Only or Only Me) by passing followers_only or only_me
+        /// </param>
         /// <param name="tags">
         /// Activity tags to set on the resulting activity, sent as form fields keyed by tag name with a boolean value, e.g. `tags[WithPet]=true` (true adds, false removes). Supported tags: WithPet, Recovery, Competition, ForACause, Commute. Any other tag is rejected. This cannot be combined with the legacy commute param in the same request.
         /// </param>
@@ -109,6 +118,7 @@ namespace Strava
             string? description,
             string? trainer,
             string? commute,
+            string? visibility,
             string? tags,
             global::Strava.CreateUploadRequestDataType? dataType,
             string? externalId)
@@ -119,6 +129,7 @@ namespace Strava
             this.Description = description;
             this.Trainer = trainer;
             this.Commute = commute;
+            this.Visibility = visibility;
             this.Tags = tags;
             this.DataType = dataType;
             this.ExternalId = externalId;
